@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <title>Twitter Tool</title>
+    <meta name="author" content="Yoshihiro Ueda"/>
+    <link type="text/css" rel="stylesheet" href="stylesheets/main.css" />
+  </head>
+  <body>
+    <div ID="BODY">
+      <div ID="title"><img src="images/logo.png" alt="logo" /></div>
+      <div ID="logo">
+        <span style="text-align:left;float:left; width:240px;">
+          <%link_to @url_linktext, :action => "login" %>
+        </span>
+        <span><a href="mailto:yoshihiroueda@gmail.com">Yoshihiro Ueda</a></span>
+      </div>
+      <div>
+        <% form_for @poster,  :url => {:controller=>"posters", :action => "make"} do |f| %>
+          <%= f.error_messages %>
+        <h2>Poster Maker</h2>
+          <p>
+            <%= f.label :query %>
+            <%= f.text_field :query %>
+            <%= f.submit 'Make!' , :method =>:post %></p>
+        <% end %>
+      </div>
+    </div>
+  </body>
+</html>

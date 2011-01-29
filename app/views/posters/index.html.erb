@@ -1,0 +1,24 @@
+<h1>Listing posters</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Query</th>
+    <th>Result</th>
+  </tr>
+
+<% @posters.each do |poster| %>
+  <tr>
+    <td><%=h poster.user %></td>
+    <td><%=h poster.query %></td>
+    <td><%=h poster.result %></td>
+    <td><%= link_to 'Show', poster %></td>
+    <td><%= link_to 'Edit', edit_poster_path(poster) %></td>
+    <td><%= link_to 'Destroy', poster, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New poster', new_poster_path %>

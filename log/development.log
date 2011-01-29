@@ -1,0 +1,1724 @@
+
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (7.7ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateLogs (20110109125301)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user" varchar(255), "query" varchar(255), "result" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110109125301')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("logs")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:12:59) [GET]
+
+LoadError (Expected /Users/ueda/codes/Rails/tweetimes/app/controllers/main_controller.rb to define MainController):
+  
+
+Rendered rescues/_trace (81.4ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-10 15:13:56) [GET]
+Rendering main/index
+
+ActionView::TemplateError (undefined local variable or method `url_linktext' for #<ActionView::Base:0x1044466c8>) on line #13 of app/views/main/index.html.erb:
+10:       <div ID="title"><img src="images/logo.png" alt="logo" /></div>
+11:       <div ID="logo">
+12:         <span style="text-align:left;float:left; width:240px;">
+13:           <%link_to url_linktext, :action => "login" %>
+14:         </span>
+15:         <span><a href="mailto:yoshihiroueda@gmail.com">Yoshihiro Ueda</a></span>
+16:       </div>
+
+    app/views/main/index.html.erb:13
+
+Rendered rescues/_trace (40.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-10 15:15:43) [GET]
+Rendering main/index
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #18 of app/views/main/index.html.erb:
+15:         <span><a href="mailto:yoshihiroueda@gmail.com">Yoshihiro Ueda</a></span>
+16:       </div>
+17:       <div>
+18:         <% form_for @log, :url => {:controller=>"log", :action => "format"} do |f| %>
+19:           <%= f.error_messages %>
+20:         <h2>Poster Maker</h2>
+21:           <p>
+
+    app/views/main/index.html.erb:18
+
+Rendered rescues/_trace (41.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-10 15:16:44) [GET]
+Rendering main/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:16:44) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:16:44) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:17:02) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"rlCnj0FALhh9m0oquqS26xpKHj1Z3kLKHMS1AoKBX90=", "log"=>{"query"=>"hatachi"}}
+
+ActionController::RoutingError (No route matches "/log/format" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:19:18) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"rlCnj0FALhh9m0oquqS26xpKHj1Z3kLKHMS1AoKBX90=", "log"=>{"query"=>"hatachi"}}
+
+ActionController::RoutingError (No route matches "/log/format" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-10 15:19:43) [GET]
+Rendering main/index
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:19:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:19:43) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:19:47) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"rlCnj0FALhh9m0oquqS26xpKHj1Z3kLKHMS1AoKBX90=", "log"=>{"query"=>"hatachi"}}
+
+ActionController::RoutingError (No route matches "/log/format" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:21:37) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"rlCnj0FALhh9m0oquqS26xpKHj1Z3kLKHMS1AoKBX90=", "log"=>{"query"=>"hatachi"}}
+
+ActionController::RoutingError (No route matches "/log/format" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-10 15:22:41) [GET]
+Rendering main/index
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:22:41) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:22:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:22:45) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"rlCnj0FALhh9m0oquqS26xpKHj1Z3kLKHMS1AoKBX90=", "log"=>{"query"=>"query"}}
+
+ActionController::RoutingError (No route matches "/log/format" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-10 15:27:10) [GET]
+Rendering main/index
+Completed in 19ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:27:10) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:27:10) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:27:17) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"rlCnj0FALhh9m0oquqS26xpKHj1Z3kLKHMS1AoKBX90=", "log"=>{"query"=>"query"}}
+
+ActionController::RoutingError (No route matches "/log/format" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-10 15:28:48) [GET]
+Rendering main/index
+Completed in 9ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:28:48) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:28:48) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:28:53) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"rlCnj0FALhh9m0oquqS26xpKHj1Z3kLKHMS1AoKBX90=", "log"=>{"query"=>"week"}}
+
+ActionController::RoutingError (No route matches "/log/format" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-10 15:29:42) [GET]
+Rendering main/index
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:29:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:29:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 15:29:51) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"rlCnj0FALhh9m0oquqS26xpKHj1Z3kLKHMS1AoKBX90=", "log"=>{"query"=>"qery"}}
+
+ActionController::RoutingError (No route matches "/log/format" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 16:46:22) [GET]
+  Parameters: {"id"=>"4"}
+
+ActionController::RoutingError (No route matches "/log/format/" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LogsController#show (for 127.0.0.1 at 2011-01-10 16:46:43) [GET]
+  Parameters: {"id"=>"format"}
+  [4;36;1mLog Load (0.1ms)[0m   [0;1mSELECT * FROM "logs" WHERE ("logs"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Log with ID=format):
+  app/controllers/logs_controller.rb:24:in `show'
+
+Rendered rescues/_trace (89.2ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-10 16:47:50) [GET]
+Rendering main/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 16:47:50) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 16:47:50) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-10 16:47:54) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"rlCnj0FALhh9m0oquqS26xpKHj1Z3kLKHMS1AoKBX90=", "log"=>{"query"=>"log"}}
+
+NameError (undefined local variable or method `uri' for #<LogsController:0x104239830>):
+  app/controllers/logs_controller.rb:97:in `format'
+
+Rendered rescues/_trace (43.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-10 16:51:01) [GET]
+Rendering main/index
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 16:51:01) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 16:51:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-10 16:51:05) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"rlCnj0FALhh9m0oquqS26xpKHj1Z3kLKHMS1AoKBX90=", "log"=>{"query"=>"uri"}}
+
+NameError (undefined local variable or method `uri' for #<LogsController:0x1043320e8>):
+  app/controllers/logs_controller.rb:97:in `format'
+
+Rendered rescues/_trace (31.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-10 16:52:09) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"rlCnj0FALhh9m0oquqS26xpKHj1Z3kLKHMS1AoKBX90=", "log"=>{"query"=>"uri"}}
+
+NameError (undefined local variable or method `obj' for #<LogsController:0x1040a5c80>):
+  app/controllers/logs_controller.rb:103:in `format'
+
+Rendered rescues/_trace (31.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-10 16:53:04) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"rlCnj0FALhh9m0oquqS26xpKHj1Z3kLKHMS1AoKBX90=", "log"=>{"query"=>"uri"}}
+
+ArgumentError (wrong number of arguments (1 for 0)):
+  app/controllers/logs_controller.rb:101:in `elements'
+  app/controllers/logs_controller.rb:101:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:135:in `open_uri'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:518:in `open'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:30:in `open'
+  app/controllers/logs_controller.rb:99:in `format'
+
+Rendered rescues/_trace (92.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-10 16:53:57) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"rlCnj0FALhh9m0oquqS26xpKHj1Z3kLKHMS1AoKBX90=", "log"=>{"query"=>"uri"}}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/logs_controller.rb:105:in `format'
+
+Rendered rescues/_trace (31.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-10 17:00:33) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"rlCnj0FALhh9m0oquqS26xpKHj1Z3kLKHMS1AoKBX90=", "log"=>{"query"=>"uri"}}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each):
+  app/controllers/logs_controller.rb:105:in `format'
+
+Rendered rescues/_trace (32.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-10 17:00:44) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"rlCnj0FALhh9m0oquqS26xpKHj1Z3kLKHMS1AoKBX90=", "log"=>{"query"=>"uri"}}
+
+NoMethodError (undefined method `text' for nil:NilClass):
+  app/controllers/logs_controller.rb:101:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:135:in `open_uri'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:518:in `open'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:30:in `open'
+  app/controllers/logs_controller.rb:99:in `format'
+
+Rendered rescues/_trace (91.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-10 19:05:26) [GET]
+Rendering main/index
+Completed in 20ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 19:05:26) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-10 19:05:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-10 19:05:32) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"rlCnj0FALhh9m0oquqS26xpKHj1Z3kLKHMS1AoKBX90=", "log"=>{"query"=>"julian"}}
+
+NoMethodError (undefined method `text' for nil:NilClass):
+  app/controllers/logs_controller.rb:101:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:135:in `open_uri'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:518:in `open'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:30:in `open'
+  app/controllers/logs_controller.rb:99:in `format'
+
+Rendered rescues/_trace (87.6ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-12 00:38:27) [GET]
+Rendering main/index
+Completed in 63ms (View: 58, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-12 00:38:28) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-12 00:38:28) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-12 00:38:39) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"bfPlv0k9/EK2NoFh3RFNpKAWS/HssRA7mfbwir+dCW0=", "log"=>{"query"=>"hijituzai"}}
+
+NoMethodError (undefined method `text' for nil:NilClass):
+  app/controllers/logs_controller.rb:101:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:135:in `open_uri'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:518:in `open'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:30:in `open'
+  app/controllers/logs_controller.rb:99:in `format'
+
+Rendered rescues/_trace (35.2ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-12 00:39:13) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"bfPlv0k9/EK2NoFh3RFNpKAWS/HssRA7mfbwir+dCW0=", "log"=>{"query"=>"hijituzai"}}
+
+NoMethodError (undefined method `elements' for nil:NilClass):
+  app/controllers/logs_controller.rb:101:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:135:in `open_uri'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:518:in `open'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:30:in `open'
+  app/controllers/logs_controller.rb:99:in `format'
+
+Rendered rescues/_trace (91.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-12 00:40:26) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"bfPlv0k9/EK2NoFh3RFNpKAWS/HssRA7mfbwir+dCW0=", "log"=>{"query"=>"hijituzai"}}
+Rendering template within layouts/logs
+Rendering logs/format
+Completed in 891ms (View: 53, DB: 0) | 200 OK [http://localhost/logs/format]
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-12 00:44:10) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"bfPlv0k9/EK2NoFh3RFNpKAWS/HssRA7mfbwir+dCW0=", "log"=>{"query"=>"hijituzai"}}
+Rendering template within layouts/logs
+Rendering logs/format
+Completed in 862ms (View: 8, DB: 0) | 200 OK [http://localhost/logs/format]
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-12 00:46:07) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"bfPlv0k9/EK2NoFh3RFNpKAWS/HssRA7mfbwir+dCW0=", "log"=>{"query"=>"hijituzai"}}
+
+NoMethodError (undefined method `elements' for "\n":String):
+  app/controllers/logs_controller.rb:108:in `format'
+  app/controllers/logs_controller.rb:106:in `each'
+  app/controllers/logs_controller.rb:106:in `format'
+
+Rendered rescues/_trace (86.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-12 00:46:53) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"bfPlv0k9/EK2NoFh3RFNpKAWS/HssRA7mfbwir+dCW0=", "log"=>{"query"=>"hijituzai"}}
+
+NoMethodError (undefined method `elements' for "\n    ":REXML::Text):
+  app/controllers/logs_controller.rb:108:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/parent.rb:40:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/parent.rb:40:in `each'
+  app/controllers/logs_controller.rb:106:in `format'
+
+Rendered rescues/_trace (31.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-12 00:59:28) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"bfPlv0k9/EK2NoFh3RFNpKAWS/HssRA7mfbwir+dCW0=", "log"=>{"query"=>"hijituzai"}}
+
+NoMethodError (undefined method `elements' for "\n    ":REXML::Text):
+  app/controllers/logs_controller.rb:108:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/parent.rb:40:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/parent.rb:40:in `each'
+  app/controllers/logs_controller.rb:106:in `format'
+
+Rendered rescues/_trace (32.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-12 01:02:00) [GET]
+Rendering main/index
+Completed in 19ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-12 01:02:00) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-12 01:02:00) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-12 01:02:11) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"bfPlv0k9/EK2NoFh3RFNpKAWS/HssRA7mfbwir+dCW0=", "log"=>{"query"=>"hijitsuzai"}}
+
+NoMethodError (undefined method `elements' for "\n    ":REXML::Text):
+  app/controllers/logs_controller.rb:108:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/parent.rb:40:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/parent.rb:40:in `each'
+  app/controllers/logs_controller.rb:106:in `format'
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-12 01:09:42) [GET]
+Rendering main/index
+Completed in 20ms (View: 17, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-12 01:09:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-12 01:09:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-12 01:09:49) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"bfPlv0k9/EK2NoFh3RFNpKAWS/HssRA7mfbwir+dCW0=", "log"=>{"query"=>"hijitsuzai"}}
+Rendering template within layouts/logs
+Rendering logs/format
+Completed in 765ms (View: 8, DB: 0) | 200 OK [http://localhost/logs/format]
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-12 01:12:41) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"bfPlv0k9/EK2NoFh3RFNpKAWS/HssRA7mfbwir+dCW0=", "log"=>{"query"=>"hijitsuzai"}}
+Rendering template within layouts/logs
+Rendering logs/format
+Completed in 672ms (View: 5, DB: 0) | 200 OK [http://localhost/logs/format]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-29 11:32:20) [GET]
+Rendering main/index
+Completed in 94ms (View: 90, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 11:32:21) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 11:32:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing LogsController#format (for 127.0.0.1 at 2011-01-29 11:32:35) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "log"=>{"query"=>"isweb"}}
+Rendering template within layouts/logs
+Rendering logs/format
+Completed in 1415ms (View: 60, DB: 0) | 200 OK [http://localhost/logs/format]
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateLogs (20110109125301)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mCREATE TABLE "logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user" varchar(255), "query" varchar(255), "result" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110109125301')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("logs")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateLogs (20110109125301)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user" varchar(255), "query" varchar(255), "result" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110109125301')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("logs")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateLogs (20110109125301)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mCREATE TABLE "logs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user" varchar(255), "query" varchar(255), "result" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110109125301')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("logs")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateLogs (20110109125301)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("logs")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (16.2ms)[0m   [0;1mDROP TABLE "logs"[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mDELETE FROM schema_migrations WHERE version = '20110109125301'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosters (20110129031045)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "posters" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user" varchar(255), "query" varchar(255), "result" text, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110129031045')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("posters")[0m
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-29 12:16:17) [GET]
+
+NameError (uninitialized constant MainController::Log):
+  app/controllers/main_controller.rb:4:in `index'
+
+Rendered rescues/_trace (35.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-29 12:16:22) [GET]
+
+NameError (uninitialized constant MainController::Log):
+  app/controllers/main_controller.rb:4:in `index'
+
+Rendered rescues/_trace (93.4ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-29 12:17:30) [GET]
+
+NameError (uninitialized constant MainController::Log):
+  app/controllers/main_controller.rb:4:in `index'
+
+Rendered rescues/_trace (32.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-29 12:17:37) [GET]
+
+NameError (uninitialized constant MainController::Log):
+  app/controllers/main_controller.rb:4:in `index'
+
+Rendered rescues/_trace (112.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-29 12:18:48) [GET]
+
+NameError (uninitialized constant MainController::Log):
+  app/controllers/main_controller.rb:4:in `index'
+
+Rendered rescues/_trace (32.0ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-29 12:20:23) [GET]
+
+NameError (uninitialized constant MainController::Log):
+  app/controllers/main_controller.rb:4:in `index'
+
+Rendered rescues/_trace (94.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-29 12:22:37) [GET]
+Rendering main/index
+Completed in 36ms (View: 33, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 12:22:37) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 12:22:37) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 12:22:43) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"irb"}}
+
+ActionController::RoutingError (No route matches "/poster/format" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 12:23:47) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"irb"}}
+
+ActionController::RoutingError (No route matches "/poster/format" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 12:24:31) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"irb"}}
+
+ActionController::MethodNotAllowed (Only get, put, and delete requests are allowed.):
+  
+
+Rendered rescues/_trace (27.0ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (method_not_allowed)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 12:26:40) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"irb"}}
+
+ActionController::RoutingError (No route matches "/poster/format" with {:method=>:post}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-29 12:27:03) [GET]
+Rendering main/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 12:27:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 12:27:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 12:27:07) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+
+NameError (uninitialized constant PostersController::Log):
+  app/controllers/posters_controller.rb:87:in `format'
+
+Rendered rescues/_trace (32.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 12:28:31) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+
+Errno::ENOENT (No such file or directory - http://search.twitter.com/search.atom?q=poster&locale=ja&rpp=10):
+  app/controllers/posters_controller.rb:91:in `initialize'
+  app/controllers/posters_controller.rb:91:in `open'
+  app/controllers/posters_controller.rb:91:in `format'
+
+Rendered rescues/_trace (91.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 12:31:23) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+
+ActionView::MissingTemplate (Missing template posters/format.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-29 13:05:14) [GET]
+Rendering main/index
+Completed in 16ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 13:05:14) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 13:05:15) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 798ms (View: 42, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 13:07:47) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 826ms (View: 5, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 13:08:35) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1488ms (View: 4, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 13:08:56) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 729ms (View: 1, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 13:37:21) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 854ms (View: 65, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 13:58:20) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+
+NameError (undefined local variable or method `result' for #<PostersController:0x104483488>):
+  app/controllers/posters_controller.rb:100:in `format'
+
+Rendered rescues/_trace (33.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 13:58:56) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+
+NameError (undefined local variable or method `result' for #<PostersController:0x104093170>):
+  app/controllers/posters_controller.rb:96:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:135:in `open_uri'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:518:in `open'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:30:in `open'
+  app/controllers/posters_controller.rb:94:in `format'
+
+Rendered rescues/_trace (34.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 13:59:29) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+
+NameError (undefined local variable or method `result' for #<PostersController:0x104242c78>):
+  app/controllers/posters_controller.rb:96:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:135:in `open_uri'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:518:in `open'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/open-uri.rb:30:in `open'
+  app/controllers/posters_controller.rb:94:in `format'
+
+Rendered rescues/_trace (98.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:00:15) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.attributes):
+  app/controllers/posters_controller.rb:104:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/element.rb:891:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/xpath.rb:53:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/element.rb:891:in `each'
+  app/controllers/posters_controller.rb:99:in `format'
+
+Rendered rescues/_trace (33.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:01:13) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.attributes):
+  app/controllers/posters_controller.rb:105:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/element.rb:891:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/xpath.rb:53:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/element.rb:891:in `each'
+  app/controllers/posters_controller.rb:100:in `format'
+
+Rendered rescues/_trace (33.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:02:56) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+
+NoMethodError (undefined method `value' for "http://twitter.com/keshnkev/statuses/31215560347881472":String):
+  app/controllers/posters_controller.rb:105:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/element.rb:891:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/xpath.rb:53:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/element.rb:891:in `each'
+  app/controllers/posters_controller.rb:100:in `format'
+
+Rendered rescues/_trace (94.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:12:12) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+
+NoMethodError (undefined method `lastelement' for <entry> ... </>:REXML::Element):
+  app/controllers/posters_controller.rb:105:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/element.rb:891:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/xpath.rb:53:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/element.rb:891:in `each'
+  app/controllers/posters_controller.rb:100:in `format'
+
+Rendered rescues/_trace (96.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:18:03) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+
+NoMethodError (undefined method `elemets' for <entry> ... </>:REXML::Element):
+  app/controllers/posters_controller.rb:106:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/element.rb:891:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/xpath.rb:53:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/element.rb:891:in `each'
+  app/controllers/posters_controller.rb:100:in `format'
+
+Rendered rescues/_trace (32.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:18:31) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.size) on line #4 of app/views/posters/format.html.erb:
+1: <h1>Listing Entries</h1>
+2: 
+3: <h2>Key = <%=h @key %> </h2>
+4: <%= @entries.size %>
+5:   <% @entries.each do |item| %>
+6:   <p><%=h item %></p>
+7:   <% end %>
+
+    app/views/posters/format.html.erb:4
+
+Rendered rescues/_trace (39.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:19:25) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 767ms (View: 69, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:30:41) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 698ms (View: 1, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:33:10) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 828ms (View: 5, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing ApplicationController#format (for 127.0.0.1 at 2011-01-29 14:41:00) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+
+SyntaxError (/Users/ueda/codes/Rails/tweetimes/app/controllers/posters_controller.rb:108: syntax error, unexpected '}', expecting ')'):
+  
+
+Rendered rescues/_trace (92.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:41:37) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+
+NoMethodError (undefined method `last' for REXML::XPath:Class):
+  app/controllers/posters_controller.rb:106:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/element.rb:891:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/xpath.rb:53:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/element.rb:891:in `each'
+  app/controllers/posters_controller.rb:100:in `format'
+
+Rendered rescues/_trace (32.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:41:58) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+
+NoMethodError (undefined method `second' for REXML::XPath:Class):
+  app/controllers/posters_controller.rb:106:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/element.rb:891:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/xpath.rb:53:in `each'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/rexml/element.rb:891:in `each'
+  app/controllers/posters_controller.rb:100:in `format'
+
+Rendered rescues/_trace (33.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:42:24) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1484ms (View: 1, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:43:01) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1049ms (View: 4, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:45:19) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1050ms (View: 1, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:46:28) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 899ms (View: 1, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:46:43) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1154ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:47:13) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1202ms (View: 1, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:48:04) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 973ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 14:49:27) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1202ms (View: 1, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 15:03:22) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 951ms (View: 5, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 15:04:35) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1067ms (View: 4, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 15:04:36) [GET]
+
+ActionController::RoutingError (No route matches "/images/twitimes.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 15:05:30) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1152ms (View: 4, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 15:05:31) [GET]
+
+ActionController::RoutingError (No route matches "/images/twitimes.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 15:08:38) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 712ms (View: 1, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 15:22:30) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+ERROR: compiling _run_erb_app47views47posters47format46html46erb RAISED compile error
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:68: syntax error, unexpected kENSURE, expecting kEND
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:70: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_erb_app47views47posters47format46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n\n\n\t<div id=\"banner\">\n\t\t<img src=\"/images/twitimes.gif\">\n\t</div>\n\t<div id=\"container\">\n\t\t<div id = \"theme\">\n\t\t\tTheme: <span class = \"theme\">"
+
+
+
+
+
+
+
+; @output_buffer.concat((h @key ).to_s); @output_buffer.concat "</span> ["; @output_buffer.concat(( Time.now() ).to_s); @output_buffer.concat "]\n\t\t</div>\n"
+
+;  @items.each do |item| ; @output_buffer.concat "\n  <tr>\n    <td>"
+
+; @output_buffer.concat((h item[:url] ).to_s); @output_buffer.concat "</td>\n     <td>"
+; @output_buffer.concat((h item[:author] ).to_s); @output_buffer.concat "</td>\n\t <td>"
+; @output_buffer.concat((h item[:authorurl] ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat((h item[:date] ).to_s); @output_buffer.concat "</td>\n    <td>"
+; @output_buffer.concat((h item[:text] ).to_s); @output_buffer.concat "</td>\n\t    <td>"
+; @output_buffer.concat((h item[:image] ).to_s); @output_buffer.concat "</td>\n\n  </tr>\n"
+
+
+;  end ; @output_buffer.concat "\n\n\n\t\t<div id=\"left\" class=\"column\">\n\t\t\t"
+
+
+
+;  @items.each do |item| ; @output_buffer.concat "\n\t\t\t<div class= \"tweet-body\" width=\"100%\">\n\t\t\t\t<div style=\"float:left;width:64px;height:64px;\">\n\t\t\t\t\t<img src=\"item[:image]\" alt=\"icon\" width=\"48\" height=\"48\">\n\t\t\t\t</div>\n\t\t\t\t<div>\n\t\t\t\t\t<a href=\"http://twitter.com/{{ item.user }}\">"
+
+
+
+
+
+; @output_buffer.concat((h item[:user] ).to_s); @output_buffer.concat "</a>:\n\t\t\t\t\t{{ item.text }}\n\t\t\t\t\t<a class=\"tweet-date\" href=\"http://twitter.com/{{ item.user }}/statuses/{{ item.id }}\">{{ item.date }}</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<br clear=\"all\"/>\n\t\t\t{% endfor %}\n\t\t</div>\n\t\t<div id=\"right\" class=\"column\">\n\t\t\t{% for item in itemsR %}\n\t\t\t<div class= \"tweet-body\" width=\"100%\">\n\t\t\t\t<div style=\"float:left;width:64px;height:64px;\">\n\t\t\t\t\t<img src=\"{{item.image}}\"\343\200\200alt=\"icon\" width=\"48\" height=\"48\">\n\t\t\t\t</div>\n\t\t\t\t<div>\n\t\t\t\t\t<a href=\"http://twitter.com/{{ item.user }}\">{{ item.user }}</a>:\n\t\t\t\t\t{{ item.text }}\n\t\t\t\t\t<a class=\"tweet-date\" href=\"http://twitter.com/{{ item.user }}/statuses/{{ item.id }}\">{{ item.date }}</a>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t\t<br clear=\"all\"/>\n\t\t\t{% endfor %}\n\t\t</div>\n\t</div>\n\t\n\t<script type=\"text/javascript\">\n\tvar gaJsHost = ((\"https:\" == document.location.protocol) ? \"https://ssl.\" : \"http://www.\");\n\tdocument.write(unescape(\"%3Cscript src='\" + gaJsHost + \"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E\"));\n\t</script>\n\t<script type=\"text/javascript\">\n\ttry {\n\tvar pageTracker = _gat._getTracker(\"UA-598676-10\");\n\tpageTracker._trackPageview();\n\t} catch(err) {}</script>\n\n\n"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:70:in `compile!'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/ueda/codes/Rails/tweetimes/script/server:3
+
+ActionView::TemplateError (compile error
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:68: syntax error, unexpected kENSURE, expecting kEND
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:70: syntax error, unexpected $end, expecting kEND) on line #68 of app/views/posters/format.html.erb:
+0
+    app/views/posters/format.html.erb:70:in `compile!'
+
+Rendered rescues/_trace (38.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 15:23:50) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 788ms (View: 9, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 15:27:50) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 859ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 15:28:10) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"poster"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 799ms (View: 5, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-29 15:28:18) [GET]
+Rendering main/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 15:28:18) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 15:28:27) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"#jpn"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 901ms (View: 1, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-29 15:41:44) [GET]
+Rendering main/index
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 15:41:44) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 15:41:44) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 15:41:53) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"サッカー"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1354ms (View: 6, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 15:47:05) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"サッカー"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1013ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 15:47:58) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"サッカー"}}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1353ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-29 16:01:12) [GET]
+Rendering main/index
+Completed in 86ms (View: 71, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 16:01:12) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#make (for 127.0.0.1 at 2011-01-29 16:01:14) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"サッカー"}}
+
+SyntaxError (/Users/ueda/codes/Rails/tweetimes/app/controllers/posters_controller.rb:91: syntax error, unexpected tIVAR, expecting tASSOC
+  redirect_to :action => "format" , :q= @poster.query
+                                               ^
+/Users/ueda/codes/Rails/tweetimes/app/controllers/posters_controller.rb:123: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (30.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#make (for 127.0.0.1 at 2011-01-29 16:01:40) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"サッカー"}}
+
+SyntaxError (/Users/ueda/codes/Rails/tweetimes/app/controllers/posters_controller.rb:123: syntax error, unexpected $end, expecting kEND):
+  
+
+Rendered rescues/_trace (91.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-01-29 16:02:05) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"サッカー"}}
+Redirected to http://localhost:3000/posters/format?q=%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/posters/make]
+
+
+Processing PostersController#show (for 127.0.0.1 at 2011-01-29 16:02:05) [GET]
+  Parameters: {"id"=>"format", "q"=>"サッカー"}
+  [4;36;1mPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Poster with ID=format):
+  app/controllers/posters_controller.rb:19:in `show'
+
+Rendered rescues/_trace (33.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-01-29 16:03:12) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"サッカー"}}
+Redirected to http://localhost:3000/posters/format?q=%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/posters/make]
+
+
+Processing PostersController#show (for 127.0.0.1 at 2011-01-29 16:03:12) [GET]
+  Parameters: {"id"=>"format", "q"=>"サッカー"}
+  [4;35;1mPoster Load (0.1ms)[0m   [0mSELECT * FROM "posters" WHERE ("posters"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Poster with ID=format):
+  app/controllers/posters_controller.rb:19:in `show'
+
+Rendered rescues/_trace (101.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#make (for 127.0.0.1 at 2011-01-29 16:07:45) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"サッカー"}}
+
+SyntaxError (/Users/ueda/codes/Rails/tweetimes/app/controllers/posters_controller.rb:91: syntax error, unexpected tSTRING_BEG, expecting kEND
+  redirect_to :controller="poster", :action => "format" ,...
+                           ^
+/Users/ueda/codes/Rails/tweetimes/app/controllers/posters_controller.rb:91: syntax error, unexpected ',', expecting kEND
+...irect_to :controller="poster", :action => "format" , :q => @...
+                              ^
+/Users/ueda/codes/Rails/tweetimes/app/controllers/posters_controller.rb:91: syntax error, unexpected ',', expecting kEND
+...poster", :action => "format" , :q => @poster.query
+                              ^):
+  
+
+Rendered rescues/_trace (30.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-01-29 16:08:04) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"サッカー"}}
+Redirected to http://localhost:3000/poster/format?q=%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/posters/make]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-29 16:08:05) [GET]
+  Parameters: {"q"=>"サッカー"}
+
+ActionController::RoutingError (No route matches "/poster/format" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-01-29 16:08:27) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"サッカー"}}
+Redirected to http://localhost:3000/posters/format?q=%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/posters/make]
+
+
+Processing PostersController#show (for 127.0.0.1 at 2011-01-29 16:08:27) [GET]
+  Parameters: {"id"=>"format", "q"=>"サッカー"}
+  [4;36;1mPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Poster with ID=format):
+  app/controllers/posters_controller.rb:19:in `show'
+
+Rendered rescues/_trace (33.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-01-29 16:10:10) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"サッカー"}}
+Redirected to http://localhost:3000/posters/format?q=%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/posters/make]
+
+
+Processing PostersController#show (for 127.0.0.1 at 2011-01-29 16:10:10) [GET]
+  Parameters: {"id"=>"format", "q"=>"サッカー"}
+  [4;36;1mPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Poster with ID=format):
+  app/controllers/posters_controller.rb:19:in `show'
+
+Rendered rescues/_trace (90.7ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-01-29 16:13:29) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"サッカー"}}
+Redirected to http://localhost:3000/posters/format?q=%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/posters/make]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-29 16:13:29) [GET]
+  Parameters: {"q"=>"サッカー"}
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1169ms (View: 12, DB: 0) | 200 OK [http://localhost/posters/format?q=%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC]

@@ -1,0 +1,54 @@
+
+
+
+	<div id="banner">
+		<img src="/images/twitimes.gif">
+	</div>
+	<div id="container">
+		<div id = "theme">
+			Theme: <span class = "theme"><%=h @key %></span> [<%= Time.now() %>]
+		</div>
+
+		<div id="left" class="column">
+			<% @items_l.each do |item| %>
+			<div class= "tweet-body" width="100%">
+				<div style="float:left;width:64px;height:64px;">
+					<img src="<%=h item[:image] %>" alt="icon" width="48" height="48">
+				</div>
+				<div>
+					<a href="<%=h item[:authorurl] %>"><%=h item[:author] %></a>:
+				<%= item[:text] %>
+					<a class="tweet-date" href="<%=h item[:url] %>"><%=h item[:date] %></a>
+				</div>
+			</div>
+			<br clear="all"/>
+			<% end %>
+		</div>
+		<div id="right" class="column">
+		<% @items_r.each do |item| %>
+			<div class= "tweet-body" width="100%">
+				<div style="float:left;width:64px;height:64px;">
+					<img src="<%=h item[:image] %>" alt="icon" width="48" height="48">
+				</div>
+				<div>
+					<a href="<%=h item[:authorurl] %>"><%=h item[:author] %></a>:
+				<%= item[:text] %>
+					<a class="tweet-date" href="<%=h item[:url] %>"><%=h item[:date] %></a>
+				</div>
+			</div>
+			<br clear="all"/>
+			<% end %>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	try {
+	var pageTracker = _gat._getTracker("UA-598676-10");
+	pageTracker._trackPageview();
+	} catch(err) {}</script>
+</div>
+

@@ -1,0 +1,18 @@
+<p>
+  <b>User:</b>
+  <%=h @poster.user %>
+</p>
+
+<p>
+  <b>Query:</b>
+  <%=h @poster.query %>
+</p>
+
+<p>
+  <b>Result:</b>
+  <%=h @poster.result %>
+</p>
+
+
+<%= link_to 'Edit', edit_poster_path(@poster) %> |
+<%= link_to 'Back', posters_path %>
