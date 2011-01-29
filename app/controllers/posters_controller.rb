@@ -1,5 +1,6 @@
 require 'open-uri'
 require 'rexml/document'
+require 'net/http'
 
 class PostersController < ApplicationController
   # GET /posters
@@ -92,8 +93,41 @@ class PostersController < ApplicationController
   end
 
   
-  # GET /posters/format?q=
   def format
+  
+Net::HTTP.version_1_2   # おまじない
+    @key = params[:q]
+	result= nil
+	url = "search.twitter.com"
+	
+	Net::HTTP.start(url) { |http|
+      response = http.get('/search.atom' + URI.escape('?q=' +  @key + "&locale=ja&rpp=30"))
+		if response.code == '200'
+		result = REXML::Document.new(response.body)
+			@items = []
+			result.elements.each("feed/entry"){ |e|
+				@items << {
+					:author => e.elements['author/name'].text,
+					:authorurl => e.elements['author/uri'].text,
+					:url =>  e.elements['link'].attributes["href"],
+					:date => e.elements['updated'].text,
+					:text => e.elements['content'].text,
+					:image => REXML::XPath.first(e, "link/attribute::href[2]")
+					}
+					}
+			@items_l = @items[0..14]
+			@items_r= @items[15..30]
+		else
+			@key = @key + " -> " + response.code.to_s
+			@items_l =[]
+			@items_r= []
+		end
+	  }
+   
+  end
+	
+  # GET /posters/format?q=
+  def format2
   @key = params[:q]
 	result= nil
   
@@ -117,8 +151,6 @@ class PostersController < ApplicationController
    
    @items_l = @items[0..14]
    @items_r= @items[15..30]
-
-
 
   end
 end
