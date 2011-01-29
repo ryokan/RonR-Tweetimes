@@ -89,8 +89,8 @@ class PostersController < ApplicationController
   
   def make
       @poster = Poster.new(params[:poster])
-  redirect_to :controller=>"posters", :action => "format" , :q => @poster.query
-  end
+	  @query = @poster.query
+    end
 
   
   def format
