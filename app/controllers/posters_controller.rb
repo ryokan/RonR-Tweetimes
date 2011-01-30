@@ -45,6 +45,8 @@ class PostersController < ApplicationController
   # POST /posters.xml
   def create
     @poster = Poster.new(params[:poster])
+redirect_to(@poster)
+return
 
     respond_to do |format|
       if @poster.save
@@ -62,6 +64,8 @@ class PostersController < ApplicationController
   # PUT /posters/1.xml
   def update
     @poster = Poster.find(params[:id])
+redirect_to(@poster)
+return
 
     respond_to do |format|
       if @poster.update_attributes(params[:poster])
@@ -79,7 +83,7 @@ class PostersController < ApplicationController
   # DELETE /posters/1.xml
   def destroy
     @poster = Poster.find(params[:id])
-    @poster.destroy
+    # @poster.destroy
 
     respond_to do |format|
       format.html { redirect_to(posters_url) }
@@ -97,6 +101,8 @@ class PostersController < ApplicationController
   
 Net::HTTP.version_1_2   # おまじない
     @key = params[:q]
+	poster = Poster.new
+	poster.query = @key
 	result= nil
 	url = "search.twitter.com"
 	
@@ -117,13 +123,15 @@ Net::HTTP.version_1_2   # おまじない
 					}
 			@items_l = @items[0..14]
 			@items_r = @items[15..30]
+			poster.result = @items.map {|i| i[:url]}.join(', ')
 		else
 			@key = @key + " -> " + response.code.to_s
 			@items_l =[]
 			@items_r= []
+			poster.result = response.code.to_s
 		end
 	  }
-   
+   poster.save
   end
 	
   # GET /posters/format?q=

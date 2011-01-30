@@ -2647,3 +2647,184 @@ Processing PostersController#make (for 127.0.0.1 at 2011-01-30 14:43:09) [POST]
 Rendering template within layouts/posters
 Rendering posters/make
 Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-31 07:35:29) [GET]
+Rendering main/index
+Completed in 42ms (View: 29, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-31 07:35:29) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-31 07:35:29) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-01-31 07:35:43) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"Kara"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 15ms (View: 11, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-31 07:35:46) [GET]
+  Parameters: {"q"=>"Kara"}
+
+NoMethodError (undefined method `url' for #<Hash:0x1041a1b98>):
+  app/controllers/posters_controller.rb:126:in `format'
+  app/controllers/posters_controller.rb:126:in `map'
+  app/controllers/posters_controller.rb:126:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:543:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:440:in `start'
+  app/controllers/posters_controller.rb:109:in `format'
+
+Rendered rescues/_trace (34.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-31 07:36:18) [GET]
+  Parameters: {"q"=>"Kara"}
+  [4;35;1mPoster Create (40.9ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "updated_at", "user", "query") VALUES(',,,,,,,,,,,,,,,,,,,,,,,,,,,,,', '2011-01-30 22:36:19', '2011-01-30 22:36:19', NULL, 'Kara')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1221ms (View: 2, DB: 41) | 200 OK [http://localhost/posters/format?q=Kara]
+
+
+Processing PostersController#index (for 127.0.0.1 at 2011-01-31 07:36:26) [GET]
+  [4;36;1mPoster Load (0.3ms)[0m   [0;1mSELECT * FROM "posters" [0m
+Rendering template within layouts/posters
+Rendering posters/index
+Completed in 18ms (View: 15, DB: 0) | 200 OK [http://localhost/posters/]
+
+
+Processing PostersController#show (for 127.0.0.1 at 2011-01-31 07:37:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPoster Load (0.1ms)[0m   [0mSELECT * FROM "posters" WHERE ("posters"."id" = 1) [0m
+Rendering template within layouts/posters
+Rendering posters/show
+Completed in 26ms (View: 22, DB: 0) | 200 OK [http://localhost/posters/1]
+
+
+Processing PostersController#destroy (for 127.0.0.1 at 2011-01-31 07:37:11) [DELETE]
+  Parameters: {"authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "id"=>"1"}
+  [4;36;1mPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 1) [0m
+Redirected to http://localhost:3000/posters
+Completed in 5ms (DB: 0) | 302 Found [http://localhost/posters/1]
+
+
+Processing PostersController#index (for 127.0.0.1 at 2011-01-31 07:37:11) [GET]
+  [4;35;1mPoster Load (0.3ms)[0m   [0mSELECT * FROM "posters" [0m
+Rendering template within layouts/posters
+Rendering posters/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posters]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-31 07:40:12) [GET]
+Rendering main/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-31 07:40:12) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-31 07:40:12) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-01-31 07:40:23) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"EXILE"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-31 07:40:25) [GET]
+  Parameters: {"q"=>"EXILE"}
+  [4;36;1mPoster Create (0.7ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "updated_at", "user", "query") VALUES('http://twitter.com/Mindfulspikes/statuses/31844098679767040,http://twitter.com/KidsHaveRights2/statuses/31844086533070848,http://twitter.com/MexCAN/statuses/31843923198484480,http://twitter.com/yoshida_tukimi/statuses/31843807360192512,http://twitter.com/Elicoopter_mid/statuses/31843403247390720,http://twitter.com/MTapiaa_/statuses/31843390651891712,http://twitter.com/akb_417/statuses/31843379813810176,http://twitter.com/waag88/statuses/31842947813089281,http://twitter.com/cheetapizza/statuses/31842539937996800,http://twitter.com/newzbb/statuses/31842322253615104,http://twitter.com/synerzhang/statuses/31842090916773890,http://twitter.com/bookmooch/statuses/31841728377921536,http://twitter.com/asami0407/statuses/31841689861627904,http://twitter.com/marketmentat/statuses/31841580314796032,http://twitter.com/r0a5hi6o2/statuses/31841575738802176,http://twitter.com/bambiCupcakes/statuses/31841536488505344,http://twitter.com/dvprecords/statuses/31841246674681857,http://twitter.com/tomama213/statuses/31841167175843841,http://twitter.com/taku_16/statuses/31840662005489664,http://twitter.com/mynamesernie/statuses/31840592195493888,http://twitter.com/IM_World_News/statuses/31839931261263874,http://twitter.com/tomama213/statuses/31839838709747712,http://twitter.com/korochan_pe/statuses/31839740172967936,http://twitter.com/XManDV21/statuses/31839723936817155,http://twitter.com/AnataAnime/statuses/31839580793602048,http://twitter.com/THE_Efram/statuses/31839301788499968,http://twitter.com/Video_Top/statuses/31839192820486144,http://twitter.com/DailyNewsAlert/statuses/31839145315799040,http://twitter.com/heavensTBS/statuses/31839143566770177,http://twitter.com/yumi_141/statuses/31838591990628352', '2011-01-30 22:40:26', '2011-01-30 22:40:26', NULL, 'EXILE')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1039ms (View: 2, DB: 1) | 200 OK [http://localhost/posters/format?q=EXILE]
+
+
+Processing PostersController#index (for 127.0.0.1 at 2011-01-31 07:40:32) [GET]
+  [4;35;1mPoster Load (0.3ms)[0m   [0mSELECT * FROM "posters" [0m
+Rendering template within layouts/posters
+Rendering posters/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/posters/]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-01-31 07:41:21) [GET]
+Rendering main/index
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-31 07:41:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-01-31 07:41:21) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-01-31 07:41:29) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "poster"=>{"query"=>"YMO"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-01-31 07:41:31) [GET]
+  Parameters: {"q"=>"YMO"}
+  [4;36;1mPoster Create (0.3ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "updated_at", "user", "query") VALUES('http://twitter.com/yanayanafish/statuses/31841437108670465, http://twitter.com/magicnamber123/statuses/31838899839959040, http://twitter.com/funabito/statuses/31827195957612544, http://twitter.com/aisatsu_club/statuses/31827122079285248, http://twitter.com/4yota/statuses/31825665615470592, http://twitter.com/aisi06/statuses/31821981284302848, http://twitter.com/beni_ken/statuses/31818132142166017, http://twitter.com/sunsetJP/statuses/31814950070517760, http://twitter.com/dq9_wizard/statuses/31813706702651392, http://twitter.com/jun_sunaga/statuses/31812604116598784, http://twitter.com/dreamonart/statuses/31792579179708416, http://twitter.com/2chlabel01/statuses/31774461933916160, http://twitter.com/Secretary_Bob/statuses/31772345567809536, http://twitter.com/colosseo1212/statuses/31769397475409922, http://twitter.com/yonedon/statuses/31768054316670977, http://twitter.com/141_HiDE/statuses/31765829158707200, http://twitter.com/koh_orz_orz/statuses/31765268279595008, http://twitter.com/St_momonga_XIII/statuses/31764064019415041, http://twitter.com/St_momonga_XIII/statuses/31763473134260224, http://twitter.com/y6shima/statuses/31761144926441472, http://twitter.com/mariwwo/statuses/31759831735992320, http://twitter.com/mikatukuyo/statuses/31759182252216320, http://twitter.com/mikatukuyo/statuses/31759028644216833, http://twitter.com/FRISKFOSSILFANG/statuses/31758651135885314, http://twitter.com/Peer_to_Peer/statuses/31754511433338880, http://twitter.com/nonbirhythmusic/statuses/31753789320986625, http://twitter.com/2dwar/statuses/31753737445838849, http://twitter.com/sasatakuvse/statuses/31753181214023681, http://twitter.com/masaharustar/statuses/31751324475334657, http://twitter.com/manamanabubu/statuses/31750925919985664', '2011-01-30 22:41:33', '2011-01-30 22:41:33', NULL, 'YMO')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1517ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?q=YMO]
+
+
+Processing PostersController#index (for 127.0.0.1 at 2011-01-31 07:41:59) [GET]
+  [4;35;1mPoster Load (0.3ms)[0m   [0mSELECT * FROM "posters" [0m
+Rendering template within layouts/posters
+Rendering posters/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/posters/]
+
+
+Processing PostersController#destroy (for 127.0.0.1 at 2011-01-31 07:42:21) [DELETE]
+  Parameters: {"authenticity_token"=>"WFcsKOuP6PcFneTEFuQW7l6pcQQVp+ri/SeTkV5mmLc=", "id"=>"2"}
+  [4;36;1mPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 2) [0m
+Redirected to http://localhost:3000/posters
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/posters/2]
+
+
+Processing PostersController#index (for 127.0.0.1 at 2011-01-31 07:42:21) [GET]
+  [4;35;1mPoster Load (0.3ms)[0m   [0mSELECT * FROM "posters" [0m
+Rendering template within layouts/posters
+Rendering posters/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/posters]
