@@ -116,7 +116,7 @@ Net::HTTP.version_1_2   # おまじない
 					}
 					}
 			@items_l = @items[0..14]
-			@items_r= @items[15..30]
+			@items_r = @items[15..30]
 		else
 			@key = @key + " -> " + response.code.to_s
 			@items_l =[]
