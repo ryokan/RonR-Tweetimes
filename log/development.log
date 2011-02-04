@@ -3201,3 +3201,100 @@ Processing PostersController#pdf (for 127.0.0.1 at 2011-02-05 00:05:10) [POST]
   Parameters: {"authenticity_token"=>"L4Uu92bH/F9e9clbH1AAZgrW1Sbnp2fVEBA2yKjW3VI=", "q"=>"ケリー"}
 Redirected to http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format?q=%E3%82%B1%E3%83%AA%E3%83%BC&ret=PDF
 Completed in 1ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=%E3%82%B1%E3%83%AA%E3%83%BC]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-05 00:29:24) [GET]
+Rendering main/index
+Completed in 76ms (View: 70, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-05 00:29:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-05 00:29:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-05 00:29:29) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"hzNzQvPa2LqugiwBdFps04PRk9FtBNskFcLanxrlgu0=", "poster"=>{"query"=>"nagatomo"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-05 00:29:32) [GET]
+  Parameters: {"q"=>"nagatomo"}
+
+TypeError (can't convert Hash into String):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:560:in `initialize'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:560:in `open'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:560:in `connect'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/timeout.rb:53:in `timeout'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/timeout.rb:93:in `timeout'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:560:in `connect'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:553:in `do_start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:542:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:440:in `start'
+  app/controllers/posters_controller.rb:118:in `format'
+
+Rendered rescues/_trace (34.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-05 00:34:08) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"hzNzQvPa2LqugiwBdFps04PRk9FtBNskFcLanxrlgu0=", "poster"=>{"query"=>"nagatomo"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-05 00:34:10) [GET]
+  Parameters: {"q"=>"nagatomo"}
+  [4;36;1mPoster Create (0.3ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "updated_at", "user", "query") VALUES('http://twitter.com/agenbolacom/statuses/33548621920079873, http://twitter.com/webfc/statuses/33548523748196352, http://twitter.com/shinsuke310/statuses/33548452126265345, http://twitter.com/renkunpapa/statuses/33548096440897536, http://twitter.com/ct__inter/statuses/33547974529396736, http://twitter.com/cmseriea/statuses/33547939892699137, http://twitter.com/yyyyyymi16/statuses/33547833558700032, http://twitter.com/enfan_bacchus/statuses/33547830756904961, http://twitter.com/go11jp/statuses/33547788621070336, http://twitter.com/izmy/statuses/33547758078001152, http://twitter.com/tuttocalcio/statuses/33547665971093504, http://twitter.com/echa_vicky/statuses/33547525545791488, http://twitter.com/almer_eizier/statuses/33547497666248705, http://twitter.com/sosorasora/statuses/33547363222028288, http://twitter.com/twitkoto08/statuses/33547327339896832, http://twitter.com/haribote_nobody/statuses/33547305860730880, http://twitter.com/Heradz/statuses/33547147420901376, http://twitter.com/emdhja6/statuses/33547043486040064, http://twitter.com/shokunin5963/statuses/33546859414814720, http://twitter.com/twitkoto08/statuses/33546646398832640, http://twitter.com/mino_test_bot/statuses/33546559673077762, http://twitter.com/muuchannel/statuses/33546521949503488, http://twitter.com/nagatomo/statuses/33546409483440128, http://twitter.com/soco_ch/statuses/33546276993769472, http://twitter.com/luizgustavo88/statuses/33546264436158464, http://twitter.com/tuboyaki_shiro/statuses/33546220752347136, http://twitter.com/nrc1030msn100/statuses/33546050241306624, http://twitter.com/tinyroot/statuses/33545958226661376, http://twitter.com/angga_fazdly/statuses/33545714667626497, http://twitter.com/noval54/statuses/33545684531548160', '2011-02-04 15:34:11', '2011-02-04 15:34:11', NULL, 'nagatomo')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1097ms (View: 3, DB: 0) | 200 OK [http://localhost/posters/format?q=nagatomo]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-05 00:34:24) [GET]
+Rendering main/index
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-05 00:34:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-05 00:34:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-05 00:34:31) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"hzNzQvPa2LqugiwBdFps04PRk9FtBNskFcLanxrlgu0=", "poster"=>{"query"=>"ながとも"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-05 00:34:32) [POST]
+  Parameters: {"authenticity_token"=>"hzNzQvPa2LqugiwBdFps04PRk9FtBNskFcLanxrlgu0=", "q"=>"ながとも"}
+Redirected to http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format?q=%E3%81%AA%E3%81%8C%E3%81%A8%E3%82%82&ret=PDF
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=%E3%81%AA%E3%81%8C%E3%81%A8%E3%82%82]

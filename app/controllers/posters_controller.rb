@@ -115,8 +115,9 @@ Net::HTTP.version_1_2   # おまじない
 	result= nil
 	url = "search.twitter.com"
 	
-	Net::HTTP.start(url, "User-Agent" => "Ruby/#{RUBY_VERSION}") { |http|
-      response = http.get('/search.atom' + '?q=' + @key  + "&locale=ja&rpp=30")
+	Net::HTTP.start(url) { |http|
+      response = http.get('/search.atom' + '?q=' + @key  + "&locale=ja&rpp=30",
+	  "User-Agent" => "Ruby/#{RUBY_VERSION}")
 		if response.code == '200'
 		result = REXML::Document.new(response.body)
 			@items = []
