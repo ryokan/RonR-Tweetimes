@@ -102,7 +102,7 @@ return
 def pdf
  @key = params[:q]
  redirect_to "http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format?q=" +
-URI.escape(@key + "&ret=PDF")
+URI.encode(@key + "&ret=PDF")
 end
 
   
