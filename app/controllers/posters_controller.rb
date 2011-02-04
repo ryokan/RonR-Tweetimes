@@ -1,6 +1,7 @@
 require 'open-uri'
 require 'rexml/document'
 require 'net/http'
+require 'uri'
 
 class PostersController < ApplicationController
   # GET /posters
@@ -92,9 +93,17 @@ return
   end
   
   def make
+  $KCODE = 'u'
       @poster = Poster.new(params[:poster])
 	  @query = @poster.query
+	  @escaped = URI.encode(@query)
     end
+
+def pdf
+ @key = params[:q]
+ redirect_to "http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format?q=" +
+URI.escape(@key + "&ret=PDF")
+end
 
   
   def format
@@ -107,7 +116,7 @@ Net::HTTP.version_1_2   # おまじない
 	url = "search.twitter.com"
 	
 	Net::HTTP.start(url) { |http|
-      response = http.get('/search.atom' + URI.escape('?q=' +  @key + "&locale=ja&rpp=30"))
+      response = http.get('/search.atom' + '?q=' + @key  + "&locale=ja&rpp=30")
 		if response.code == '200'
 		result = REXML::Document.new(response.body)
 			@items = []
@@ -128,6 +137,7 @@ Net::HTTP.version_1_2   # おまじない
 			@key = @key + " -> " + response.code.to_s
 			@items_l =[]
 			@items_r= []
+			poster.query = @key
 			poster.result = response.code.to_s
 		end
 	  }

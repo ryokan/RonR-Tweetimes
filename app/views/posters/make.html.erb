@@ -1,12 +1,13 @@
+<% require 'uri' %>
 <p>
   <b>Query:</b>
   <%=h @query %>
 </p>
 
 <p>Web上で閲覧 <%= link_to 'Show', :action => "format",  :q => @query %></p>
-
-<p>PDF作成 <%= link_to  'PDF', "http://html2pdf.biz/api?url=" +
-u("http://tweetimes.heroku.com/posters/format?q="+ @query) + "&ret=PDF" %></p>
+<p>PDF作成 <%= button_to 'PDF', :action => "pdf",  :q => @query %></p>
+<p>PDF作成 <%= link_to 'PDF', "http://html2pdf.biz/api?url=" + "http://tweetimes.heroku.com/posters/format?q=" +
+@escaped + "&ret=PDF" %></p>
 
 <!--
 <%= link_to 'PDF', "http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format?q=" +
@@ -14,4 +15,4 @@ URI.encode(@query) + "&ret=PDF" %>
 -->
 
 <p>ネットプリントで印刷 <%= button_to 'ネットプリント', "http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format?q=" +
-u(@query) + "&ret=PDF", :method => :get, :disabled => true%></p>
+URI.encode(@query) + "&ret=PDF", :method => :get, :disabled => true %></p>

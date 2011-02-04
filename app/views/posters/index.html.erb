@@ -4,14 +4,14 @@
   <tr>
     <th>User</th>
     <th>Query</th>
-    <th>Result</th>
+    <th>Date</th>
   </tr>
 
 <% @posters.each do |poster| %>
   <tr>
     <td><%=h poster.user %></td>
     <td><%=h poster.query %></td>
-    <td><%=h poster.result %></td>
+    <td><%=h poster.created_at %></td>
     <td><%= link_to 'Show', poster %></td>
     <td><%= link_to 'Edit', edit_poster_path(poster) %></td>
     <td><%= link_to 'Destroy', poster, :confirm => 'Are you sure?', :method => :delete %></td>
