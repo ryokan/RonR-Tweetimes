@@ -96,13 +96,13 @@ return
   $KCODE = 'u'
       @poster = Poster.new(params[:poster])
 	  @query = @poster.query
-	  @escaped = URI.encode(@query)
+	  @escaped = URI.encode("http://tweetimes.heroku.com/posters/format?q=" + @query)
     end
 
 def pdf
  @key = params[:q]
- redirect_to "http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format?q=" +
-URI.encode(@key + "&ret=PDF")
+ redirect_to "http://html2pdf.biz/api?url=" +
+URI.encode("http://tweetimes.heroku.com/posters/format?q=" + @key) + "&ret=PDF"
 end
 
   
@@ -116,7 +116,7 @@ Net::HTTP.version_1_2   # おまじない
 	url = "search.twitter.com"
 	
 	Net::HTTP.start(url) { |http|
-      response = http.get('/search.atom' + '?q=' + @key  + "&locale=ja&rpp=30",
+      response = http.get('/search.atom' + '?q=' + URI.escape(@key)  + "&locale=ja&rpp=30",
 	  "User-Agent" => "Ruby/#{RUBY_VERSION}")
 		if response.code == '200'
 		result = REXML::Document.new(response.body)

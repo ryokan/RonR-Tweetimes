@@ -6,7 +6,7 @@
 
 <p>Web上で閲覧 <%= link_to 'Show', :action => "format",  :q => @query %></p>
 <p>PDF作成 <%= button_to 'PDF', :action => "pdf",  :q => @query %></p>
-<p>PDF作成 <%= link_to 'PDF', "http://html2pdf.biz/api?url=" + "http://tweetimes.heroku.com/posters/format?q=" +
+<p>PDF作成 <%= link_to 'PDF', "http://html2pdf.biz/api?url=" + 
 @escaped + "&ret=PDF" %></p>
 
 <!--
