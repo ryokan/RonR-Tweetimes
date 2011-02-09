@@ -3533,3 +3533,89 @@ Processing PostersController#make (for 127.0.0.1 at 2011-02-10 02:14:03) [POST]
 Rendering template within layouts/posters
 Rendering posters/make
 Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#index (for 127.0.0.1 at 2011-02-10 02:16:01) [GET]
+  [4;35;1mPoster Load (0.7ms)[0m   [0mSELECT * FROM "posters" [0m
+Rendering template within layouts/posters
+Rendering posters/index
+Completed in 33ms (View: 29, DB: 1) | 200 OK [http://localhost/posters]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-10 02:23:38) [POST]
+  Parameters: {"authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "q"=>"poster maker"}
+Redirected to http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format?q=poster%20maker&mode=PDF&ret=PDF
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=poster+maker]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-10 02:25:02) [GET]
+Rendering main/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-10 02:25:02) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-10 02:25:04) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "poster"=>{"query"=>"poster maker"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-10 02:25:05) [POST]
+  Parameters: {"authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "q"=>"poster maker"}
+Redirected to http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format?q=poster%20maker&ret=PDF
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=poster+maker]
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-10 02:25:25) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "poster"=>{"query"=>"ツイッター"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-10 02:25:26) [POST]
+  Parameters: {"authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "q"=>"ツイッター"}
+Redirected to http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format?q=%E3%83%84%E3%82%A4%E3%83%83%E3%82%BF%E3%83%BC&ret=PDF
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=%E3%83%84%E3%82%A4%E3%83%83%E3%82%BF%E3%83%BC]
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-10 02:26:23) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "poster"=>{"query"=>"ツイッター"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-10 02:26:24) [POST]
+  Parameters: {"authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "q"=>"ツイッター"}
+Redirected to http://html2pdf.biz/api?url=http%3A%2F%2Ftweetimes.heroku.com%2Fposters%2Fformat%3Fq%3D%E3%83%84%E3%82%A4%E3%83%83%E3%82%BF%E3%83%BC&ret=PDF
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=%E3%83%84%E3%82%A4%E3%83%83%E3%82%BF%E3%83%BC]
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-10 02:27:13) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "poster"=>{"query"=>"PDF"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-10 02:27:14) [POST]
+  Parameters: {"authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "q"=>"PDF"}
+Redirected to http://html2pdf.biz/api?url=http%3A%2F%2Ftweetimes.heroku.com%2Fposters%2Fformat%3Fq%3DPDF&ret=PDF
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=PDF]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-10 02:32:50) [GET]
+  Parameters: {"q"=>"TV"}
+  [4;36;1mPoster Create (0.4ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/agenciaupside/statuses/35390645052907520, http://twitter.com/oetamateo/statuses/35390644826546176, http://twitter.com/Epidemic_Chels/statuses/35390644239335424, http://twitter.com/kalifadani/statuses/35390643333238784, http://twitter.com/shindarter/statuses/35390641856847872, http://twitter.com/rucrazy730/statuses/35390639193464832, http://twitter.com/hellowFeny/statuses/35390638165860352, http://twitter.com/Aanklacht/statuses/35390636534267904, http://twitter.com/michakaufman/statuses/35390636509102080, http://twitter.com/samanthaaloovee/statuses/35390636161114112, http://twitter.com/TSEDANG/statuses/35390635439554560, http://twitter.com/stevebrigden/statuses/35390634764279808, http://twitter.com/Paulinamiel/statuses/35390634621665280, http://twitter.com/iamprettyeyez/statuses/35390634311430144, http://twitter.com/lapekecanales/statuses/35390630452535296, http://twitter.com/saifsultan/statuses/35390629697560576, http://twitter.com/dragonflyaly/statuses/35390629433442304, http://twitter.com/kiubo/statuses/35390627713650688, http://twitter.com/saarscene/statuses/35390626165952512, http://twitter.com/KemeshaJacobs/statuses/35390625578881024, http://twitter.com/vivianeportes/statuses/35390625465647104, http://twitter.com/awdyta/statuses/35390625322897408, http://twitter.com/imnotarappatv/statuses/35390624232382464, http://twitter.com/Paulisthynha/statuses/35390623989112832, http://twitter.com/lukiistylight/statuses/35390623737454592, http://twitter.com/TVWatchtower/statuses/35390619182436353, http://twitter.com/juditas666/statuses/35390617592799232, http://twitter.com/machetteyeah/statuses/35390617236275200, http://twitter.com/guibezerra_/statuses/35390615919271936, http://twitter.com/xnadiiaaaa/statuses/35390614870695937', '2011-02-09 17:32:51', 200, '2011-02-09 17:32:51', 'Web', NULL, 'TV')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1354ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?q=TV]

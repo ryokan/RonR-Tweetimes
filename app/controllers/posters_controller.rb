@@ -2,6 +2,7 @@ require 'open-uri'
 require 'rexml/document'
 require 'net/http'
 require 'uri'
+require 'cgi'
 Net::HTTP.version_1_2   # おまじない
 
 class PostersController < ApplicationController
@@ -103,7 +104,7 @@ class PostersController < ApplicationController
   def pdf
     @key = URI.decode params[:q]
     redirect_to "http://html2pdf.biz/api?url=" +
-      URI.encode("http://tweetimes.heroku.com/posters/format?q=" + @key + "&mode=PDF") + "&ret=PDF"
+      CGI.escape("http://tweetimes.heroku.com/posters/format?q=" + @key) + "&ret=PDF"
   end
 
   
