@@ -3483,3 +3483,53 @@ Processing PostersController#format (for 127.0.0.1 at 2011-02-10 01:48:04) [GET]
 Rendering template within layouts/posters
 Rendering posters/format
 Completed in 1390ms (View: 2, DB: 1) | 200 OK [http://localhost/posters/format?q=%E6%84%9F%E3%81%98+%E5%A4%89%E6%8F%9B]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-10 02:07:25) [GET]
+Rendering main/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-10 02:07:26) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-10 02:07:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-10 02:07:39) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "poster"=>{"query"=>"poster maker"}}
+
+TypeError (can't convert HashWithIndifferentAccess into String):
+  app/controllers/posters_controller.rb:99:in `make'
+
+Rendered rescues/_trace (34.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-10 02:10:56) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "poster"=>{"query"=>"poster maker"}}
+
+TypeError (can't convert HashWithIndifferentAccess into String):
+  app/controllers/posters_controller.rb:99:in `make'
+
+Rendered rescues/_trace (34.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-10 02:14:03) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "poster"=>{"query"=>"poster maker"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/posters/make]

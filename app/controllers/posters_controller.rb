@@ -95,14 +95,15 @@ class PostersController < ApplicationController
   
   def make
     $KCODE = 'u'
-    @query = params[:poster]
+    @query = params[:poster][:query]
+      
     @escaped = URI.encode("http://tweetimes.heroku.com/posters/format?q=" + @query)
   end
 
   def pdf
     @key = URI.decode params[:q]
-    redirect_to "http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format" +
-      URI.encode("?q=" + @key + "&mode=PDF") + "&ret=PDF"
+    redirect_to "http://html2pdf.biz/api?url=" +
+      URI.encode("http://tweetimes.heroku.com/posters/format?q=" + @key + "&mode=PDF") + "&ret=PDF"
   end
 
   
