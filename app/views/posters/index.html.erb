@@ -4,6 +4,8 @@
   <tr>
     <th>User</th>
     <th>Query</th>
+    <th>Mode</th>
+    <th>Response.Code</th>
     <th>Date</th>
   </tr>
 
@@ -11,6 +13,8 @@
   <tr>
     <td><%=h poster.user %></td>
     <td><%=h poster.query %></td>
+    <td><%=h poster.mode %></td>
+    <td><%=h poster.code %></td>
     <td><%=h poster.created_at %></td>
     <td><%= link_to 'Show', poster %></td>
     <td><%= link_to 'Edit', edit_poster_path(poster) %></td>

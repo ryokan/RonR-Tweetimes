@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110129031045) do
+ActiveRecord::Schema.define(:version => 20110209160925) do
 
   create_table "posters", :force => true do |t|
     t.string   "user"
@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(:version => 20110129031045) do
     t.text     "result"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "mode"
+    t.integer  "code"
   end
 
 end

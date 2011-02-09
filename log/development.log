@@ -3298,3 +3298,188 @@ Processing PostersController#pdf (for 127.0.0.1 at 2011-02-05 00:34:32) [POST]
   Parameters: {"authenticity_token"=>"hzNzQvPa2LqugiwBdFps04PRk9FtBNskFcLanxrlgu0=", "q"=>"ながとも"}
 Redirected to http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format?q=%E3%81%AA%E3%81%8C%E3%81%A8%E3%82%82&ret=PDF
 Completed in 1ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=%E3%81%AA%E3%81%8C%E3%81%A8%E3%82%82]
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePosters (20110129031045)
+Migrating to AddModeToPoster (20110209160925)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mALTER TABLE "posters" ADD "mode" varchar(255)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mALTER TABLE "posters" ADD "code" integer[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110209160925')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("posters")[0m
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-10 01:19:41) [GET]
+Rendering main/index
+Completed in 43ms (View: 39, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-10 01:19:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-10 01:19:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-10 01:19:59) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "poster"=>{"query"=>"twitter facebook"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 17ms (View: 13, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-10 01:20:06) [GET]
+  Parameters: {"q"=>"twitter facebook"}
+  [4;36;1mPoster Create (16.3ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/SoHtheband/statuses/35372294045962240, http://twitter.com/necome_00/statuses/35372294041772032, http://twitter.com/criisalvernaz/statuses/35372293911740416, http://twitter.com/Diabetic_DoNUTZ/statuses/35372293895110656, http://twitter.com/AmanKayo_Shoota/statuses/35372293525868544, http://twitter.com/MaridaDoPeLu/statuses/35372293446180864, http://twitter.com/Ohhjasminnee/statuses/35372293274353664, http://twitter.com/FC_FamRestart/statuses/35372293240659968, http://twitter.com/lethiciasl_/statuses/35372293123211264, http://twitter.com/joeriholzken/statuses/35372293060440064, http://twitter.com/ditocokin/statuses/35372292838133760, http://twitter.com/visadklline/statuses/35372292825423872, http://twitter.com/dayaner_/statuses/35372292775088128, http://twitter.com/Anakrutsch/statuses/35372292632621056, http://twitter.com/gabifrugoli/statuses/35372292561174529', '2011-02-09 16:20:07', 200, '2011-02-09 16:20:07', 'Web', NULL, 'twitter facebook')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 786ms (View: 5, DB: 16) | 200 OK [http://localhost/posters/format?q=twitter+facebook]
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-10 01:20:50) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "poster"=>{"query"=>"twitter"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-10 01:20:53) [GET]
+  Parameters: {"q"=>"twitter"}
+  [4;35;1mPoster Create (0.3ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/gabrielagazzi88/statuses/35372541820411904, http://twitter.com/AskewenAE/statuses/35372541530869761, http://twitter.com/puding_lovers/statuses/35372541526679553, http://twitter.com/rydiaz/statuses/35372541480665088, http://twitter.com/lydiaa_s/statuses/35372541367296000, http://twitter.com/tatusi2/statuses/35372541350649856, http://twitter.com/Paulo__Freire/statuses/35372541212246016, http://twitter.com/melissatulling/statuses/35372541115637760, http://twitter.com/MayaraJoycePE/statuses/35372541044461568, http://twitter.com/missing_power/statuses/35372540675375105, http://twitter.com/JoostTMB/statuses/35372540641816576, http://twitter.com/lipeapocalipse/statuses/35372540352266241, http://twitter.com/AustinWulf/statuses/35372540276772864, http://twitter.com/jmook22/statuses/35372540222246912, http://twitter.com/JoaoRecio/statuses/35372540121726976, http://twitter.com/iBieberJustin_x/statuses/35372540096548864, http://twitter.com/mszakevia09/statuses/35372540046225408, http://twitter.com/beeto_r/statuses/35372539999948800, http://twitter.com/toptw_sftwre/statuses/35372539433721856, http://twitter.com/luhmoraaes/statuses/35372539404361728, http://twitter.com/bubblegumchews/statuses/35372539249168384, http://twitter.com/TweetsbyTee/statuses/35372539123343360, http://twitter.com/andrea_2198/statuses/35372538888458240, http://twitter.com/Cyntyacalmon/statuses/35372538808762368, http://twitter.com/Luzichi/statuses/35372538569687040, http://twitter.com/JUiiCYxJAY/statuses/35372538557251584, http://twitter.com/thaalia_r/statuses/35372538506776577, http://twitter.com/Killzone3Clan/statuses/35372538288672768, http://twitter.com/RodrigoPontess/statuses/35372538095738880, http://twitter.com/dOpeisntgood/statuses/35372538045407233', '2011-02-09 16:20:55', 200, '2011-02-09 16:20:55', 'Web', NULL, 'twitter')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1706ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?q=twitter]
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-10 01:21:23) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "poster"=>{"query"=>"twitter facebook"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-10 01:21:26) [GET]
+  Parameters: {"q"=>"twitter facebook"}
+  [4;36;1mPoster Create (0.3ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/SantO_SMT/statuses/35372635260977153, http://twitter.com/BRANDI_LASH/statuses/35372635206582272, http://twitter.com/IrisCollors/statuses/35372634988478464, http://twitter.com/fashionsteph/statuses/35372634845749249, http://twitter.com/_mrbrian/statuses/35372634363400193, http://twitter.com/Lautje106/statuses/35372633667149824, http://twitter.com/iAmMyAlterEgo/statuses/35372633587597312, http://twitter.com/LadyDEversley/statuses/35372633449168896, http://twitter.com/Cauen/statuses/35372633415483392, http://twitter.com/fcb_malhacao/statuses/35372633268682752, http://twitter.com/davidmtaylor/statuses/35372633121886209, http://twitter.com/Layllen/statuses/35372633105108992, http://twitter.com/andressa_tynna/statuses/35372633075752962, http://twitter.com/Xponk/statuses/35372632979283968, http://twitter.com/ianfortier/statuses/35372632949919744', '2011-02-09 16:21:27', 200, '2011-02-09 16:21:27', 'Web', NULL, 'twitter facebook')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1002ms (View: 1, DB: 0) | 200 OK [http://localhost/posters/format?q=twitter+facebook]
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-10 01:21:46) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "poster"=>{"query"=>"twitter user"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-10 01:21:49) [GET]
+  Parameters: {"q"=>"twitter user"}
+  [4;35;1mPoster Create (0.3ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/BunnyMcKenzie/statuses/35372763405492224, http://twitter.com/Liezja/statuses/35372763367604224, http://twitter.com/emiiorellana/statuses/35372763325796352, http://twitter.com/criis_cherry/statuses/35372762444865536, http://twitter.com/EuKlide/statuses/35372762390339584, http://twitter.com/bieberdoido/statuses/35372762226757632, http://twitter.com/Matheus923/statuses/35372761845207040, http://twitter.com/hashkerala/statuses/35372761488560128, http://twitter.com/journotutor/statuses/35372761459335168, http://twitter.com/MsAllen2U/statuses/35372761195098112, http://twitter.com/ExcuseMe_BITCH/statuses/35372761194958848, http://twitter.com/jplorente/statuses/35372760871993345, http://twitter.com/ArikSharon/statuses/35372760809086976, http://twitter.com/gutako/statuses/35372760708415488, http://twitter.com/xmarieke13/statuses/35372760670666752', '2011-02-09 16:21:51', 200, '2011-02-09 16:21:51', 'Web', NULL, 'twitter user')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1070ms (View: 1, DB: 0) | 200 OK [http://localhost/posters/format?q=twitter+user]
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-10 01:36:53) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "poster"=>{"query"=>"twitter user"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-10 01:37:29) [GET]
+  Parameters: {"q"=>"twitter user"}
+
+NameError (uninitialized constant PostersController::URL):
+  app/controllers/posters_controller.rb:111:in `format'
+
+Rendered rescues/_trace (94.4ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-10 01:38:26) [GET]
+  Parameters: {"q"=>"twitter user"}
+  [4;36;1mPoster Create (0.3ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/k0machu/statuses/35376736661282817, http://twitter.com/hal09875/statuses/35376702574174208, http://twitter.com/imgriff/statuses/35376690888843264, http://twitter.com/blogwerk/statuses/35376686728085504, http://twitter.com/droudable/statuses/35375768901001219, http://twitter.com/ellenlange/statuses/35375719735361536, http://twitter.com/EvilControllers/statuses/35375551564750848, http://twitter.com/Cefas_/statuses/35375213126488064, http://twitter.com/bobbicaprice/statuses/35375095220273152, http://twitter.com/ItsAmandaxoxo/statuses/35375037590544385, http://twitter.com/verityburns/statuses/35374878165049344, http://twitter.com/carywarner/statuses/35374701215752192, http://twitter.com/Doubleaxle/statuses/35374691556265985, http://twitter.com/Doubleaxle/statuses/35374690948091904, http://twitter.com/Doubleaxle/statuses/35374690868404225, http://twitter.com/yuya_takeyama/statuses/35374498324676609, http://twitter.com/pastak/statuses/35373628535214080, http://twitter.com/aibou/statuses/35373547731943424, http://twitter.com/suuhsat/statuses/35373497630851072, http://twitter.com/Rafa_Larissa/statuses/35373477456257025, http://twitter.com/muroran_navi/statuses/35373378432933888, http://twitter.com/coocy/statuses/35373355842543616, http://twitter.com/luis_grave/statuses/35373160828239872, http://twitter.com/JanieC/statuses/35372301969002496, http://twitter.com/ori_hokun/statuses/35371759138115584, http://twitter.com/MDcommunity/statuses/35371606259798016, http://twitter.com/C0ld_Shad0w/statuses/35371562706272256, http://twitter.com/bell0930/statuses/35371376479047680, http://twitter.com/marz04/statuses/35371139026915330, http://twitter.com/Final_Illusion/statuses/35370454118170624', '2011-02-09 16:38:27', 200, '2011-02-09 16:38:27', 'Web', NULL, 'twitter user')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1067ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?q=twitter+user]
+
+
+Processing PostersController#index (for 127.0.0.1 at 2011-02-10 01:38:42) [GET]
+  [4;35;1mPoster Load (22.1ms)[0m   [0mSELECT * FROM "posters" [0m
+Rendering template within layouts/posters
+Rendering posters/index
+Completed in 150ms (View: 124, DB: 22) | 200 OK [http://localhost/posters]
+
+
+Processing PostersController#index (for 127.0.0.1 at 2011-02-10 01:39:43) [GET]
+  [4;36;1mPoster Load (0.7ms)[0m   [0;1mSELECT * FROM "posters" [0m
+Rendering template within layouts/posters
+Rendering posters/index
+Completed in 94ms (View: 89, DB: 1) | 200 OK [http://localhost/posters]
+
+
+Processing PostersController#index (for 127.0.0.1 at 2011-02-10 01:40:54) [GET]
+  [4;35;1mPoster Load (0.6ms)[0m   [0mSELECT * FROM "posters" [0m
+Rendering template within layouts/posters
+Rendering posters/index
+Completed in 31ms (View: 26, DB: 1) | 200 OK [http://localhost/posters]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-10 01:46:51) [GET]
+Rendering main/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-10 01:46:51) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-10 01:46:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-10 01:47:02) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"7gXmokZjA60fKK/5XMhDAVYgcXmdLFH7kgzRkCk/PQQ=", "poster"=>{"query"=>"感じ 変換"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-10 01:48:04) [GET]
+  Parameters: {"q"=>"感じ 変換"}
+  [4;36;1mPoster Create (0.5ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/inamasu175/statuses/35375543654289408, http://twitter.com/shiro2564/statuses/35370776861487104, http://twitter.com/Juniper_8/statuses/35369768957517824, http://twitter.com/k___re/statuses/35367949791399936, http://twitter.com/yuufla_214/statuses/35367474392207360, http://twitter.com/oitn/statuses/35364739940884480, http://twitter.com/keihappyspiral/statuses/35362638170951680, http://twitter.com/JohnnyRyogo_Kid/statuses/35361691738980352, http://twitter.com/ybokmr/statuses/35361552932544512, http://twitter.com/Kasuga_91/statuses/35360241608699904, http://twitter.com/blue0black/statuses/35358095962021888, http://twitter.com/ayumi_fukushima/statuses/35356563786960897, http://twitter.com/pupupuka/statuses/35356276997226496, http://twitter.com/nan389/statuses/35355297916657665, http://twitter.com/tomorumiya/statuses/35353630089420800, http://twitter.com/sukamelancholy/statuses/35353016982831104, http://twitter.com/lufian_/statuses/35352919343632384, http://twitter.com/nasunet/statuses/35350757968453632, http://twitter.com/tokimizuharu/statuses/35350249941766144, http://twitter.com/kotori1982/statuses/35350200511889408, http://twitter.com/s_tkrz/statuses/35346779012599809, http://twitter.com/boyakinoossann/statuses/35344678840844288, http://twitter.com/koryuuiraru/statuses/35343229675110401, http://twitter.com/yu_ki_12/statuses/35342435953410048, http://twitter.com/akerLomain/statuses/35342353224957953, http://twitter.com/matsubara_2nd/statuses/35341915662716928, http://twitter.com/sadisticx/statuses/35341700062781441, http://twitter.com/39yossy/statuses/35340389221277696, http://twitter.com/keisystems/statuses/35340379230306304, http://twitter.com/flare0816/statuses/35336987653308417', '2011-02-09 16:48:05', 200, '2011-02-09 16:48:05', 'Web', NULL, '感じ 変換')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1390ms (View: 2, DB: 1) | 200 OK [http://localhost/posters/format?q=%E6%84%9F%E3%81%98+%E5%A4%89%E6%8F%9B]

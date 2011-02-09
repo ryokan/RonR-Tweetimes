@@ -2,6 +2,7 @@ require 'open-uri'
 require 'rexml/document'
 require 'net/http'
 require 'uri'
+Net::HTTP.version_1_2   # おまじない
 
 class PostersController < ApplicationController
   # GET /posters
@@ -46,8 +47,8 @@ class PostersController < ApplicationController
   # POST /posters.xml
   def create
     @poster = Poster.new(params[:poster])
-redirect_to(@poster)
-return
+    redirect_to(@poster)
+    return
 
     respond_to do |format|
       if @poster.save
@@ -65,8 +66,8 @@ return
   # PUT /posters/1.xml
   def update
     @poster = Poster.find(params[:id])
-redirect_to(@poster)
-return
+    redirect_to(@poster)
+    return
 
     respond_to do |format|
       if @poster.update_attributes(params[:poster])
@@ -93,62 +94,66 @@ return
   end
   
   def make
-  $KCODE = 'u'
-      @poster = Poster.new(params[:poster])
-	  @query = @poster.query
-	  @escaped = URI.encode("http://tweetimes.heroku.com/posters/format?q=" + @query)
-    end
+    $KCODE = 'u'
+    @query = params[:poster]
+    @escaped = URI.encode("http://tweetimes.heroku.com/posters/format?q=" + @query)
+  end
 
-def pdf
- @key = params[:q]
- redirect_to "http://html2pdf.biz/api?url=" +
-URI.encode("http://tweetimes.heroku.com/posters/format?q=" + @key) + "&ret=PDF"
-end
+  def pdf
+    @key = URI.decode params[:q]
+    redirect_to "http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format" +
+      URI.encode("?q=" + @key + "&mode=PDF") + "&ret=PDF"
+  end
 
   
   def format
-  
-Net::HTTP.version_1_2   # おまじない
-    @key = params[:q]
-	poster = Poster.new
-	poster.query = @key
-	result= nil
-	url = "search.twitter.com"
+    @key = URI.decode params[:q]
+    mode = params[:mode]
+    poster = Poster.new
+    poster.query = @key
+    if mode == 'PDF'
+      poster.mode = 'PDF'
+    else
+      poster.mode = 'Web'
+    end
+    result= nil
+    url = "search.twitter.com"
 	
-	Net::HTTP.start(url) { |http|
-      response = http.get('/search.atom' + '?q=' + @key  + "&locale=ja&rpp=30",
-	  "User-Agent" => "Ruby/#{RUBY_VERSION}")
-		if response.code == '200'
-		result = REXML::Document.new(response.body)
-			@items = []
-			result.elements.each("feed/entry"){ |e|
-				@items << {
-					:author => e.elements['author/name'].text,
-					:authorurl => e.elements['author/uri'].text,
-					:url =>  e.elements['link'].attributes["href"],
-					:date => e.elements['updated'].text,
-					:text => e.elements['content'].text,
-					:image => REXML::XPath.first(e, "link/attribute::href[2]")
+    Net::HTTP.start(url) { |http|
+      response = http.get('/search.atom' + URI.encode('?q=' + @key)  +
+          "&locale=ja&rpp=30",
+        "User-Agent" => "Ruby/#{RUBY_VERSION}")
+      poster.code = response.code.to_s
+      if response.code == '200'
+        result = REXML::Document.new(response.body)
+        @items = []
+        result.elements.each("feed/entry"){ |e|
+		      @items << {
+            :author => e.elements['author/name'].text,
+            :authorurl => e.elements['author/uri'].text,
+            :url =>  e.elements['link'].attributes["href"],
+            :date => e.elements['updated'].text,
+            :text => e.elements['content'].text,
+            :image => REXML::XPath.first(e, "link/attribute::href[2]")
 					}
-					}
-			@items_l = @items[0..14]
-			@items_r = @items[15..30]
-			poster.result = @items.map {|i| i[:url]}.join(', ')
-		else
-			@key = @key + " -> " + response.code.to_s
-			@items_l =[]
-			@items_r= []
-			poster.query = @key
-			poster.result = response.code.to_s
-		end
-	  }
-   poster.save
+        }
+        @items_l = @items[0..14]
+        @items_r = @items[15..30]
+        poster.result = @items.map {|i| i[:url]}.join(', ')
+      else
+        @key = @key + " -> " + response.code.to_s
+        @items_l =[]
+        @items_r= []
+        poster.result = ""
+      end
+    }
+    poster.save
   end
 	
   # GET /posters/format?q=
   def format2
-  @key = params[:q]
-	result= nil
+    @key = params[:q]
+    result= nil
   
     url = URI.escape("http://search.twitter.com/search.atom?q=" +
         @key + "&locale=ja&rpp=30")
@@ -157,19 +162,19 @@ Net::HTTP.version_1_2   # おまじない
       @obj = result.elements["feed"]
     end
     @items = []
-	result.elements.each("feed/entry"){ |e|
+    result.elements.each("feed/entry"){ |e|
       @items << {
-	  :author => e.elements['author/name'].text,
+        :author => e.elements['author/name'].text,
 	  	  :authorurl => e.elements['author/uri'].text,
         :url =>  e.elements['link'].attributes["href"],
-		        :date => e.elements['updated'].text,
-				        :text => e.elements['content'].text,
+        :date => e.elements['updated'].text,
+        :text => e.elements['content'].text,
         :image => REXML::XPath.first(e, "link/attribute::href[2]")
       }
-   }
+    }
    
-   @items_l = @items[0..14]
-   @items_r= @items[15..30]
+    @items_l = @items[0..14]
+    @items_r= @items[15..30]
 
   end
 end
