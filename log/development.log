@@ -3619,3 +3619,493 @@ Processing PostersController#format (for 127.0.0.1 at 2011-02-10 02:32:50) [GET]
 Rendering template within layouts/posters
 Rendering posters/format
 Completed in 1354ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?q=TV]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-12 10:51:27) [GET]
+Rendering main/index
+Completed in 123ms (View: 110, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 10:51:27) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 10:51:27) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 10:51:35) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"notofu "}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 75ms (View: 74, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 10:51:51) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"ノトフ Daily"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 10:51:55) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "q"=>"ノトフ Daily"}
+
+Net::HTTPBadResponse (wrong status line: "<html>"):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:2022:in `read_status_line'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:2009:in `read_new'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:1050:in `request'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:772:in `get'
+  app/controllers/posters_controller.rb:110:in `pdf'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:543:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:440:in `start'
+  app/controllers/posters_controller.rb:109:in `pdf'
+
+Rendered rescues/_trace (43.9ms)
+Rendered rescues/_request_and_response (1.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 10:53:34) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "q"=>"ノトフ Daily"}
+
+Net::HTTPBadResponse (wrong status line: "<html>"):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:2022:in `read_status_line'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:2009:in `read_new'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:1050:in `request'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:772:in `get'
+  app/controllers/posters_controller.rb:110:in `pdf'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:543:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:440:in `start'
+  app/controllers/posters_controller.rb:109:in `pdf'
+
+Rendered rescues/_trace (113.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 11:10:37) [GET]
+  Parameters: {"q"=>"ノトフ Daily"}
+  [4;36;1mPoster Create (24.2ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('', '2011-02-12 02:10:38', 200, '2011-02-12 02:10:38', 'Web', NULL, 'ノトフ Daily')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #26 of app/views/posters/format.html.erb:
+23:     <% end %>
+24:   </div>
+25:   <div id="right" class="column">
+26:     <% @items_r.each do |item| %>
+27:       <div class= "tweet-body" width="100%">
+28:         <div style="float:left;width:64px;height:64px;">
+29:           <img src="<%=h item[:image] %>" alt="icon" width="48" height="48" />
+
+    app/views/posters/format.html.erb:26
+
+Rendered rescues/_trace (40.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 11:10:49) [GET]
+  Parameters: {"q"=>"ノトフ Daily"}
+  [4;35;1mPoster Create (0.4ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('', '2011-02-12 02:10:49', 200, '2011-02-12 02:10:49', 'Web', NULL, 'ノトフ Daily')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #26 of app/views/posters/format.html.erb:
+23:     <% end %>
+24:   </div>
+25:   <div id="right" class="column">
+26:     <% @items_r.each do |item| %>
+27:       <div class= "tweet-body" width="100%">
+28:         <div style="float:left;width:64px;height:64px;">
+29:           <img src="<%=h item[:image] %>" alt="icon" width="48" height="48" />
+
+    app/views/posters/format.html.erb:26
+
+Rendered rescues/_trace (40.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 11:11:11) [GET]
+  Parameters: {"q"=>"ノトフDaily"}
+  [4;36;1mPoster Create (0.3ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('', '2011-02-12 02:11:12', 200, '2011-02-12 02:11:12', 'Web', NULL, 'ノトフDaily')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.each) on line #26 of app/views/posters/format.html.erb:
+23:     <% end %>
+24:   </div>
+25:   <div id="right" class="column">
+26:     <% @items_r.each do |item| %>
+27:       <div class= "tweet-body" width="100%">
+28:         <div style="float:left;width:64px;height:64px;">
+29:           <img src="<%=h item[:image] %>" alt="icon" width="48" height="48" />
+
+    app/views/posters/format.html.erb:26
+
+Rendered rescues/_trace (127.1ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 11:12:41) [GET]
+  Parameters: {"q"=>"Daily"}
+  [4;35;1mPoster Create (0.3ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/GabeSpain/statuses/36246236256403456, http://twitter.com/amanda_alley/statuses/36246234977144832, http://twitter.com/DWincl/statuses/36246228660396032, http://twitter.com/FS_TaylorGang/statuses/36246213904830465, http://twitter.com/dav1son/statuses/36246213103722496, http://twitter.com/brianthemacguru/statuses/36246210213842944, http://twitter.com/Fantastic_Value/statuses/36246209983160320, http://twitter.com/ran9neT4/statuses/36246197601570817, http://twitter.com/semlady/statuses/36246195462475777, http://twitter.com/kooldealsbypaul/statuses/36246186348253184, http://twitter.com/ChaparroGroup/statuses/36246170577670144, http://twitter.com/KirstenHohlt319/statuses/36246160922509312, http://twitter.com/Elyse479/statuses/36246160372928513, http://twitter.com/SteveCimino/statuses/36246156694528000, http://twitter.com/Petslover1/statuses/36246147559333888, http://twitter.com/Petslover1/statuses/36246147513192448, http://twitter.com/northernkt/statuses/36246133231591424, http://twitter.com/yagatino/statuses/36246130257821697, http://twitter.com/Zimbianz/statuses/36246128626245632, http://twitter.com/fbraswell/statuses/36246122288648192, http://twitter.com/eccunningham/statuses/36246118413111298, http://twitter.com/EddieSpence1/statuses/36246112847273985, http://twitter.com/blogsoftheworld/statuses/36246112599810048, http://twitter.com/7Steps2Wealth/statuses/36246103644966912, http://twitter.com/johnnyholywd_82/statuses/36246095864537088, http://twitter.com/Gossippress/statuses/36246093230645248, http://twitter.com/JangoFett25/statuses/36246091536007170, http://twitter.com/carlabradman/statuses/36246075891257344, http://twitter.com/Paceset9999/statuses/36246073064296448, http://twitter.com/crossfantasista/statuses/36246069926961152', '2011-02-12 02:12:42', 200, '2011-02-12 02:12:42', 'Web', NULL, 'Daily')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1165ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?q=Daily]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 11:52:01) [GET]
+  Parameters: {"q"=>"Daily"}
+  [4;36;1mPoster Create (0.3ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/BombsAtomically/statuses/36256147346300928, http://twitter.com/woolcrazy/statuses/36256146943639553, http://twitter.com/1leadnow/statuses/36256134373318657, http://twitter.com/Fantastic_Value/statuses/36256133853220864, http://twitter.com/Rev_Gene/statuses/36256132913836032, http://twitter.com/6kxa/statuses/36256132808839168, http://twitter.com/1comicstrip/statuses/36256132196474880, http://twitter.com/OliCake995/statuses/36256131995140096, http://twitter.com/newsandnudes/statuses/36256114056110080, http://twitter.com/Bintara2PWK/statuses/36256101708214272, http://twitter.com/Gazelleint/statuses/36256094040887296, http://twitter.com/justFOREXpert/statuses/36256093873242112, http://twitter.com/RealEstateDayOH/statuses/36256086432423937, http://twitter.com/CHINICT/statuses/36256084071022593, http://twitter.com/Gazelleint/statuses/36256067016990720, http://twitter.com/waterstorage/statuses/36256059504992256, http://twitter.com/budbeauties/statuses/36256054778011648, http://twitter.com/ervan25/statuses/36256051720364032, http://twitter.com/sipietz/statuses/36256045164666880, http://twitter.com/BertoNato/statuses/36256034246885376, http://twitter.com/PTheVirtualPA/statuses/36256033315753984, http://twitter.com/Merri872/statuses/36256029167587328, http://twitter.com/seeitdesign/statuses/36256021114523648, http://twitter.com/jocelynlebug/statuses/36256020581974016, http://twitter.com/dr_erwinchan/statuses/36256019357110273, http://twitter.com/2inspired/statuses/36256012365201408, http://twitter.com/Yen228/statuses/36256007290224640, http://twitter.com/LibertyCzarina/statuses/36256004584771584, http://twitter.com/Jerri1794/statuses/36256003825598464, http://twitter.com/ljcrest/statuses/36256003267760128', '2011-02-12 02:52:02', 200, '2011-02-12 02:52:02', 'Web', NULL, 'Daily')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1177ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format/?q=Daily]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-12 11:57:45) [GET]
+Rendering main/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 11:57:45) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 11:57:45) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 11:57:54) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"the daily"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 11:58:03) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "q"=>"the daily"}
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/controllers/posters_controller.rb:108:in `decode'
+  app/controllers/posters_controller.rb:108:in `pdf'
+
+Rendered rescues/_trace (110.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 12:00:33) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "q"=>"the daily"}
+
+ArgumentError (wrong number of arguments (2 for 1)):
+  app/controllers/posters_controller.rb:108:in `decode'
+  app/controllers/posters_controller.rb:108:in `pdf'
+
+Rendered rescues/_trace (36.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 12:01:19) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "q"=>"the daily"}
+
+TypeError (can't convert ActionController::Response into String):
+  app/controllers/posters_controller.rb:113:in `pdf'
+
+Rendered rescues/_trace (118.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 12:02:41) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "q"=>"the daily"}
+
+TypeError (can't convert Array into String):
+  app/controllers/posters_controller.rb:113:in `pdf'
+
+Rendered rescues/_trace (36.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-12 13:25:35) [GET]
+Rendering main/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 13:25:35) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 13:25:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 13:25:49) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"poster daily"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 13:25:54) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "q"=>"poster daily"}
+
+TypeError (can't convert Array into String):
+  app/controllers/posters_controller.rb:114:in `pdf'
+
+Rendered rescues/_trace (39.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#pdf (for 127.0.0.1 at 2011-02-12 13:31:10) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "q"=>"poster daily"}
+
+SyntaxError (/Users/ueda/codes/Rails/tweetimes/app/controllers/posters_controller.rb:118: syntax error, unexpected '}', expecting kEND
+/Users/ueda/codes/Rails/tweetimes/app/controllers/posters_controller.rb:194: syntax error, unexpected $end, expecting '}'):
+  
+
+Rendered rescues/_trace (42.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 13:31:50) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "q"=>"poster daily"}
+Redirected to http://html2pdf.biz/api?url=http://bit.ly/eMZEZD
+&ret=PDF
+Completed in 355ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=poster+daily]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-12 13:36:25) [GET]
+Rendering main/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 13:36:25) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 13:36:32) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"dauly"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 13:36:40) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"daily"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 13:37:10) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "q"=>"daily"}
+Redirected to http://html2pdf.biz/api?url=http://bit.ly/fKsCnT
+&ret=PDF
+Completed in 394ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=daily]
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 13:37:44) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"漢字変換"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 13:37:49) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "q"=>"漢字変換"}
+Redirected to http://html2pdf.biz/api?url=http://bit.ly/fNw4t9
+&ret=PDF
+Completed in 411ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=%E6%BC%A2%E5%AD%97%E5%A4%89%E6%8F%9B]
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 13:45:42) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"漢字 変換"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 13:45:46) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "q"=>"漢字 変換"}
+Redirected to http://html2pdf.biz/api?url=http://bit.ly/gR2keA
+&ret=PDF
+Completed in 403ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=%E6%BC%A2%E5%AD%97+%E5%A4%89%E6%8F%9B]
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 14:16:47) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"漢字 変換"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-12 14:18:15) [GET]
+Rendering main/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 14:18:15) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 14:18:19) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"漢字 変換"}}
+
+TypeError (can't convert nil into String):
+  app/controllers/posters_controller.rb:103:in `make'
+
+Rendered rescues/_trace (36.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 14:20:21) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"漢字 変換"}}
+
+TypeError (can't convert nil into String):
+  app/controllers/posters_controller.rb:103:in `make'
+
+Rendered rescues/_trace (116.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 14:20:56) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"漢字 変換"}}
+
+TypeError (can't convert nil into String):
+  app/controllers/posters_controller.rb:103:in `make'
+
+Rendered rescues/_trace (34.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 14:21:25) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"漢字 変換"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 14:25:48) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"漢字 変換"}}
+Rendering template within layouts/posters
+Rendering posters/make
+
+ActionView::TemplateError (can't convert nil into String) on line #10 of app/views/posters/make.html.erb:
+7: <p>Web上で閲覧 <%= link_to 'Show', :action => "format",  :q => @query %></p>
+8: <p>PDF作成 <%= button_to 'PDF', :action => "pdf", :q => @query %></p>
+9: <p>Test <%= link_to 'PDF', "http://html2pdf.biz/api?url=" +
+10: @escaped + "&ret=PDF" %></p>
+11: 
+12: <!--
+13: <%= link_to 'PDF', "http://html2pdf.biz/api?url=" + @escaped + "&ret=PDF" %>
+
+    app/views/posters/make.html.erb:10
+
+Rendered rescues/_trace (46.0ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 14:27:14) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"漢字 変換"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 14:27:21) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "q"=>"漢字+変換"}
+Redirected to http://html2pdf.biz/api?url=http://bit.ly/gR2keA
+&ret=PDF
+Completed in 279ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=%E6%BC%A2%E5%AD%97%2B%E5%A4%89%E6%8F%9B]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-12 14:30:54) [GET]
+Rendering main/index
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 14:30:54) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 14:30:54) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 14:31:04) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"trick treat"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 14:33:51) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "q"=>"trick+treat"}
+Redirected to http://html2pdf.biz/api?url=http://bit.ly/em3fmh
+&ret=PDF
+Completed in 349ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=trick%2Btreat]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 14:34:00) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "q"=>"trick+treat"}
+Redirected to http://html2pdf.biz/api?url=http://bit.ly/em3fmh
+&ret=PDF
+Completed in 351ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=trick%2Btreat]

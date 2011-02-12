@@ -1,4 +1,4 @@
-require 'open-uri'
+#require 'open-uri'
 require 'rexml/document'
 require 'net/http'
 require 'uri'
@@ -6,6 +6,8 @@ require 'cgi'
 Net::HTTP.version_1_2   # おまじない
 
 class PostersController < ApplicationController
+  APIKEY = 'R_c34bf15744bdea2f53cc36f81b87cf81'
+
   # GET /posters
   # GET /posters.xml
   def index
@@ -96,15 +98,24 @@ class PostersController < ApplicationController
   
   def make
     $KCODE = 'u'
-    @query = params[:poster][:query]
-      
-    @escaped = URI.encode("http://tweetimes.heroku.com/posters/format?q=" + @query)
-  end
+    @query = params[:poster][:query].split(/ /).join('+')
+	@escaped = URI.encode("http://tweetimes.heroku.com/posters/format/?q=" + @query, '&?=:/ ')
+	end
 
   def pdf
-    @key = URI.decode params[:q]
-    redirect_to "http://html2pdf.biz/api?url=" +
-      CGI.escape("http://tweetimes.heroku.com/posters/format?q=" + @key) + "&ret=PDF"
+    @key = params[:q].split(/ /).join('+')
+	longurl = URI.encode("http://tweetimes.heroku.com/posters/format/?q=" + @key, '&?=:/ ')
+	Net::HTTP.start('api.bit.ly') { |http|
+	  response = http.get('/v3/shorten?login=ryokan&apiKey=' + APIKEY + '&longUrl=' + longurl + '&format=txt')
+	  if response.code == '200'
+		redirect_to "http://html2pdf.biz/api?url=" + response.body + "&ret=PDF"
+		return
+	   else 
+	   @query = @key + " -> " + response.code.to_s
+	   render :action=> 'make'
+	   end
+	  }
+
   end
 
   

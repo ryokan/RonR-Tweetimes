@@ -5,14 +5,10 @@
 </p>
 
 <p>Web上で閲覧 <%= link_to 'Show', :action => "format",  :q => @query %></p>
-<p>PDF作成 <%= button_to 'PDF', :action => "pdf",  :q => @query %></p>
-<p>Test <%= link_to 'PDF', "http://html2pdf.biz/api?url=" +
-@escaped + "&ret=PDF" %></p>
+<p>PDF作成 <%= button_to 'PDF', :action => "pdf", :q => @query %></p>
+<p>Test <%= link_to 'PDF', "http://html2pdf.biz/api?url=" + @escaped + "&ret=PDF" %></p>
 
-<!--
-<%= link_to 'PDF', "http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format?q=" +
-URI.encode(@query) + "&ret=PDF" %>
--->
+
 
 <p>ネットプリントで印刷 <%= button_to 'ネットプリント', "http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format?q=" +
 URI.encode(@query) + "&ret=PDF", :method => :get, :disabled => true %></p>
