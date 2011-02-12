@@ -98,7 +98,8 @@ class PostersController < ApplicationController
   
   def make
     $KCODE = 'u'
-    @query = params[:poster][:query].split(/ /).join('+')
+	@query = params[:poster][:query]
+    #@query = params[:poster][:query].split(/ /).join('+')
 	@escaped = URI.encode("http://tweetimes.heroku.com/posters/format/?q=" + @query, '&?=:/ ')
 	end
 
