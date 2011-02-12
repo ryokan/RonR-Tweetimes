@@ -4153,3 +4153,480 @@ Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 14:49:49) [POST]
 Redirected to http://html2pdf.biz/api?url=http://bit.ly/em3fmh
 &ret=PDF
 Completed in 375ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=trick%2Btreat]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-12 14:59:39) [GET]
+Rendering main/index
+Completed in 23ms (View: 19, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 14:59:40) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 14:59:54) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"自然言語 処理"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 15:00:01) [GET]
+  Parameters: {"q"=>"自然言語 処理"}
+  [4;36;1mPoster Create (23.5ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/ume_zzZ/statuses/36301094644617216, http://twitter.com/m_ishihata/statuses/36286844454834176, http://twitter.com/m_ishihata/statuses/36286386910789632, http://twitter.com/mogmod/statuses/36204517372465152, http://twitter.com/takahiroanno/statuses/36143663323025408, http://twitter.com/otoguro/statuses/36113843419750400, http://twitter.com/needle/statuses/36110335270322176, http://twitter.com/hayasakit/statuses/36109222626205696, http://twitter.com/nikkei_software/statuses/36081002371756033, http://twitter.com/gonta72mx/statuses/36081000605810689, http://twitter.com/kzhr/statuses/36070029812305921, http://twitter.com/Mitchara/statuses/36068031490695168, http://twitter.com/gotshu/statuses/36067752754020352, http://twitter.com/Mitchara/statuses/36067605672361984, http://twitter.com/kabeiria/statuses/36067564459139072, http://twitter.com/dlit/statuses/36067474474676224, http://twitter.com/hebiko/statuses/36055786685870081, http://twitter.com/ketsumedo_yarou/statuses/36015241280094208, http://twitter.com/2010310WED/statuses/35994719930687488, http://twitter.com/rubyist_bot/statuses/35978243412598784, http://twitter.com/mickey24/statuses/35978199070552064, http://twitter.com/mickey24/statuses/35976160504582144, http://twitter.com/SillyCrown/statuses/35950546062032897, http://twitter.com/kabeiria/statuses/35944243633586177, http://twitter.com/masaoichioka/statuses/35908505382690816, http://twitter.com/326588/statuses/35905449953861632, http://twitter.com/ryohal/statuses/35902592282271744, http://twitter.com/iabetaka/statuses/35894655656796160, http://twitter.com/ikkn/statuses/35894289816879104, http://twitter.com/muratyan79/statuses/35878292397490176', '2011-02-12 06:00:02', 200, '2011-02-12 06:00:02', 'Web', NULL, '自然言語 処理')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1449ms (View: 3, DB: 24) | 200 OK [http://localhost/posters/format?q=%E8%87%AA%E7%84%B6%E8%A8%80%E8%AA%9E+%E5%87%A6%E7%90%86]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 15:01:44) [GET]
+  Parameters: {"q"=>"自然言語 処理"}
+  [4;35;1mPoster Create (0.7ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/ume_zzZ/statuses/36301094644617216, http://twitter.com/m_ishihata/statuses/36286844454834176, http://twitter.com/m_ishihata/statuses/36286386910789632, http://twitter.com/mogmod/statuses/36204517372465152, http://twitter.com/takahiroanno/statuses/36143663323025408, http://twitter.com/otoguro/statuses/36113843419750400, http://twitter.com/needle/statuses/36110335270322176, http://twitter.com/hayasakit/statuses/36109222626205696, http://twitter.com/nikkei_software/statuses/36081002371756033, http://twitter.com/gonta72mx/statuses/36081000605810689, http://twitter.com/kzhr/statuses/36070029812305921, http://twitter.com/Mitchara/statuses/36068031490695168, http://twitter.com/gotshu/statuses/36067752754020352, http://twitter.com/Mitchara/statuses/36067605672361984, http://twitter.com/kabeiria/statuses/36067564459139072, http://twitter.com/dlit/statuses/36067474474676224, http://twitter.com/hebiko/statuses/36055786685870081, http://twitter.com/ketsumedo_yarou/statuses/36015241280094208, http://twitter.com/2010310WED/statuses/35994719930687488, http://twitter.com/rubyist_bot/statuses/35978243412598784, http://twitter.com/mickey24/statuses/35978199070552064, http://twitter.com/mickey24/statuses/35976160504582144, http://twitter.com/SillyCrown/statuses/35950546062032897, http://twitter.com/kabeiria/statuses/35944243633586177, http://twitter.com/masaoichioka/statuses/35908505382690816, http://twitter.com/326588/statuses/35905449953861632, http://twitter.com/ryohal/statuses/35902592282271744, http://twitter.com/iabetaka/statuses/35894655656796160, http://twitter.com/ikkn/statuses/35894289816879104, http://twitter.com/muratyan79/statuses/35878292397490176', '2011-02-12 06:01:45', 200, '2011-02-12 06:01:45', 'Web', NULL, '自然言語 処理')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1290ms (View: 6, DB: 1) | 200 OK [http://localhost/posters/format?q=%E8%87%AA%E7%84%B6%E8%A8%80%E8%AA%9E+%E5%87%A6%E7%90%86]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 15:02:34) [GET]
+  Parameters: {"q"=>"自然言語 処理"}
+  [4;36;1mPoster Create (0.3ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/ume_zzZ/statuses/36301094644617216, http://twitter.com/m_ishihata/statuses/36286844454834176, http://twitter.com/m_ishihata/statuses/36286386910789632, http://twitter.com/mogmod/statuses/36204517372465152, http://twitter.com/takahiroanno/statuses/36143663323025408, http://twitter.com/otoguro/statuses/36113843419750400, http://twitter.com/needle/statuses/36110335270322176, http://twitter.com/hayasakit/statuses/36109222626205696, http://twitter.com/nikkei_software/statuses/36081002371756033, http://twitter.com/gonta72mx/statuses/36081000605810689, http://twitter.com/kzhr/statuses/36070029812305921, http://twitter.com/Mitchara/statuses/36068031490695168, http://twitter.com/gotshu/statuses/36067752754020352, http://twitter.com/Mitchara/statuses/36067605672361984, http://twitter.com/kabeiria/statuses/36067564459139072, http://twitter.com/dlit/statuses/36067474474676224, http://twitter.com/hebiko/statuses/36055786685870081, http://twitter.com/ketsumedo_yarou/statuses/36015241280094208, http://twitter.com/2010310WED/statuses/35994719930687488, http://twitter.com/rubyist_bot/statuses/35978243412598784, http://twitter.com/mickey24/statuses/35978199070552064, http://twitter.com/mickey24/statuses/35976160504582144, http://twitter.com/SillyCrown/statuses/35950546062032897, http://twitter.com/kabeiria/statuses/35944243633586177, http://twitter.com/masaoichioka/statuses/35908505382690816, http://twitter.com/326588/statuses/35905449953861632, http://twitter.com/ryohal/statuses/35902592282271744, http://twitter.com/iabetaka/statuses/35894655656796160, http://twitter.com/ikkn/statuses/35894289816879104, http://twitter.com/muratyan79/statuses/35878292397490176', '2011-02-12 06:02:36', 200, '2011-02-12 06:02:36', 'Web', NULL, '自然言語 処理')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1728ms (View: 7, DB: 0) | 200 OK [http://localhost/posters/format?q=%E8%87%AA%E7%84%B6%E8%A8%80%E8%AA%9E+%E5%87%A6%E7%90%86]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 15:14:42) [GET]
+  Parameters: {"q"=>"自然言語 処理"}
+  [4;35;1mPoster Create (0.7ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/ume_zzZ/statuses/36301094644617216, http://twitter.com/m_ishihata/statuses/36286844454834176, http://twitter.com/m_ishihata/statuses/36286386910789632, http://twitter.com/mogmod/statuses/36204517372465152, http://twitter.com/takahiroanno/statuses/36143663323025408, http://twitter.com/otoguro/statuses/36113843419750400, http://twitter.com/needle/statuses/36110335270322176, http://twitter.com/hayasakit/statuses/36109222626205696, http://twitter.com/nikkei_software/statuses/36081002371756033, http://twitter.com/gonta72mx/statuses/36081000605810689, http://twitter.com/kzhr/statuses/36070029812305921, http://twitter.com/Mitchara/statuses/36068031490695168, http://twitter.com/gotshu/statuses/36067752754020352, http://twitter.com/Mitchara/statuses/36067605672361984, http://twitter.com/kabeiria/statuses/36067564459139072, http://twitter.com/dlit/statuses/36067474474676224, http://twitter.com/hebiko/statuses/36055786685870081, http://twitter.com/ketsumedo_yarou/statuses/36015241280094208, http://twitter.com/2010310WED/statuses/35994719930687488, http://twitter.com/rubyist_bot/statuses/35978243412598784, http://twitter.com/mickey24/statuses/35978199070552064, http://twitter.com/mickey24/statuses/35976160504582144, http://twitter.com/SillyCrown/statuses/35950546062032897, http://twitter.com/kabeiria/statuses/35944243633586177, http://twitter.com/masaoichioka/statuses/35908505382690816, http://twitter.com/326588/statuses/35905449953861632, http://twitter.com/ryohal/statuses/35902592282271744, http://twitter.com/iabetaka/statuses/35894655656796160, http://twitter.com/ikkn/statuses/35894289816879104, http://twitter.com/muratyan79/statuses/35878292397490176', '2011-02-12 06:14:44', 200, '2011-02-12 06:14:44', 'Web', NULL, '自然言語 処理')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1346ms (View: 6, DB: 1) | 200 OK [http://localhost/posters/format?q=%E8%87%AA%E7%84%B6%E8%A8%80%E8%AA%9E+%E5%87%A6%E7%90%86]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 15:17:50) [GET]
+  Parameters: {"q"=>"自然言語 処理"}
+  [4;36;1mPoster Create (59.4ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/ume_zzZ/statuses/36301094644617216, http://twitter.com/m_ishihata/statuses/36286844454834176, http://twitter.com/m_ishihata/statuses/36286386910789632, http://twitter.com/mogmod/statuses/36204517372465152, http://twitter.com/takahiroanno/statuses/36143663323025408, http://twitter.com/otoguro/statuses/36113843419750400, http://twitter.com/needle/statuses/36110335270322176, http://twitter.com/hayasakit/statuses/36109222626205696, http://twitter.com/nikkei_software/statuses/36081002371756033, http://twitter.com/gonta72mx/statuses/36081000605810689, http://twitter.com/kzhr/statuses/36070029812305921, http://twitter.com/Mitchara/statuses/36068031490695168, http://twitter.com/gotshu/statuses/36067752754020352, http://twitter.com/Mitchara/statuses/36067605672361984, http://twitter.com/kabeiria/statuses/36067564459139072, http://twitter.com/dlit/statuses/36067474474676224, http://twitter.com/hebiko/statuses/36055786685870081, http://twitter.com/ketsumedo_yarou/statuses/36015241280094208, http://twitter.com/2010310WED/statuses/35994719930687488, http://twitter.com/rubyist_bot/statuses/35978243412598784, http://twitter.com/mickey24/statuses/35978199070552064, http://twitter.com/mickey24/statuses/35976160504582144, http://twitter.com/SillyCrown/statuses/35950546062032897, http://twitter.com/kabeiria/statuses/35944243633586177, http://twitter.com/masaoichioka/statuses/35908505382690816, http://twitter.com/326588/statuses/35905449953861632, http://twitter.com/ryohal/statuses/35902592282271744, http://twitter.com/iabetaka/statuses/35894655656796160, http://twitter.com/ikkn/statuses/35894289816879104, http://twitter.com/muratyan79/statuses/35878292397490176', '2011-02-12 06:17:52', 200, '2011-02-12 06:17:52', 'Web', NULL, '自然言語 処理')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1607ms (View: 6, DB: 59) | 200 OK [http://localhost/posters/format?q=%E8%87%AA%E7%84%B6%E8%A8%80%E8%AA%9E+%E5%87%A6%E7%90%86]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 15:18:50) [GET]
+  Parameters: {"q"=>"自然言語 処理"}
+  [4;35;1mPoster Create (0.4ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/ume_zzZ/statuses/36301094644617216, http://twitter.com/m_ishihata/statuses/36286844454834176, http://twitter.com/m_ishihata/statuses/36286386910789632, http://twitter.com/mogmod/statuses/36204517372465152, http://twitter.com/takahiroanno/statuses/36143663323025408, http://twitter.com/otoguro/statuses/36113843419750400, http://twitter.com/needle/statuses/36110335270322176, http://twitter.com/hayasakit/statuses/36109222626205696, http://twitter.com/nikkei_software/statuses/36081002371756033, http://twitter.com/gonta72mx/statuses/36081000605810689, http://twitter.com/kzhr/statuses/36070029812305921, http://twitter.com/Mitchara/statuses/36068031490695168, http://twitter.com/gotshu/statuses/36067752754020352, http://twitter.com/Mitchara/statuses/36067605672361984, http://twitter.com/kabeiria/statuses/36067564459139072, http://twitter.com/dlit/statuses/36067474474676224, http://twitter.com/hebiko/statuses/36055786685870081, http://twitter.com/ketsumedo_yarou/statuses/36015241280094208, http://twitter.com/2010310WED/statuses/35994719930687488, http://twitter.com/rubyist_bot/statuses/35978243412598784, http://twitter.com/mickey24/statuses/35978199070552064, http://twitter.com/mickey24/statuses/35976160504582144, http://twitter.com/SillyCrown/statuses/35950546062032897, http://twitter.com/kabeiria/statuses/35944243633586177, http://twitter.com/masaoichioka/statuses/35908505382690816, http://twitter.com/326588/statuses/35905449953861632, http://twitter.com/ryohal/statuses/35902592282271744, http://twitter.com/iabetaka/statuses/35894655656796160, http://twitter.com/ikkn/statuses/35894289816879104, http://twitter.com/muratyan79/statuses/35878292397490176', '2011-02-12 06:18:52', 200, '2011-02-12 06:18:52', 'Web', NULL, '自然言語 処理')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1612ms (View: 6, DB: 0) | 200 OK [http://localhost/posters/format?q=%E8%87%AA%E7%84%B6%E8%A8%80%E8%AA%9E+%E5%87%A6%E7%90%86]
+
+
+Processing PostersController#show (for 127.0.0.1 at 2011-02-12 15:18:55) [GET]
+  Parameters: {"id"=>"pdf", "q"=>"自然言語 処理"}
+  [4;36;1mPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Poster with ID=pdf):
+  app/controllers/posters_controller.rb:25:in `show'
+
+Rendered rescues/_trace (118.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 15:19:37) [GET]
+  Parameters: {"q"=>"自然言語 処理"}
+  [4;35;1mPoster Create (0.4ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/ume_zzZ/statuses/36301094644617216, http://twitter.com/m_ishihata/statuses/36286844454834176, http://twitter.com/m_ishihata/statuses/36286386910789632, http://twitter.com/mogmod/statuses/36204517372465152, http://twitter.com/takahiroanno/statuses/36143663323025408, http://twitter.com/otoguro/statuses/36113843419750400, http://twitter.com/needle/statuses/36110335270322176, http://twitter.com/hayasakit/statuses/36109222626205696, http://twitter.com/nikkei_software/statuses/36081002371756033, http://twitter.com/gonta72mx/statuses/36081000605810689, http://twitter.com/kzhr/statuses/36070029812305921, http://twitter.com/Mitchara/statuses/36068031490695168, http://twitter.com/gotshu/statuses/36067752754020352, http://twitter.com/Mitchara/statuses/36067605672361984, http://twitter.com/kabeiria/statuses/36067564459139072, http://twitter.com/dlit/statuses/36067474474676224, http://twitter.com/hebiko/statuses/36055786685870081, http://twitter.com/ketsumedo_yarou/statuses/36015241280094208, http://twitter.com/2010310WED/statuses/35994719930687488, http://twitter.com/rubyist_bot/statuses/35978243412598784, http://twitter.com/mickey24/statuses/35978199070552064, http://twitter.com/mickey24/statuses/35976160504582144, http://twitter.com/SillyCrown/statuses/35950546062032897, http://twitter.com/kabeiria/statuses/35944243633586177, http://twitter.com/masaoichioka/statuses/35908505382690816, http://twitter.com/326588/statuses/35905449953861632, http://twitter.com/ryohal/statuses/35902592282271744, http://twitter.com/iabetaka/statuses/35894655656796160, http://twitter.com/ikkn/statuses/35894289816879104, http://twitter.com/muratyan79/statuses/35878292397490176', '2011-02-12 06:19:38', 200, '2011-02-12 06:19:38', 'Web', NULL, '自然言語 処理')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+ERROR: compiling _run_erb_app47views47posters47format46html46erb RAISED compile error
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:8: syntax error, unexpected '=', expecting tASSOC
+...> "pdf", :q => @key, :method ='post' ).to_s)
+                              ^
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:12: syntax error, unexpected kDO_BLOCK, expecting kEND
+;  @items_l.each do |item| ; @output_buffer.conca...
+                   ^
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:55: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47posters47format46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n<div id=\"banner\">\n  <img src=\"/images/twitimes.gif\" />\n</div>\n<div id=\"container\">\n  <div id = \"theme\">\n  Theme: <span class = \"theme\">"
+
+
+
+
+
+; @output_buffer.concat((h @key ).to_s); @output_buffer.concat "</span> ["; @output_buffer.concat(( Time.now() ).to_s); @output_buffer.concat "]\n\t\t\t-> "
+; @output_buffer.concat(( link_to 'PDF', :action => "pdf", :q => @key, :method ='post' ).to_s)
+@output_buffer.concat "  </div>\n\n  <div id=\"left\" class=\"column\">\n    "
+
+
+;  @items_l.each do |item| ; @output_buffer.concat "\n      <div class= \"tweet-body\" width=\"100%\">\n        <div style=\"float:left;width:64px;height:64px;\">\n          <img src=\""
+
+
+; @output_buffer.concat((h item[:image] ).to_s); @output_buffer.concat "\" alt=\"icon\" width=\"48\" height=\"48\" />\n        </div>\n        <div>\n          <a href=\""
+
+
+; @output_buffer.concat((h item[:authorurl] ).to_s); @output_buffer.concat "\">"; @output_buffer.concat((h item[:author] ).to_s); @output_buffer.concat "</a>:\n          "
+; @output_buffer.concat(( item[:text] ).to_s); @output_buffer.concat "\n          <a class=\"tweet-date\" href=\""
+; @output_buffer.concat((h item[:url] ).to_s); @output_buffer.concat "\">"; @output_buffer.concat((h item[:date] ).to_s); @output_buffer.concat "</a>\n        </div>\n      </div>\n      <br clear=\"all\"/>\n    "
+
+
+
+;  end ; @output_buffer.concat "\n  </div>\n  <div id=\"right\" class=\"column\">\n    "
+
+
+;  @items_r.each do |item| ; @output_buffer.concat "\n      <div class= \"tweet-body\" width=\"100%\">\n        <div style=\"float:left;width:64px;height:64px;\">\n          <img src=\""
+
+
+; @output_buffer.concat((h item[:image] ).to_s); @output_buffer.concat "\" alt=\"icon\" width=\"48\" height=\"48\" />\n        </div>\n        <div>\n          <a href=\""
+
+
+; @output_buffer.concat((h item[:authorurl] ).to_s); @output_buffer.concat "\">"; @output_buffer.concat((h item[:author] ).to_s); @output_buffer.concat "</a>:\n          "
+; @output_buffer.concat(( item[:text] ).to_s); @output_buffer.concat "\n          <a class=\"tweet-date\" href=\""
+; @output_buffer.concat((h item[:url] ).to_s); @output_buffer.concat "\">"; @output_buffer.concat((h item[:date] ).to_s); @output_buffer.concat "</a>\n        </div>\n      </div>\n      <br clear=\"all\"/>\n    "
+
+
+
+;  end ; @output_buffer.concat "\n  </div>\n</div>\n\n<script type=\"text/javascript\">\n  var gaJsHost = ((\"https:\" == document.location.protocol) ? \"https://ssl.\" : \"http://www.\");\n  document.write(unescape(\"%3Cscript src='\" + gaJsHost + \"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E\"));\n</script>\n<script type=\"text/javascript\">\n  try {\n    var pageTracker = _gat._getTracker(\"UA-598676-10\");\n    pageTracker._trackPageview();\n  } catch(err) {}</script>\n\n\n"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:55:in `compile!'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/ueda/codes/Rails/tweetimes/script/server:3
+
+ActionView::TemplateError (compile error
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:8: syntax error, unexpected '=', expecting tASSOC
+...> "pdf", :q => @key, :method ='post' ).to_s)
+                              ^
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:12: syntax error, unexpected kDO_BLOCK, expecting kEND
+;  @items_l.each do |item| ; @output_buffer.conca...
+                   ^
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:55: syntax error, unexpected kENSURE, expecting $end) on line #8 of app/views/posters/format.html.erb:
+5: <div id="container">
+6:   <div id = "theme">
+7:   Theme: <span class = "theme"><%=h @key -%></span> [<%= Time.now() -%>]
+8: 			-> <%= link_to 'PDF', :action => "pdf", :q => @key, :method ='post' -%>
+9:   </div>
+10: 
+11:   <div id="left" class="column">
+
+    app/views/posters/format.html.erb:55:in `compile!'
+
+Rendered rescues/_trace (41.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 15:19:50) [GET]
+  Parameters: {"q"=>"自然言語 処理"}
+  [4;36;1mPoster Create (0.3ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/ume_zzZ/statuses/36301094644617216, http://twitter.com/m_ishihata/statuses/36286844454834176, http://twitter.com/m_ishihata/statuses/36286386910789632, http://twitter.com/mogmod/statuses/36204517372465152, http://twitter.com/takahiroanno/statuses/36143663323025408, http://twitter.com/otoguro/statuses/36113843419750400, http://twitter.com/needle/statuses/36110335270322176, http://twitter.com/hayasakit/statuses/36109222626205696, http://twitter.com/nikkei_software/statuses/36081002371756033, http://twitter.com/gonta72mx/statuses/36081000605810689, http://twitter.com/kzhr/statuses/36070029812305921, http://twitter.com/Mitchara/statuses/36068031490695168, http://twitter.com/gotshu/statuses/36067752754020352, http://twitter.com/Mitchara/statuses/36067605672361984, http://twitter.com/kabeiria/statuses/36067564459139072, http://twitter.com/dlit/statuses/36067474474676224, http://twitter.com/hebiko/statuses/36055786685870081, http://twitter.com/ketsumedo_yarou/statuses/36015241280094208, http://twitter.com/2010310WED/statuses/35994719930687488, http://twitter.com/rubyist_bot/statuses/35978243412598784, http://twitter.com/mickey24/statuses/35978199070552064, http://twitter.com/mickey24/statuses/35976160504582144, http://twitter.com/SillyCrown/statuses/35950546062032897, http://twitter.com/kabeiria/statuses/35944243633586177, http://twitter.com/masaoichioka/statuses/35908505382690816, http://twitter.com/326588/statuses/35905449953861632, http://twitter.com/ryohal/statuses/35902592282271744, http://twitter.com/iabetaka/statuses/35894655656796160, http://twitter.com/ikkn/statuses/35894289816879104, http://twitter.com/muratyan79/statuses/35878292397490176', '2011-02-12 06:19:52', 200, '2011-02-12 06:19:52', 'Web', NULL, '自然言語 処理')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1247ms (View: 6, DB: 0) | 200 OK [http://localhost/posters/format?q=%E8%87%AA%E7%84%B6%E8%A8%80%E8%AA%9E+%E5%87%A6%E7%90%86]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 15:20:36) [GET]
+  Parameters: {"q"=>"自然言語 処理"}
+  [4;35;1mPoster Create (0.3ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/ume_zzZ/statuses/36301094644617216, http://twitter.com/m_ishihata/statuses/36286844454834176, http://twitter.com/m_ishihata/statuses/36286386910789632, http://twitter.com/mogmod/statuses/36204517372465152, http://twitter.com/takahiroanno/statuses/36143663323025408, http://twitter.com/otoguro/statuses/36113843419750400, http://twitter.com/needle/statuses/36110335270322176, http://twitter.com/hayasakit/statuses/36109222626205696, http://twitter.com/nikkei_software/statuses/36081002371756033, http://twitter.com/gonta72mx/statuses/36081000605810689, http://twitter.com/kzhr/statuses/36070029812305921, http://twitter.com/Mitchara/statuses/36068031490695168, http://twitter.com/gotshu/statuses/36067752754020352, http://twitter.com/Mitchara/statuses/36067605672361984, http://twitter.com/kabeiria/statuses/36067564459139072, http://twitter.com/dlit/statuses/36067474474676224, http://twitter.com/hebiko/statuses/36055786685870081, http://twitter.com/ketsumedo_yarou/statuses/36015241280094208, http://twitter.com/2010310WED/statuses/35994719930687488, http://twitter.com/rubyist_bot/statuses/35978243412598784, http://twitter.com/mickey24/statuses/35978199070552064, http://twitter.com/mickey24/statuses/35976160504582144, http://twitter.com/SillyCrown/statuses/35950546062032897, http://twitter.com/kabeiria/statuses/35944243633586177, http://twitter.com/masaoichioka/statuses/35908505382690816, http://twitter.com/326588/statuses/35905449953861632, http://twitter.com/ryohal/statuses/35902592282271744, http://twitter.com/iabetaka/statuses/35894655656796160, http://twitter.com/ikkn/statuses/35894289816879104, http://twitter.com/muratyan79/statuses/35878292397490176', '2011-02-12 06:20:37', 200, '2011-02-12 06:20:37', 'Web', NULL, '自然言語 処理')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+ERROR: compiling _run_erb_app47views47posters47format46html46erb RAISED compile error
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:8: syntax error, unexpected ')'
+...ction => "pdf", :q => @key,  ).to_s)
+                              ^
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:9: syntax error, unexpected tIVAR, expecting ')'
+@output_buffer.concat "  </div>\n\n  <div id...
+              ^
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:12: syntax error, unexpected kDO_BLOCK, expecting kEND
+;  @items_l.each do |item| ; @output_buffer.conca...
+                   ^
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:55: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47posters47format46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n<div id=\"banner\">\n  <img src=\"/images/twitimes.gif\" />\n</div>\n<div id=\"container\">\n  <div id = \"theme\">\n  Theme: <span class = \"theme\">"
+
+
+
+
+
+; @output_buffer.concat((h @key ).to_s); @output_buffer.concat "</span> ["; @output_buffer.concat(( Time.now() ).to_s); @output_buffer.concat "]\n\t\t\t-> "
+; @output_buffer.concat(( link_to 'PDF', {:method => 'post'}, :action => "pdf", :q => @key,  ).to_s)
+@output_buffer.concat "  </div>\n\n  <div id=\"left\" class=\"column\">\n    "
+
+
+;  @items_l.each do |item| ; @output_buffer.concat "\n      <div class= \"tweet-body\" width=\"100%\">\n        <div style=\"float:left;width:64px;height:64px;\">\n          <img src=\""
+
+
+; @output_buffer.concat((h item[:image] ).to_s); @output_buffer.concat "\" alt=\"icon\" width=\"48\" height=\"48\" />\n        </div>\n        <div>\n          <a href=\""
+
+
+; @output_buffer.concat((h item[:authorurl] ).to_s); @output_buffer.concat "\">"; @output_buffer.concat((h item[:author] ).to_s); @output_buffer.concat "</a>:\n          "
+; @output_buffer.concat(( item[:text] ).to_s); @output_buffer.concat "\n          <a class=\"tweet-date\" href=\""
+; @output_buffer.concat((h item[:url] ).to_s); @output_buffer.concat "\">"; @output_buffer.concat((h item[:date] ).to_s); @output_buffer.concat "</a>\n        </div>\n      </div>\n      <br clear=\"all\"/>\n    "
+
+
+
+;  end ; @output_buffer.concat "\n  </div>\n  <div id=\"right\" class=\"column\">\n    "
+
+
+;  @items_r.each do |item| ; @output_buffer.concat "\n      <div class= \"tweet-body\" width=\"100%\">\n        <div style=\"float:left;width:64px;height:64px;\">\n          <img src=\""
+
+
+; @output_buffer.concat((h item[:image] ).to_s); @output_buffer.concat "\" alt=\"icon\" width=\"48\" height=\"48\" />\n        </div>\n        <div>\n          <a href=\""
+
+
+; @output_buffer.concat((h item[:authorurl] ).to_s); @output_buffer.concat "\">"; @output_buffer.concat((h item[:author] ).to_s); @output_buffer.concat "</a>:\n          "
+; @output_buffer.concat(( item[:text] ).to_s); @output_buffer.concat "\n          <a class=\"tweet-date\" href=\""
+; @output_buffer.concat((h item[:url] ).to_s); @output_buffer.concat "\">"; @output_buffer.concat((h item[:date] ).to_s); @output_buffer.concat "</a>\n        </div>\n      </div>\n      <br clear=\"all\"/>\n    "
+
+
+
+;  end ; @output_buffer.concat "\n  </div>\n</div>\n\n<script type=\"text/javascript\">\n  var gaJsHost = ((\"https:\" == document.location.protocol) ? \"https://ssl.\" : \"http://www.\");\n  document.write(unescape(\"%3Cscript src='\" + gaJsHost + \"google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E\"));\n</script>\n<script type=\"text/javascript\">\n  try {\n    var pageTracker = _gat._getTracker(\"UA-598676-10\");\n    pageTracker._trackPageview();\n  } catch(err) {}</script>\n\n\n"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:55:in `compile!'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:29:in `require'
+/Users/ueda/codes/Rails/tweetimes/script/server:3
+
+ActionView::TemplateError (compile error
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:8: syntax error, unexpected ')'
+...ction => "pdf", :q => @key,  ).to_s)
+                              ^
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:9: syntax error, unexpected tIVAR, expecting ')'
+@output_buffer.concat "  </div>\n\n  <div id...
+              ^
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:12: syntax error, unexpected kDO_BLOCK, expecting kEND
+;  @items_l.each do |item| ; @output_buffer.conca...
+                   ^
+/Users/ueda/codes/Rails/tweetimes/app/views/posters/format.html.erb:55: syntax error, unexpected kENSURE, expecting $end) on line #8 of app/views/posters/format.html.erb:
+5: <div id="container">
+6:   <div id = "theme">
+7:   Theme: <span class = "theme"><%=h @key -%></span> [<%= Time.now() -%>]
+8: 			-> <%= link_to 'PDF', {:method => 'post'}, :action => "pdf", :q => @key,  -%>
+9:   </div>
+10: 
+11:   <div id="left" class="column">
+
+    app/views/posters/format.html.erb:55:in `compile!'
+
+Rendered rescues/_trace (111.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 15:20:52) [GET]
+  Parameters: {"q"=>"自然言語 処理"}
+  [4;36;1mPoster Create (0.3ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/ume_zzZ/statuses/36301094644617216, http://twitter.com/m_ishihata/statuses/36286844454834176, http://twitter.com/m_ishihata/statuses/36286386910789632, http://twitter.com/mogmod/statuses/36204517372465152, http://twitter.com/takahiroanno/statuses/36143663323025408, http://twitter.com/otoguro/statuses/36113843419750400, http://twitter.com/needle/statuses/36110335270322176, http://twitter.com/hayasakit/statuses/36109222626205696, http://twitter.com/nikkei_software/statuses/36081002371756033, http://twitter.com/gonta72mx/statuses/36081000605810689, http://twitter.com/kzhr/statuses/36070029812305921, http://twitter.com/Mitchara/statuses/36068031490695168, http://twitter.com/gotshu/statuses/36067752754020352, http://twitter.com/Mitchara/statuses/36067605672361984, http://twitter.com/kabeiria/statuses/36067564459139072, http://twitter.com/dlit/statuses/36067474474676224, http://twitter.com/hebiko/statuses/36055786685870081, http://twitter.com/ketsumedo_yarou/statuses/36015241280094208, http://twitter.com/2010310WED/statuses/35994719930687488, http://twitter.com/rubyist_bot/statuses/35978243412598784, http://twitter.com/mickey24/statuses/35978199070552064, http://twitter.com/mickey24/statuses/35976160504582144, http://twitter.com/SillyCrown/statuses/35950546062032897, http://twitter.com/kabeiria/statuses/35944243633586177, http://twitter.com/masaoichioka/statuses/35908505382690816, http://twitter.com/326588/statuses/35905449953861632, http://twitter.com/ryohal/statuses/35902592282271744, http://twitter.com/iabetaka/statuses/35894655656796160, http://twitter.com/ikkn/statuses/35894289816879104, http://twitter.com/muratyan79/statuses/35878292397490176', '2011-02-12 06:20:53', 200, '2011-02-12 06:20:53', 'Web', NULL, '自然言語 処理')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1439ms (View: 6, DB: 0) | 200 OK [http://localhost/posters/format?q=%E8%87%AA%E7%84%B6%E8%A8%80%E8%AA%9E+%E5%87%A6%E7%90%86]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 15:22:56) [GET]
+  Parameters: {"q"=>"自然言語 処理"}
+  [4;35;1mPoster Create (0.9ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/ume_zzZ/statuses/36301094644617216, http://twitter.com/m_ishihata/statuses/36286844454834176, http://twitter.com/m_ishihata/statuses/36286386910789632, http://twitter.com/mogmod/statuses/36204517372465152, http://twitter.com/takahiroanno/statuses/36143663323025408, http://twitter.com/otoguro/statuses/36113843419750400, http://twitter.com/needle/statuses/36110335270322176, http://twitter.com/hayasakit/statuses/36109222626205696, http://twitter.com/nikkei_software/statuses/36081002371756033, http://twitter.com/gonta72mx/statuses/36081000605810689, http://twitter.com/kzhr/statuses/36070029812305921, http://twitter.com/Mitchara/statuses/36068031490695168, http://twitter.com/gotshu/statuses/36067752754020352, http://twitter.com/Mitchara/statuses/36067605672361984, http://twitter.com/kabeiria/statuses/36067564459139072, http://twitter.com/dlit/statuses/36067474474676224, http://twitter.com/hebiko/statuses/36055786685870081, http://twitter.com/ketsumedo_yarou/statuses/36015241280094208, http://twitter.com/2010310WED/statuses/35994719930687488, http://twitter.com/rubyist_bot/statuses/35978243412598784, http://twitter.com/mickey24/statuses/35978199070552064, http://twitter.com/mickey24/statuses/35976160504582144, http://twitter.com/SillyCrown/statuses/35950546062032897, http://twitter.com/kabeiria/statuses/35944243633586177, http://twitter.com/masaoichioka/statuses/35908505382690816, http://twitter.com/326588/statuses/35905449953861632, http://twitter.com/ryohal/statuses/35902592282271744, http://twitter.com/iabetaka/statuses/35894655656796160, http://twitter.com/ikkn/statuses/35894289816879104, http://twitter.com/muratyan79/statuses/35878292397490176', '2011-02-12 06:22:57', 200, '2011-02-12 06:22:57', 'Web', NULL, '自然言語 処理')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1308ms (View: 5, DB: 1) | 200 OK [http://localhost/posters/format?q=%E8%87%AA%E7%84%B6%E8%A8%80%E8%AA%9E+%E5%87%A6%E7%90%86]
+
+
+Processing PostersController#show (for 127.0.0.1 at 2011-02-12 15:23:18) [GET]
+  Parameters: {"method"=>"post", "id"=>"pdf", "q"=>"自然言語 処理"}
+  [4;36;1mPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Poster with ID=pdf):
+  app/controllers/posters_controller.rb:25:in `show'
+
+Rendered rescues/_trace (36.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 15:23:58) [GET]
+  Parameters: {"q"=>"自然言語 処理"}
+  [4;35;1mPoster Create (0.6ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/ume_zzZ/statuses/36301094644617216, http://twitter.com/m_ishihata/statuses/36286844454834176, http://twitter.com/m_ishihata/statuses/36286386910789632, http://twitter.com/mogmod/statuses/36204517372465152, http://twitter.com/takahiroanno/statuses/36143663323025408, http://twitter.com/otoguro/statuses/36113843419750400, http://twitter.com/needle/statuses/36110335270322176, http://twitter.com/hayasakit/statuses/36109222626205696, http://twitter.com/nikkei_software/statuses/36081002371756033, http://twitter.com/gonta72mx/statuses/36081000605810689, http://twitter.com/kzhr/statuses/36070029812305921, http://twitter.com/Mitchara/statuses/36068031490695168, http://twitter.com/gotshu/statuses/36067752754020352, http://twitter.com/Mitchara/statuses/36067605672361984, http://twitter.com/kabeiria/statuses/36067564459139072, http://twitter.com/dlit/statuses/36067474474676224, http://twitter.com/hebiko/statuses/36055786685870081, http://twitter.com/ketsumedo_yarou/statuses/36015241280094208, http://twitter.com/2010310WED/statuses/35994719930687488, http://twitter.com/rubyist_bot/statuses/35978243412598784, http://twitter.com/mickey24/statuses/35978199070552064, http://twitter.com/mickey24/statuses/35976160504582144, http://twitter.com/SillyCrown/statuses/35950546062032897, http://twitter.com/kabeiria/statuses/35944243633586177, http://twitter.com/masaoichioka/statuses/35908505382690816, http://twitter.com/326588/statuses/35905449953861632, http://twitter.com/ryohal/statuses/35902592282271744, http://twitter.com/iabetaka/statuses/35894655656796160, http://twitter.com/ikkn/statuses/35894289816879104, http://twitter.com/muratyan79/statuses/35878292397490176', '2011-02-12 06:24:00', 200, '2011-02-12 06:24:00', 'Web', NULL, '自然言語 処理')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1618ms (View: 4, DB: 1) | 200 OK [http://localhost/posters/format?q=%E8%87%AA%E7%84%B6%E8%A8%80%E8%AA%9E+%E5%87%A6%E7%90%86]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 15:24:05) [GET]
+  Parameters: {"method"=>"post", "q"=>"自然言語 処理"}
+Redirected to http://html2pdf.biz/api?url=http://bit.ly/gudX9F
+&ret=PDF
+Completed in 423ms (DB: 0) | 302 Found [http://localhost/posters/pdf?method=post&q=%E8%87%AA%E7%84%B6%E8%A8%80%E8%AA%9E+%E5%87%A6%E7%90%86]
