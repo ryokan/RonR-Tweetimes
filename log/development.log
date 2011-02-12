@@ -4109,3 +4109,47 @@ Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 14:34:00) [POST]
 Redirected to http://html2pdf.biz/api?url=http://bit.ly/em3fmh
 &ret=PDF
 Completed in 351ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=trick%2Btreat]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 14:45:26) [GET]
+  Parameters: {"q"=>"trick+treat"}
+  [4;35;1mPoster Create (0.3ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/unholykilla420/statuses/36298957655113728, http://twitter.com/CaptMorgan27/statuses/36290350666612736, http://twitter.com/EBsaysWHAT/statuses/36290338112933888, http://twitter.com/BieberrFantasyy/statuses/36289913305579520, http://twitter.com/Romaaann/statuses/36289798427639808, http://twitter.com/Ayy_ItsNariaa/statuses/36289773115023360, http://twitter.com/Arienne_Shante/statuses/36289762176270336, http://twitter.com/TopicIsDaShO/statuses/36286778788806657, http://twitter.com/unholykilla420/statuses/36286764079386624, http://twitter.com/unholykilla420/statuses/36285916611878912, http://twitter.com/TopicIsDaShO/statuses/36284931407618048, http://twitter.com/ellen_g/statuses/36283665210150913, http://twitter.com/srealpe/statuses/36280023849639936, http://twitter.com/WearAreYouVilus/statuses/36274668168155136, http://twitter.com/bigdaddylilcity/statuses/36273659924455424, http://twitter.com/Hu_ro_oo_HA/statuses/36273102262509568, http://twitter.com/leeyuri727/statuses/36268985917898752, http://twitter.com/sailorskyy/statuses/36268499655589888, http://twitter.com/bonsetoaji/statuses/36266650479104000, http://twitter.com/ellen_g/statuses/36262683648991232, http://twitter.com/adiez2miza2/statuses/36259236992385024, http://twitter.com/shamyrapretty13/statuses/36258528318464000, http://twitter.com/akaha_bot/statuses/36258452544163840, http://twitter.com/iLikeCrownz/statuses/36255575721381888, http://twitter.com/GregAkers/statuses/36255551641878529, http://twitter.com/RyusoarusREX/statuses/36255535950991360, http://twitter.com/I_amQ/statuses/36255441184886784, http://twitter.com/ComedySkipppy/statuses/36255036942065664, http://twitter.com/Dev_McKissic/statuses/36255035092369408, http://twitter.com/shouyu_kaitobot/statuses/36253989557248000', '2011-02-12 05:45:27', 200, '2011-02-12 05:45:27', 'Web', NULL, 'trick+treat')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1147ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?q=trick%2Btreat]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 14:47:50) [GET]
+  Parameters: {"q"=>"trick+treat"}
+  [4;36;1mPoster Create (0.3ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/unholykilla420/statuses/36298957655113728, http://twitter.com/CaptMorgan27/statuses/36290350666612736, http://twitter.com/EBsaysWHAT/statuses/36290338112933888, http://twitter.com/BieberrFantasyy/statuses/36289913305579520, http://twitter.com/Romaaann/statuses/36289798427639808, http://twitter.com/Ayy_ItsNariaa/statuses/36289773115023360, http://twitter.com/Arienne_Shante/statuses/36289762176270336, http://twitter.com/TopicIsDaShO/statuses/36286778788806657, http://twitter.com/unholykilla420/statuses/36286764079386624, http://twitter.com/unholykilla420/statuses/36285916611878912, http://twitter.com/TopicIsDaShO/statuses/36284931407618048, http://twitter.com/ellen_g/statuses/36283665210150913, http://twitter.com/srealpe/statuses/36280023849639936, http://twitter.com/WearAreYouVilus/statuses/36274668168155136, http://twitter.com/bigdaddylilcity/statuses/36273659924455424, http://twitter.com/Hu_ro_oo_HA/statuses/36273102262509568, http://twitter.com/leeyuri727/statuses/36268985917898752, http://twitter.com/sailorskyy/statuses/36268499655589888, http://twitter.com/bonsetoaji/statuses/36266650479104000, http://twitter.com/ellen_g/statuses/36262683648991232, http://twitter.com/adiez2miza2/statuses/36259236992385024, http://twitter.com/shamyrapretty13/statuses/36258528318464000, http://twitter.com/akaha_bot/statuses/36258452544163840, http://twitter.com/iLikeCrownz/statuses/36255575721381888, http://twitter.com/GregAkers/statuses/36255551641878529, http://twitter.com/RyusoarusREX/statuses/36255535950991360, http://twitter.com/I_amQ/statuses/36255441184886784, http://twitter.com/ComedySkipppy/statuses/36255036942065664, http://twitter.com/Dev_McKissic/statuses/36255035092369408, http://twitter.com/shouyu_kaitobot/statuses/36253989557248000', '2011-02-12 05:47:51', 200, '2011-02-12 05:47:51', 'Web', NULL, 'trick+treat')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1430ms (View: 7, DB: 0) | 200 OK [http://localhost/posters/format?q=trick%2Btreat]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 14:47:58) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4="}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.split):
+  app/controllers/posters_controller.rb:106:in `pdf'
+
+Rendered rescues/_trace (34.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 14:49:39) [GET]
+  Parameters: {"q"=>"trick+treat"}
+  [4;35;1mPoster Create (0.3ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/unholykilla420/statuses/36298957655113728, http://twitter.com/CaptMorgan27/statuses/36290350666612736, http://twitter.com/EBsaysWHAT/statuses/36290338112933888, http://twitter.com/BieberrFantasyy/statuses/36289913305579520, http://twitter.com/Romaaann/statuses/36289798427639808, http://twitter.com/Ayy_ItsNariaa/statuses/36289773115023360, http://twitter.com/Arienne_Shante/statuses/36289762176270336, http://twitter.com/TopicIsDaShO/statuses/36286778788806657, http://twitter.com/unholykilla420/statuses/36286764079386624, http://twitter.com/unholykilla420/statuses/36285916611878912, http://twitter.com/TopicIsDaShO/statuses/36284931407618048, http://twitter.com/ellen_g/statuses/36283665210150913, http://twitter.com/srealpe/statuses/36280023849639936, http://twitter.com/WearAreYouVilus/statuses/36274668168155136, http://twitter.com/bigdaddylilcity/statuses/36273659924455424, http://twitter.com/Hu_ro_oo_HA/statuses/36273102262509568, http://twitter.com/leeyuri727/statuses/36268985917898752, http://twitter.com/sailorskyy/statuses/36268499655589888, http://twitter.com/bonsetoaji/statuses/36266650479104000, http://twitter.com/ellen_g/statuses/36262683648991232, http://twitter.com/adiez2miza2/statuses/36259236992385024, http://twitter.com/shamyrapretty13/statuses/36258528318464000, http://twitter.com/akaha_bot/statuses/36258452544163840, http://twitter.com/iLikeCrownz/statuses/36255575721381888, http://twitter.com/GregAkers/statuses/36255551641878529, http://twitter.com/RyusoarusREX/statuses/36255535950991360, http://twitter.com/I_amQ/statuses/36255441184886784, http://twitter.com/ComedySkipppy/statuses/36255036942065664, http://twitter.com/Dev_McKissic/statuses/36255035092369408, http://twitter.com/shouyu_kaitobot/statuses/36253989557248000', '2011-02-12 05:49:40', 200, '2011-02-12 05:49:40', 'Web', NULL, 'trick+treat')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1075ms (View: 7, DB: 0) | 200 OK [http://localhost/posters/format?q=trick%2Btreat]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 14:49:49) [POST]
+  Parameters: {"authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "q"=>"trick+treat"}
+Redirected to http://html2pdf.biz/api?url=http://bit.ly/em3fmh
+&ret=PDF
+Completed in 375ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=trick%2Btreat]

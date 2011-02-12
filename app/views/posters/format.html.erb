@@ -4,7 +4,7 @@
 </div>
 <div id="container">
   <div id = "theme">
-			Theme: <span class = "theme"><%=h @key %></span> [<%= Time.now() %>]
+			Theme: <span class = "theme"><%=h @key %></span> [<%= Time.now() %>]<%= button_to 'PDF', :action => "pdf", :q => @key -%></p>
   </div>
 
   <div id="left" class="column">
