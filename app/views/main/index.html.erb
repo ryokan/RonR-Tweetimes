@@ -21,7 +21,16 @@
           <p>
             <%= f.label :query %>
             <%= f.text_field :query %>
-            <%= f.submit 'Make!' , :method =>:post %></p>
+            <%= f.submit 'Select Format', :method =>:post %></p>
+        <% end %>
+		      <div>
+        <% form_for @poster,  :url => {:controller=>"posters", :action => "format2"} do |f| %>
+          <%= f.error_messages %>
+        
+          <p>
+            <%= f.label :query %>
+            <%= f.text_field :query %>
+            <%= f.submit 'Show!', :method =>:get %></p>
         <% end %>
       </div>
     </div>

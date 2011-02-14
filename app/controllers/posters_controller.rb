@@ -11,7 +11,7 @@ class PostersController < ApplicationController
   # GET /posters
   # GET /posters.xml
   def index
-    @posters = Poster.all
+    @posters = Poster.all.reverse
 
     respond_to do |format|
       format.html # index.html.erb
@@ -98,74 +98,126 @@ class PostersController < ApplicationController
   
   def make
     $KCODE = 'u'
-	@query = params[:poster][:query]
-    #@query = params[:poster][:query].split(/ /).join('+')
-	@escaped = URI.encode("http://tweetimes.heroku.com/posters/format/?q=" + @query, '&?=:/ ')
+    #@query = params[:poster][:query]
+    @query = params[:poster][:query].split(/ /).join('+')
+    @escaped = URI.encode("http://tweetimes.heroku.com/posters/format/?q=" + @query, '&?=:/ ')
 	end
 
   def pdf
+  if params[:q]
     @key = params[:q].split(/ /).join('+')
-	longurl = URI.encode("http://tweetimes.heroku.com/posters/format/?q=" + @key, '&?=:/ ')
-	Net::HTTP.start('api.bit.ly') { |http|
-	  response = http.get('/v3/shorten?login=ryokan&apiKey=' + APIKEY + '&longUrl=' + longurl + '&format=txt')
-	  if response.code == '200'
-		redirect_to "http://html2pdf.biz/api?url=" + response.body + "&ret=PDF"
-		return
-	   else 
-	   @query = @key + " -> " + response.code.to_s
-	   render :action=> 'make'
-	   end
+    longurl = URI.encode("http://tweetimes.heroku.com/posters/format/?q=" + @key, '&?=:/ ')
+    Net::HTTP.start('api.bit.ly') { |http|
+      response = http.get('/v3/shorten?login=ryokan&apiKey=' + APIKEY + '&longUrl=' + longurl + '&format=txt')
+      if response.code == '200'
+        redirect_to "http://html2pdf.biz/api?url=" + response.body + "&ret=PDF"
+        return
+      else
+        @query = @key + " -> " + response.code.to_s
+        render :action=> 'make'
+      end
 	  }
-
+	  else params[:id]
+	  longurl = URI.encode("http://tweetimes.heroku.com/posters/format/?id=" + params[:id].to_s, '&?=:/ ')
+	  redirect_to "http://html2pdf.biz/api?url=" + longurl + "&ret=PDF"
+        return
+	  end
   end
-
+  
+  def format2
+    @q = params[:poster][:query].split(/ /).join('+')
+    redirect_to :action => "format", :q => @q
+    return
+  end
   
   def format
-    @key = URI.decode params[:q]
-    mode = params[:mode]
-    poster = Poster.new
-    poster.query = @key
-    if mode == 'PDF'
-      poster.mode = 'PDF'
-    else
-      poster.mode = 'Web'
-    end
-    result= nil
-    url = "search.twitter.com"
-	
-    Net::HTTP.start(url) { |http|
-      response = http.get('/search.atom' + URI.encode('?q=' + @key)  +
-          "&locale=ja&rpp=30",
-        "User-Agent" => "Ruby/#{RUBY_VERSION}")
-      poster.code = response.code.to_s
-      if response.code == '200'
-        result = REXML::Document.new(response.body)
-        @items = []
-        result.elements.each("feed/entry"){ |e|
-		      @items << {
-            :author => e.elements['author/name'].text,
-            :authorurl => e.elements['author/uri'].text,
-            :url =>  e.elements['link'].attributes["href"],
-            :date => e.elements['updated'].text,
-            :text => e.elements['content'].text,
-            :image => REXML::XPath.first(e, "link/attribute::href[2]")
-					}
-        }
-        @items_l = @items[0..14]
-        @items_r = @items[15..30]
-        poster.result = @items.map {|i| i[:url]}.join(', ')
+    if params[:q]
+      @key = URI.decode params[:q]
+      mode = params[:mode]
+      @poster = Poster.new
+      @poster.query = @key
+      if mode == 'PDF'
+        @poster.mode = 'PDF'
       else
-        @key = @key + " -> " + response.code.to_s
-        @items_l =[]
-        @items_r= []
-        poster.result = ""
+        @poster.mode = 'Web'
       end
-    }
-    poster.save
+      result= nil
+      url = "search.twitter.com"
+	
+      Net::HTTP.start(url) { |http|
+        response = http.get('/search.atom' + URI.encode('?q=' + @key)  +
+            "&locale=ja&rpp=30",
+          "User-Agent" => "Ruby/#{RUBY_VERSION}")
+        @poster.code = response.code.to_s
+        if response.code == '200'
+          result = REXML::Document.new(response.body)
+          @items = []
+          result.elements.each("feed/entry"){ |e|
+            @items << {
+              :author => e.elements['author/name'].text.split(' ').first,
+              :authorurl => e.elements['author/uri'].text,
+              :url =>  e.elements['link'].attributes["href"],
+              :date => e.elements['updated'].text,
+              :text => e.elements['content'].text,
+              :image => REXML::XPath.first(e, "link/attribute::href[2]")
+            }
+          }
+          if @items.size == 0
+            @items_l = []
+            @items_r = []
+            @key = @key + " (No Result) "
+          else
+            half = @items.size / 2
+            @items_l = @items[0..half-1]
+            @items_r = @items[half..@items.size]
+          end
+          @poster.result = @items.map {|i| URI.parse(i[:url]).path.split('/').last}.join(', ')
+        else
+          @key = @key + " -> " + response.code.to_s
+          @items_l =[]
+          @items_r= []
+          @poster.result = ""
+        end
+      }
+      @poster.save
+    elsif  params[:id]
+      @poster = Poster.find(params[:id])
+      @poster.mode = 'PDF'
+	  @key = @poster.query
+	  http = Net::HTTP.new('api.twitter.com')
+
+      @items = []
+      @poster.result.split(',').each { |i|
+        req = Net::HTTP::Get.new('/1/statuses/show/' + i.to_s.strip + '.xml')
+        response = http.request(req)
+        if response.code == '200'
+          e = REXML::Document.new(response.body)
+          @items << {
+            :author => e.elements['status/user/screen_name'].text,
+            :authorurl => e.elements['status/user/url'].text,
+            :url =>  "http://twitter.com/kiku_lin/statuses/" + i.to_s,
+            :date => e.elements['status/created_at'].text,
+            :text => e.elements['status/text'].text,
+            :image => e.elements['status/user/profile_image_url'].text
+          }
+        end
+      }
+          
+      if @items.size == 0
+        @items_l = []
+        @items_r = []
+        @key = @key + " (No Result) "
+      else
+        half = @items.size / 2
+        @items_l = @items[0..half-1]
+        @items_r = @items[half..@items.size]
+      end
+      @poster.save
+    end
   end
 	
   # GET /posters/format?q=
-  def format2
+  def formatx
     @key = params[:q]
     result= nil
   
@@ -178,8 +230,8 @@ class PostersController < ApplicationController
     @items = []
     result.elements.each("feed/entry"){ |e|
       @items << {
-        :author => e.elements['author/name'].text,
-	  	  :authorurl => e.elements['author/uri'].text,
+        :author => e.elements['author/screen_name'].text,
+        :authorurl => e.elements['author/uri'].text,
         :url =>  e.elements['link'].attributes["href"],
         :date => e.elements['updated'].text,
         :text => e.elements['content'].text,
@@ -192,3 +244,6 @@ class PostersController < ApplicationController
 
   end
 end
+
+
+

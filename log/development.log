@@ -4630,3 +4630,704 @@ Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 15:24:05) [GET]
 Redirected to http://html2pdf.biz/api?url=http://bit.ly/gudX9F
 &ret=PDF
 Completed in 423ms (DB: 0) | 302 Found [http://localhost/posters/pdf?method=post&q=%E8%87%AA%E7%84%B6%E8%A8%80%E8%AA%9E+%E5%87%A6%E7%90%86]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-12 15:48:08) [GET]
+Rendering main/index
+Completed in 56ms (View: 19, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 15:48:08) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 15:48:08) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 15:48:23) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"ppt show"}}
+
+NoMethodError (private method `gsub' called for nil:NilClass):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:320:in `decode'
+  app/controllers/posters_controller.rb:124:in `format'
+
+Rendered rescues/_trace (101.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-12 15:49:01) [GET]
+Rendering main/index
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 15:49:01) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-12 15:49:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-12 15:49:09) [POST]
+  Parameters: {"commit"=>"Make!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"post show"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/posters/make]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-12 15:49:20) [GET]
+  Parameters: {"q"=>"post+show"}
+  [4;36;1mPoster Create (20.1ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/GamecockWire/statuses/36315742383120384, http://twitter.com/PRIMETRON/statuses/36315454955851776, http://twitter.com/DaBADDEST_CHRiS/statuses/36315384357326848, http://twitter.com/declarationnow/statuses/36315285136871424, http://twitter.com/gramos1212/statuses/36314854486708224, http://twitter.com/iAppsNewsReview/statuses/36314851462615040, http://twitter.com/Brian_Vx3/statuses/36314840272211968, http://twitter.com/michaelbenfranc/statuses/36314792276795392, http://twitter.com/michaelbenfranc/statuses/36314785544929280, http://twitter.com/noheliagomez/statuses/36314658180698113, http://twitter.com/yay0ii/statuses/36314416131604480, http://twitter.com/hllyh/statuses/36314407055130624, http://twitter.com/CrissyPie1971/statuses/36314362016694272, http://twitter.com/GreenTeaLatteAd/statuses/36314291258789888, http://twitter.com/jameilala/statuses/36314271306489856, http://twitter.com/camila0109/statuses/36314180336222208, http://twitter.com/patjp42/statuses/36313933857951744, http://twitter.com/banjoJYJ/statuses/36313827712835584, http://twitter.com/honjunnn/statuses/36313611148201984, http://twitter.com/SubSynthesis/statuses/36313563727400960, http://twitter.com/Dragatomi/statuses/36313484379553792, http://twitter.com/mikeromosh/statuses/36313247330074624, http://twitter.com/AWorldofDental/statuses/36313158595379200, http://twitter.com/reallovefromme/statuses/36313077808889857, http://twitter.com/NJHXCShane/statuses/36313028047675393, http://twitter.com/angelinealyssa/statuses/36312837785649152, http://twitter.com/AWorldofDental/statuses/36312816046575616, http://twitter.com/Blush_Response/statuses/36312797021216768, http://twitter.com/ConstanceLH/statuses/36312743908737024, http://twitter.com/VoteBob/statuses/36312628741537792', '2011-02-12 06:49:21', 200, '2011-02-12 06:49:21', 'Web', NULL, 'post+show')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1302ms (View: 5, DB: 20) | 200 OK [http://localhost/posters/format?q=post%2Bshow]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-12 15:49:27) [GET]
+  Parameters: {"q"=>"post+show"}
+Redirected to http://html2pdf.biz/api?url=http://bit.ly/eV2ikU
+&ret=PDF
+Completed in 361ms (DB: 0) | 302 Found [http://localhost/posters/pdf?q=post%2Bshow]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-13 07:02:32) [GET]
+  Parameters: {"q"=>"post+show"}
+  [4;35;1mPoster Create (83.9ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/insight_happens/statuses/36545641026953216, http://twitter.com/der_inder/statuses/36545635662434304, http://twitter.com/kurtroberts1/statuses/36545513230696449, http://twitter.com/nicoletxl/statuses/36545462643200001, http://twitter.com/jessportugal/statuses/36545265066319873, http://twitter.com/BOLLOCKSzine/statuses/36545249790664705, http://twitter.com/shiny_drop/statuses/36545241225887744, http://twitter.com/MegaTraffictk/statuses/36545230312316928, http://twitter.com/MegaTraffictk/statuses/36545226281590784, http://twitter.com/ElisaLee_/statuses/36545137169547264, http://twitter.com/craftforfood/statuses/36545044303462400, http://twitter.com/craftforfood/statuses/36545044273958913, http://twitter.com/craftforfood/statuses/36545044114710528, http://twitter.com/craftforfood/statuses/36545017019371520, http://twitter.com/craftforfood/statuses/36545016893542400, http://twitter.com/craftforfood/statuses/36545016818188288, http://twitter.com/craftforfood/statuses/36545016453140480, http://twitter.com/NewConceptsINC/statuses/36544895502127104, http://twitter.com/habsedge/statuses/36544891953745921, http://twitter.com/seattlecartint/statuses/36544814619041793, http://twitter.com/jguarin0/statuses/36544765335961600, http://twitter.com/KeelyMarshall/statuses/36544726140334080, http://twitter.com/pelanzaminhalma/statuses/36544676550938624, http://twitter.com/kashigal/statuses/36544590882275328, http://twitter.com/LindzeyNichole/statuses/36544569591992320, http://twitter.com/rdevicq/statuses/36544548251369473, http://twitter.com/WubeyOneKenobi/statuses/36544505855483904, http://twitter.com/CynthiaKSeymour/statuses/36544235624869889, http://twitter.com/twitbruna_/statuses/36544226070110208, http://twitter.com/Treeunit212/statuses/36544092246646786', '2011-02-12 22:02:35', 200, '2011-02-12 22:02:35', 'Web', NULL, 'post+show')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 2253ms (View: 24, DB: 84) | 200 OK [http://localhost/posters/format?q=post%2Bshow]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-13 07:02:38) [GET]
+Rendering main/index
+Completed in 52ms (View: 48, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-13 07:02:38) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-13 07:02:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-13 07:08:35) [GET]
+Rendering main/index
+Completed in 58ms (View: 53, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-13 07:08:36) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-13 07:08:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#format2 (for 127.0.0.1 at 2011-02-13 07:08:59) [POST]
+  Parameters: {"commit"=>"Show!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"ムバラク エジプト"}}
+
+TypeError (can't convert nil into String):
+  app/controllers/posters_controller.rb:173:in `format2'
+
+Rendered rescues/_trace (33.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format2 (for 127.0.0.1 at 2011-02-13 07:10:17) [POST]
+  Parameters: {"commit"=>"Show!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"ムバラク エジプト"}}
+
+NoMethodError (private method `gsub' called for nil:NilClass):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:320:in `decode'
+  app/controllers/posters_controller.rb:129:in `format'
+  app/controllers/posters_controller.rb:123:in `format2'
+
+Rendered rescues/_trace (96.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format2 (for 127.0.0.1 at 2011-02-13 07:13:31) [POST]
+  Parameters: {"commit"=>"Show!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"ムバラク エジプト"}}
+
+NoMethodError (private method `gsub' called for nil:NilClass):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:320:in `decode'
+  app/controllers/posters_controller.rb:129:in `format'
+  app/controllers/posters_controller.rb:123:in `format2'
+
+Rendered rescues/_trace (33.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-13 07:30:59) [GET]
+Rendering main/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-13 07:30:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#format2 (for 127.0.0.1 at 2011-02-13 07:31:06) [POST]
+  Parameters: {"commit"=>"Show!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"ムバラク エジプト"}}
+
+NoMethodError (private method `gsub' called for nil:NilClass):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:320:in `decode'
+  app/controllers/posters_controller.rb:129:in `format'
+  app/controllers/posters_controller.rb:123:in `format2'
+
+Rendered rescues/_trace (115.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format2 (for 127.0.0.1 at 2011-02-13 07:33:33) [POST]
+  Parameters: {"commit"=>"Show!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"ムバラク エジプト"}}
+
+NoMethodError (private method `gsub' called for nil:NilClass):
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/uri/common.rb:320:in `decode'
+  app/controllers/posters_controller.rb:129:in `format'
+  app/controllers/posters_controller.rb:123:in `format2'
+
+Rendered rescues/_trace (33.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format2 (for 127.0.0.1 at 2011-02-13 07:34:51) [POST]
+  Parameters: {"commit"=>"Show!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"ムバラク エジプト"}}
+Redirected to http://localhost:3000/posters/format?q=%E3%83%A0%E3%83%90%E3%83%A9%E3%82%AF%2B%E3%82%A8%E3%82%B8%E3%83%97%E3%83%88
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/posters/format2]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-13 07:34:52) [GET]
+  Parameters: {"q"=>"ムバラク+エジプト"}
+  [4;36;1mPoster Create (0.3ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('http://twitter.com/tpmihara/statuses/36552663512530944, http://twitter.com/yayaayah/statuses/36551656720044033, http://twitter.com/sengoku1111/statuses/36551236035551232, http://twitter.com/napomi/statuses/36551230700392448, http://twitter.com/smartyjp/statuses/36550672191066112, http://twitter.com/satoko/statuses/36550105150525441, http://twitter.com/hidapapa/statuses/36549814107897856, http://twitter.com/imodekun/statuses/36549556552478720, http://twitter.com/mobazou/statuses/36549156805808129, http://twitter.com/takayuki_33/statuses/36549012630945792, http://twitter.com/Masa_Okamura/statuses/36548738906333184, http://twitter.com/kendweller/statuses/36548307589271552, http://twitter.com/norimaki30/statuses/36547684345057280, http://twitter.com/i_hikaru7/statuses/36547586798125056, http://twitter.com/ninbenTsuita/statuses/36547557710630912, http://twitter.com/dear_morocco/statuses/36547290231476224, http://twitter.com/mike_the_reds/statuses/36547288868323328, http://twitter.com/samuraicloud69/statuses/36546989403406336, http://twitter.com/kanaya/statuses/36546869999960064, http://twitter.com/senri1274/statuses/36546645491453953, http://twitter.com/axlsdr/statuses/36546367103053824, http://twitter.com/niya0101/statuses/36546046448517120, http://twitter.com/ukyou_barca/statuses/36545810455855104, http://twitter.com/bomb_ND/statuses/36545546558783489, http://twitter.com/BlitzenRed/statuses/36545216705994752, http://twitter.com/kobe_bot/statuses/36545090075758593, http://twitter.com/El_Fire/statuses/36544963781074947, http://twitter.com/deny_religions/statuses/36544496158121984, http://twitter.com/i_hikaru7/statuses/36544426113236993, http://twitter.com/jbc_news/statuses/36542688551501824', '2011-02-12 22:34:53', 200, '2011-02-12 22:34:53', 'Web', NULL, 'ムバラク+エジプト')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1153ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?q=%E3%83%A0%E3%83%90%E3%83%A9%E3%82%AF%2B%E3%82%A8%E3%82%B8%E3%83%97%E3%83%88]
+
+
+Processing PostersController#index (for 127.0.0.1 at 2011-02-13 09:26:51) [GET]
+  [4;35;1mPoster Load (27.8ms)[0m   [0mSELECT * FROM "posters" [0m
+Rendering template within layouts/posters
+Rendering posters/index
+Completed in 446ms (View: 414, DB: 28) | 200 OK [http://localhost/posters/]
+
+
+Processing PostersController#edit (for 127.0.0.1 at 2011-02-13 09:26:59) [GET]
+  Parameters: {"id"=>"35"}
+  [4;36;1mPoster Load (0.2ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 35) [0m
+Rendering template within layouts/posters
+Rendering posters/edit
+Completed in 28ms (View: 24, DB: 0) | 200 OK [http://localhost/posters/35/edit]
+
+
+Processing PostersController#show (for 127.0.0.1 at 2011-02-13 09:27:03) [GET]
+  Parameters: {"id"=>"35"}
+  [4;35;1mPoster Load (0.2ms)[0m   [0mSELECT * FROM "posters" WHERE ("posters"."id" = 35) [0m
+Rendering template within layouts/posters
+Rendering posters/show
+Completed in 115ms (View: 22, DB: 0) | 200 OK [http://localhost/posters/35]
+
+
+Processing PostersController#show (for 127.0.0.1 at 2011-02-13 09:46:59) [GET]
+  Parameters: {"id"=>"35"}
+  [4;36;1mPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 35) [0m
+Rendering template within layouts/posters
+Rendering posters/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/35]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-13 09:47:02) [GET]
+Rendering main/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-13 09:47:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-13 09:47:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#format2 (for 127.0.0.1 at 2011-02-13 09:47:11) [POST]
+  Parameters: {"commit"=>"Show!", "authenticity_token"=>"RYUcVPdyPuYH2jWf5pdVxI3bEXlZ2S2Yh1PXnjy6QS4=", "poster"=>{"query"=>"URI"}}
+Redirected to http://localhost:3000/posters/format?q=URI
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/posters/format2]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-13 09:47:11) [GET]
+  Parameters: {"q"=>"URI"}
+
+NoMethodError (undefined method `div' for #<PostersController:0x10414d3b8>):
+  app/controllers/posters_controller.rb:168:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:543:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:440:in `start'
+  app/controllers/posters_controller.rb:142:in `format'
+
+Rendered rescues/_trace (32.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-13 09:48:38) [GET]
+  Parameters: {"q"=>"URI"}
+
+NoMethodError (undefined method `parse' for "http://twitter.com/haremaman/statuses/36587176921665536":String):
+  app/controllers/posters_controller.rb:172:in `format'
+  app/controllers/posters_controller.rb:172:in `map'
+  app/controllers/posters_controller.rb:172:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:543:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:440:in `start'
+  app/controllers/posters_controller.rb:142:in `format'
+
+Rendered rescues/_trace (95.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-13 09:49:40) [GET]
+  Parameters: {"q"=>"URI"}
+
+NoMethodError (private method `split' called for #<URI::HTTP:0x103e350e0>):
+  app/controllers/posters_controller.rb:172:in `format'
+  app/controllers/posters_controller.rb:172:in `map'
+  app/controllers/posters_controller.rb:172:in `format'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:543:in `start'
+  /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/net/http.rb:440:in `start'
+  app/controllers/posters_controller.rb:142:in `format'
+
+Rendered rescues/_trace (99.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-13 09:50:21) [GET]
+  Parameters: {"q"=>"URI"}
+
+NameError (undefined local variable or method `poster' for #<PostersController:0x104192378>):
+  app/controllers/posters_controller.rb:180:in `format'
+
+Rendered rescues/_trace (32.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-13 09:50:48) [GET]
+  Parameters: {"q"=>"URI"}
+  [4;35;1mPoster Create (0.3ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('36587799033413632, 36587737641385984, 36587176921665536, 36587011230015488, 36586793205760000, 36586785869930496, 36586461968994304, 36586456583512065, 36586210860208128, 36586166224424960, 36586049933148160, 36585478488592384, 36585137105797120, 36584617008037888, 36584269493047296, 36584103067389952, 36584097136508928, 36583997446291456, 36583980371283968, 36583480322293760, 36583328928763904, 36582993787232256, 36582856448811009, 36582601468682240, 36582410397155328, 36582174928932864, 36581772611297280, 36581196557189120, 36581161417314305, 36580965639782400', '2011-02-13 00:50:50', 200, '2011-02-13 00:50:50', 'Web', NULL, 'URI')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1472ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?q=URI]
+
+
+Processing PostersController#index (for 127.0.0.1 at 2011-02-13 09:51:52) [GET]
+  [4;36;1mPoster Load (1.4ms)[0m   [0;1mSELECT * FROM "posters" [0m
+Rendering template within layouts/posters
+Rendering posters/index
+Completed in 150ms (View: 145, DB: 1) | 200 OK [http://localhost/posters]
+
+
+Processing PostersController#show (for 127.0.0.1 at 2011-02-13 09:51:56) [GET]
+  Parameters: {"id"=>"36"}
+  [4;35;1mPoster Load (0.1ms)[0m   [0mSELECT * FROM "posters" WHERE ("posters"."id" = 36) [0m
+Rendering template within layouts/posters
+Rendering posters/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/36]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-14 06:37:28) [GET]
+Rendering main/index
+Completed in 138ms (View: 119, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-14 06:37:28) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-14 06:37:28) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#format2 (for 127.0.0.1 at 2011-02-14 07:40:08) [POST]
+  Parameters: {"commit"=>"Show!", "authenticity_token"=>"FDFV7rlztyrU5jNZGjNnocZV96K8DnoKvGj4Ghls64c=", "poster"=>{"query"=>"カミツレ 図書館"}}
+Redirected to http://localhost:3000/posters/format?q=%E3%82%AB%E3%83%9F%E3%83%84%E3%83%AC%2B%E5%9B%B3%E6%9B%B8%E9%A4%A8
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/posters/format2]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-14 07:40:08) [GET]
+  Parameters: {"q"=>"カミツレ+図書館"}
+  [4;36;1mPoster Create (34.2ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('', '2011-02-13 22:40:09', 200, '2011-02-13 22:40:09', 'Web', NULL, 'カミツレ+図書館')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 802ms (View: 94, DB: 34) | 200 OK [http://localhost/posters/format?q=%E3%82%AB%E3%83%9F%E3%83%84%E3%83%AC%2B%E5%9B%B3%E6%9B%B8%E9%A4%A8]
+
+
+Processing PostersController#format2 (for 127.0.0.1 at 2011-02-14 07:40:23) [POST]
+  Parameters: {"commit"=>"Show!", "authenticity_token"=>"FDFV7rlztyrU5jNZGjNnocZV96K8DnoKvGj4Ghls64c=", "poster"=>{"query"=>"図書館"}}
+Redirected to http://localhost:3000/posters/format?q=%E5%9B%B3%E6%9B%B8%E9%A4%A8
+Completed in 1ms (DB: 0) | 302 Found [http://localhost/posters/format2]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-14 07:40:23) [GET]
+  Parameters: {"q"=>"図書館"}
+  [4;35;1mPoster Create (0.3ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('36917538986274816, 36917530266177536, 36917316340027392, 36917217090076672, 36917197536239616, 36917027276853248, 36916671016869889, 36916439252348928, 36916412517711872, 36916036322336769, 36916016357318656, 36915727298461696, 36915675599605760, 36915631487979520, 36915593827319808, 36915323689111552, 36915004661833728, 36915001251860480, 36914712985735168, 36914651887435776, 36914574271848448, 36914557460942848, 36914348085624832, 36914294339813376, 36913968580661248, 36913811877265408, 36913791606325248, 36913631010627584, 36913495228293120, 36913457571962880', '2011-02-13 22:40:24', 200, '2011-02-13 22:40:24', 'Web', NULL, '図書館')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1395ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?q=%E5%9B%B3%E6%9B%B8%E9%A4%A8]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-14 07:43:07) [GET]
+  Parameters: {"q"=>"図書館"}
+  [4;36;1mPoster Create (0.3ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('36918044953411584, 36918035256184833, 36917945263337472, 36917861448417281, 36917831652225024, 36917747866673152, 36917693751758848, 36917538986274816, 36917530266177536, 36917316340027392, 36917217090076672, 36917197536239616, 36917027276853248, 36916671016869889, 36916439252348928, 36916412517711872, 36916036322336769, 36916016357318656, 36915727298461696, 36915675599605760, 36915631487979520, 36915593827319808, 36915323689111552, 36915004661833728, 36915001251860480, 36914712985735168, 36914651887435776, 36914574271848448, 36914557460942848, 36914348085624832', '2011-02-13 22:43:08', 200, '2011-02-13 22:43:08', 'Web', NULL, '図書館')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1145ms (View: 6, DB: 0) | 200 OK [http://localhost/posters/format?q=%E5%9B%B3%E6%9B%B8%E9%A4%A8]
+
+
+Processing PostersController#pdf (for 127.0.0.1 at 2011-02-14 07:43:20) [GET]
+  Parameters: {"id"=>"39"}
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.split):
+  app/controllers/posters_controller.rb:107:in `pdf'
+
+Rendered rescues/_trace (43.3ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-14 23:48:30) [GET]
+Rendering main/index
+Completed in 168ms (View: 150, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-14 23:48:30) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-14 23:48:30) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#format2 (for 127.0.0.1 at 2011-02-14 23:48:45) [POST]
+  Parameters: {"commit"=>"Show!", "authenticity_token"=>"rTDtST4p3D4FYwfE8Bq22sc2dSSt1NyPbhcDAfNsB0g=", "poster"=>{"query"=>"ノキア Symbian"}}
+Redirected to http://localhost:3000/posters/format?q=%E3%83%8E%E3%82%AD%E3%82%A2%2BSymbian
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/posters/format2]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-14 23:48:45) [GET]
+  Parameters: {"q"=>"ノキア+Symbian"}
+  [4;36;1mPoster Create (21.5ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('37160820920025088, 37156381966475264, 37155458460422144, 37155458322006017, 37147573445722112, 37143215807143937, 37141767358779392, 37131657194508289, 37122962587009024, 37121304800796672, 37112628023132160, 37106512954396672, 37097234990370816, 37094890907107328, 37093280147705856, 37083088626388993, 37076358605578240, 37070743141351424, 37069105957707776, 37057125930893312, 37056399817056256, 37054898537377792, 37053203098894336, 37047684686675968, 37045642010300416, 37004960633851904, 37004299556884481, 37001412156067840, 36997445795713025, 36993004015190016', '2011-02-14 14:48:46', 200, '2011-02-14 14:48:46', 'Web', NULL, 'ノキア+Symbian')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1266ms (View: 47, DB: 22) | 200 OK [http://localhost/posters/format?q=%E3%83%8E%E3%82%AD%E3%82%A2%2BSymbian]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-14 23:49:09) [GET]
+  Parameters: {"id"=>"40"}
+  [4;35;1mPoster Load (0.2ms)[0m   [0mSELECT * FROM "posters" WHERE ("posters"."id" = 40) [0m
+
+NameError (undefined local variable or method `http' for #<PostersController:0x103f36020>):
+  app/controllers/posters_controller.rb:181:in `format'
+
+Rendered rescues/_trace (33.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-14 23:52:51) [GET]
+  Parameters: {"id"=>"40"}
+  [4;36;1mPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 40) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/posters_controller.rb:203:in `format'
+
+Rendered rescues/_trace (34.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#index (for 127.0.0.1 at 2011-02-14 23:54:14) [GET]
+  [4;35;1mPoster Load (11.6ms)[0m   [0mSELECT * FROM "posters" [0m
+Rendering template within layouts/posters
+Rendering posters/index
+Completed in 341ms (View: 325, DB: 12) | 200 OK [http://localhost/posters]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-14 23:55:08) [GET]
+  Parameters: {"id"=>"40"}
+  [4;36;1mPoster Load (0.2ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 40) [0m
+
+NameError (undefined local variable or method `e' for #<PostersController:0x1040f9bf0>):
+  app/controllers/posters_controller.rb:190:in `format'
+  app/controllers/posters_controller.rb:184:in `each'
+  app/controllers/posters_controller.rb:184:in `format'
+
+Rendered rescues/_trace (31.6ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-14 23:55:55) [GET]
+  Parameters: {"id"=>"40"}
+  [4;35;1mPoster Load (0.2ms)[0m   [0mSELECT * FROM "posters" WHERE ("posters"."id" = 40) [0m
+
+NoMethodError (undefined method `text' for nil:NilClass):
+  app/controllers/posters_controller.rb:193:in `format'
+  app/controllers/posters_controller.rb:184:in `each'
+  app/controllers/posters_controller.rb:184:in `format'
+
+Rendered rescues/_trace (32.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-14 23:57:43) [GET]
+  Parameters: {"id"=>"40"}
+  [4;36;1mPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 40) [0m
+
+NoMethodError (undefined method `div' for #<PostersController:0x1041cd5b8>):
+  app/controllers/posters_controller.rb:208:in `format'
+
+Rendered rescues/_trace (33.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-14 23:58:33) [GET]
+  Parameters: {"id"=>"40"}
+  [4;35;1mPoster Load (0.2ms)[0m   [0mSELECT * FROM "posters" WHERE ("posters"."id" = 40) [0m
+  [4;36;1mPoster Update (0.4ms)[0m   [0;1mUPDATE "posters" SET "updated_at" = '2011-02-14 14:58:41', "mode" = 'PDF' WHERE "id" = 40[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 8542ms (View: 1, DB: 1) | 200 OK [http://localhost/posters/format?id=40]
+
+
+Processing PostersController#index (for 127.0.0.1 at 2011-02-14 23:59:33) [GET]
+  [4;35;1mPoster Load (1.5ms)[0m   [0mSELECT * FROM "posters" [0m
+Rendering template within layouts/posters
+Rendering posters/index
+Completed in 147ms (View: 141, DB: 1) | 200 OK [http://localhost/posters]
+
+
+Processing PostersController#show (for 127.0.0.1 at 2011-02-14 23:59:36) [GET]
+  Parameters: {"id"=>"40"}
+  [4;36;1mPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 40) [0m
+Rendering template within layouts/posters
+Rendering posters/show
+Completed in 20ms (View: 16, DB: 0) | 200 OK [http://localhost/posters/40]
+
+
+Processing PostersController#show (for 127.0.0.1 at 2011-02-15 00:00:23) [GET]
+  Parameters: {"id"=>"40"}
+  [4;35;1mPoster Load (0.1ms)[0m   [0mSELECT * FROM "posters" WHERE ("posters"."id" = 40) [0m
+Rendering template within layouts/posters
+Rendering posters/show
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/40]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-15 00:02:11) [GET]
+  Parameters: {"id"=>"40"}
+  [4;36;1mPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 40) [0m
+
+NoMethodError (undefined method `trim' for "37160820920025088":String):
+  app/controllers/posters_controller.rb:185:in `format'
+  app/controllers/posters_controller.rb:184:in `each'
+  app/controllers/posters_controller.rb:184:in `format'
+
+Rendered rescues/_trace (31.9ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-15 00:05:16) [GET]
+  Parameters: {"id"=>"40"}
+  [4;35;1mPoster Load (0.2ms)[0m   [0mSELECT * FROM "posters" WHERE ("posters"."id" = 40) [0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.+):
+  app/controllers/posters_controller.rb:203:in `format'
+
+Rendered rescues/_trace (33.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-15 00:06:52) [GET]
+  Parameters: {"id"=>"40"}
+  [4;36;1mPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 40) [0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 13303ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?id=40]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-15 00:09:25) [GET]
+  Parameters: {"id"=>"40"}
+  [4;35;1mPoster Load (0.1ms)[0m   [0mSELECT * FROM "posters" WHERE ("posters"."id" = 40) [0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 9272ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?id=40]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-15 00:11:55) [GET]
+  Parameters: {"id"=>"40"}
+  [4;36;1mPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 40) [0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 10901ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?id=40]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-15 00:12:18) [GET]
+  Parameters: {"id"=>"40"}
+  [4;35;1mPoster Load (0.1ms)[0m   [0mSELECT * FROM "posters" WHERE ("posters"."id" = 40) [0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 12226ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?id=40]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-15 00:13:12) [GET]
+  Parameters: {"id"=>"40"}
+  [4;36;1mPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 40) [0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 12179ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?id=40]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-15 00:18:39) [GET]
+Rendering main/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-15 00:18:39) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#format2 (for 127.0.0.1 at 2011-02-15 00:19:10) [POST]
+  Parameters: {"commit"=>"Show!", "authenticity_token"=>"rTDtST4p3D4FYwfE8Bq22sc2dSSt1NyPbhcDAfNsB0g=", "poster"=>{"query"=>"ノキア マイクロソフト"}}
+Redirected to http://localhost:3000/posters/format?q=%E3%83%8E%E3%82%AD%E3%82%A2%2B%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%82%BD%E3%83%95%E3%83%88
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/posters/format2]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-15 00:19:10) [GET]
+  Parameters: {"q"=>"ノキア+マイクロソフト"}
+  [4;35;1mPoster Create (0.3ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('37167769371947008, 37166489857429504, 37165250625146880, 37165049428582400, 37164406785847296, 37163581711589377, 37163437050036225, 37163099551178752, 37162900388847616, 37161881458180096, 37161847027138560, 37161641749520384, 37161615069548544, 37161580911140865, 37161563869683712, 37157818083577857, 37156381966475264, 37156379886100480, 37155458481389568, 37155458460422144, 37155458322006017, 37155311118712832, 37151863237255168, 37151721046286336, 37149659793199104, 37149445447487489, 37149444143054848, 37149008774307840, 37147575609982977, 37147575354130432', '2011-02-14 15:19:11', 200, '2011-02-14 15:19:11', 'Web', NULL, 'ノキア+マイクロソフト')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1104ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?q=%E3%83%8E%E3%82%AD%E3%82%A2%2B%E3%83%9E%E3%82%A4%E3%82%AF%E3%83%AD%E3%82%BD%E3%83%95%E3%83%88]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-15 00:28:51) [GET]
+  Parameters: {"q"=>"41"}
+  [4;36;1mPoster Create (0.3ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('37171359553421312, 37171358425284608, 37171357733093376, 37171348144914432, 37171324971388928, 37171314431098880, 37171304595460097, 37171297007968257, 37171282638405632, 37171273662464000, 37171236614320128, 37171236098412544, 37171232713613312, 37171228129247232, 37171218490593280, 37171207698788352, 37171205488250880, 37171199767224321, 37171160688893953, 37171148961611779, 37171121124024324, 37171121073684480, 37171112118988800, 37171105554759680, 37171104887996416, 37171085749403648, 37171071824166913, 37171061996916736, 37171058188492801, 37171056850505729', '2011-02-14 15:28:52', 200, '2011-02-14 15:28:52', 'Web', NULL, '41')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1071ms (View: 5, DB: 0) | 200 OK [http://localhost/posters/format?q=41]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-15 00:29:05) [GET]
+  Parameters: {"q"=>"42"}
+  [4;35;1mPoster Create (0.3ms)[0m   [0mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('37171438674776067, 37171438016274433, 37171430298746880, 37171425269784576, 37171412565229569, 37171411789430784, 37171406282170368, 37171399542063104, 37171386946551808, 37171385088483328, 37171372639649794, 37171372497178624, 37171366138482688, 37171351101902848, 37171341043957760, 37171332370145280, 37171329383800832, 37171313810350080, 37171312451395584, 37171306122190849, 37171306021527552, 37171280809566208, 37171273960267778, 37171272114765827, 37171266364379136, 37171265370456064, 37171264519016449, 37171262165880832, 37171245405585408, 37171244210069505', '2011-02-14 15:29:06', 200, '2011-02-14 15:29:06', 'Web', NULL, '42')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1147ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?q=42]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-15 00:29:19) [GET]
+  Parameters: {"id"=>"42"}
+  [4;36;1mPoster Load (0.2ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 42) [0m
+  [4;35;1mPoster Update (0.3ms)[0m   [0mUPDATE "posters" SET "updated_at" = '2011-02-14 15:29:29', "mode" = 'PDF' WHERE "id" = 42[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 10349ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?id=42]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-15 00:29:34) [GET]
+  Parameters: {"id"=>"41"}
+  [4;36;1mPoster Load (0.1ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 41) [0m
+  [4;35;1mPoster Update (0.3ms)[0m   [0mUPDATE "posters" SET "updated_at" = '2011-02-14 15:29:46', "mode" = 'PDF' WHERE "id" = 41[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 11987ms (View: 2, DB: 0) | 200 OK [http://localhost/posters/format?id=41]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-15 00:30:59) [GET]
+  Parameters: {"id"=>"41"}
+  [4;36;1mPoster Load (0.2ms)[0m   [0;1mSELECT * FROM "posters" WHERE ("posters"."id" = 41) [0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 16346ms (View: 5, DB: 0) | 200 OK [http://localhost/posters/format?id=41]

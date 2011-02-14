@@ -5,7 +5,7 @@
 <div id="container">
   <div id = "theme">
   Theme: <span class = "theme"><%=h @key -%></span> [<%= Time.now() -%>]
-			→ <%= link_to 'PDFを作成する', :action => "pdf", :q => @key  -%>
+			→ <%= link_to 'PDFを作成する', :action => "pdf", :id => @poster  -%>
   </div>
 
   <div id="left" class="column">
