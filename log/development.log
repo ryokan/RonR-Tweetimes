@@ -5331,3 +5331,50 @@ Processing PostersController#format (for 127.0.0.1 at 2011-02-15 00:30:59) [GET]
 Rendering template within layouts/posters
 Rendering posters/format
 Completed in 16346ms (View: 5, DB: 0) | 200 OK [http://localhost/posters/format?id=41]
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-15 00:50:48) [GET]
+Rendering main/index
+Completed in 21ms (View: 18, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-15 00:50:48) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#index (for 127.0.0.1 at 2011-02-15 00:51:42) [GET]
+Rendering main/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-02-15 00:51:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/main.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing PostersController#format2 (for 127.0.0.1 at 2011-02-15 00:52:12) [POST]
+  Parameters: {"commit"=>"Show!", "authenticity_token"=>"rTDtST4p3D4FYwfE8Bq22sc2dSSt1NyPbhcDAfNsB0g=", "poster"=>{"query"=>"民主党 菅直人"}}
+Redirected to http://localhost:3000/posters/format?q=%E6%B0%91%E4%B8%BB%E5%85%9A%2B%E8%8F%85%E7%9B%B4%E4%BA%BA
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/posters/format2]
+
+
+Processing PostersController#format (for 127.0.0.1 at 2011-02-15 00:52:12) [GET]
+  Parameters: {"q"=>"民主党+菅直人"}
+  [4;36;1mPoster Create (0.4ms)[0m   [0;1mINSERT INTO "posters" ("result", "created_at", "code", "updated_at", "mode", "user", "query") VALUES('37169076295962624, 37167721816920064, 37167680662278144, 37167602736308224, 37167255074639873, 37166922202087424, 37166785543274496, 37166590873190400, 37166154396999680, 37164323264528385, 37162895875772416, 37154523512446976, 37148697980706816, 37147614071754752, 37147045802287105, 37146864335716352, 37146181331066880, 37145507759390720, 37144656328265728, 37144655325822976, 37143404525658112, 37142305999814656, 37141530724675584, 37140942922186752, 37136257087709184, 37136196362571777, 37134334095785986, 37130388409303040, 37129376067895296, 37129049784455168', '2011-02-14 15:52:13', 200, '2011-02-14 15:52:13', 'Web', NULL, '民主党+菅直人')[0m
+Rendering template within layouts/posters
+Rendering posters/format
+Completed in 1579ms (View: 11, DB: 0) | 200 OK [http://localhost/posters/format?q=%E6%B0%91%E4%B8%BB%E5%85%9A%2B%E8%8F%85%E7%9B%B4%E4%BA%BA]
+
+
+Processing PostersController#make (for 127.0.0.1 at 2011-02-15 00:52:38) [POST]
+  Parameters: {"commit"=>"Select Format", "authenticity_token"=>"rTDtST4p3D4FYwfE8Bq22sc2dSSt1NyPbhcDAfNsB0g=", "poster"=>{"query"=>"民主党 菅直人"}}
+Rendering template within layouts/posters
+Rendering posters/make
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://localhost/posters/make]

@@ -104,23 +104,23 @@ class PostersController < ApplicationController
 	end
 
   def pdf
-  if params[:q]
-    @key = params[:q].split(/ /).join('+')
-    longurl = URI.encode("http://tweetimes.heroku.com/posters/format/?q=" + @key, '&?=:/ ')
-    Net::HTTP.start('api.bit.ly') { |http|
-      response = http.get('/v3/shorten?login=ryokan&apiKey=' + APIKEY + '&longUrl=' + longurl + '&format=txt')
-      if response.code == '200'
-        redirect_to "http://html2pdf.biz/api?url=" + response.body + "&ret=PDF"
-        return
-      else
-        @query = @key + " -> " + response.code.to_s
-        render :action=> 'make'
-      end
-	  }
+    if params[:q]
+      @key = params[:q].split(/ /).join('+')
+      longurl = URI.encode("http://tweetimes.heroku.com/posters/format/?q=" + @key, '&?=:/ ')
+      Net::HTTP.start('api.bit.ly') { |http|
+        response = http.get('/v3/shorten?login=ryokan&apiKey=' + APIKEY + '&longUrl=' + longurl + '&format=txt')
+        if response.code == '200'
+          redirect_to "http://html2pdf.biz/api?url=" + response.body + "&ret=PDF"
+          return
+        else
+          @query = @key + " -> " + response.code.to_s
+          render :action=> 'make'
+        end
+      }
 	  else params[:id]
-	  longurl = URI.encode("http://tweetimes.heroku.com/posters/format/?id=" + params[:id].to_s, '&?=:/ ')
-	  redirect_to "http://html2pdf.biz/api?url=" + longurl + "&ret=PDF"
-        return
+      longurl = URI.encode("http://tweetimes.heroku.com/posters/format/?id=" + params[:id].to_s, '&?=:/ ')
+      redirect_to "http://html2pdf.biz/api?url=" + longurl + "&ret=PDF"
+      return
 	  end
   end
   
@@ -183,8 +183,8 @@ class PostersController < ApplicationController
     elsif  params[:id]
       @poster = Poster.find(params[:id])
       @poster.mode = 'PDF'
-	  @key = @poster.query
-	  http = Net::HTTP.new('api.twitter.com')
+      @key = @poster.query
+      http = Net::HTTP.new('api.twitter.com')
 
       @items = []
       @poster.result.split(',').each { |i|

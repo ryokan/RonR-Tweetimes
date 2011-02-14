@@ -7,30 +7,30 @@
   </head>
   <body>
     <div ID="BODY">
-      <div ID="title"><img src="images/logo.png" alt="logo" /></div>
+      <!-- div ID="title"><img src="images/logo.png" alt="logo" /></div> -->
       <div ID="logo">
         <span style="text-align:left;float:left; width:240px;">
           <%link_to @url_linktext, :action => "login" %>
         </span>
         <span><a href="mailto:yoshihiroueda@gmail.com">Yoshihiro Ueda</a></span>
       </div>
+      <h2>Poster Maker</h2>
       <div>
-        <% form_for @poster,  :url => {:controller=>"posters", :action => "make"} do |f| %>
-          <%= f.error_messages %>
-        <h2>Poster Maker</h2>
-          <p>
-            <%= f.label :query %>
-            <%= f.text_field :query %>
-            <%= f.submit 'Select Format', :method =>:post %></p>
-        <% end %>
-		      <div>
+        <p>画面表示 → その後 PDF</p>
         <% form_for @poster,  :url => {:controller=>"posters", :action => "format2"} do |f| %>
           <%= f.error_messages %>
-        
           <p>
             <%= f.label :query %>
             <%= f.text_field :query %>
             <%= f.submit 'Show!', :method =>:get %></p>
+        <% end %>
+        <p>形式選択</p>
+        <% form_for @poster,  :url => {:controller=>"posters", :action => "make"} do |f| %>
+          <%= f.error_messages %>
+           <p>
+            <%= f.label :query %>
+            <%= f.text_field :query %>
+            <%= f.submit 'Select Format', :method =>:post %></p>
         <% end %>
       </div>
     </div>
