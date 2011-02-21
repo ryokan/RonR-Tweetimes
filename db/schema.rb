@@ -9,7 +9,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110209160925) do
+ActiveRecord::Schema.define(:version => 20110221060643) do
+
+  create_table "entries", :force => true do |t|
+    t.string   "author"
+    t.string   "authorurl"
+    t.string   "url"
+    t.string   "date"
+    t.string   "content"
+    t.string   "image"
+    t.string   "poster_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "logs", :force => true do |t|
+    t.integer  "poster_id"
+    t.string   "user"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posters", :force => true do |t|
     t.string   "user"

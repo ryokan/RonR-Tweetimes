@@ -1,6 +1,14 @@
 class MainController < ApplicationController
 	def index
-	@url_linktext = "login"
+    @url_linktext = "login"
     @poster = Poster.new
+    logs = Log.find :all, :conditions => ["created_at > ?", Time.now - 7*24*60*60 ]
+    posters = []
+    logs.each {|log| posters = posters | [log.poster]}
+    @posters = posters.map {|poster|
+      {:id => poster.id, :query => poster.query, :count => poster.logs.size, :created_at => poster.created_at}
+    }
+    @posters.sort! {|b,a| a[:count] - b[:count]}
+    @psters = @posters[0..9]
 	end
 end

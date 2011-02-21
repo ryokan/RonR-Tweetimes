@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :entries
+
+  map.resources :logs
+
   map.resources :posters, :collection=>{:format => :get,:format2 => :post, :pdf => :get,
     :pdf2 => :get, :make=> :post, :test2=>:any}
 

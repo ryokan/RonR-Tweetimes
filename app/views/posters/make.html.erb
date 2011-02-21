@@ -8,5 +8,7 @@
 <p>PDF作成 <%= button_to 'PDF', :action => "pdf", :q => @query %></p>
 <!-- <p>URL Test <%= link_to 'PDF', "http://html2pdf.biz/api?url=" + @escaped + "&ret=PDF" %></p> -->
 
-<p>ネットプリントで印刷 <%= button_to 'ネットプリント', "http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format?q=" +
-URI.encode(@query) + "&ret=PDF", :method => :get, :disabled => true %></p>
+<p>ネットプリントで印刷 <%= button_to 'ネットプリント',
+    "http://html2pdf.biz/api?url=http://tweetimes.heroku.com/posters/format?q=" +
+    URI.encode(@query) + "&ret=PDF", :method => :get, :disabled => true %>
+</p>
