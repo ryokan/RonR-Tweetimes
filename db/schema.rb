@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20110221060643) do
     t.string   "authorurl"
     t.string   "url"
     t.string   "date"
-    t.string   "content"
+    t.text     "content"
     t.string   "image"
     t.string   "poster_id"
     t.datetime "created_at"

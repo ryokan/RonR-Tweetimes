@@ -5,7 +5,7 @@ class CreateEntries < ActiveRecord::Migration
       t.string :authorurl
       t.string :url
       t.string :date
-      t.string :content
+      t.text :content
       t.string :image
       t.string :poster_id
 
