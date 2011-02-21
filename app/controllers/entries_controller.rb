@@ -2,7 +2,7 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.xml
   def index
-    @entries = Entry.all
+    @entries = Entry.all.reverse[0..99]
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,6 +41,8 @@ class EntriesController < ApplicationController
   # POST /entries.xml
   def create
     @entry = Entry.new(params[:entry])
+    redirect_to(@entry)
+    return
 
     respond_to do |format|
       if @entry.save
@@ -58,6 +60,8 @@ class EntriesController < ApplicationController
   # PUT /entries/1.xml
   def update
     @entry = Entry.find(params[:id])
+    redirect_to(@entry)
+    return
 
     respond_to do |format|
       if @entry.update_attributes(params[:entry])
@@ -75,7 +79,7 @@ class EntriesController < ApplicationController
   # DELETE /entries/1.xml
   def destroy
     @entry = Entry.find(params[:id])
-    @entry.destroy
+    #@entry.destroy
 
     respond_to do |format|
       format.html { redirect_to(entries_url) }

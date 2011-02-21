@@ -2,16 +2,18 @@
 
 <table>
   <tr>
+    <th>Poster_id</th>
     <th>Author</th>
     <th>Authorurl</th>
     <th>Url</th>
     <th>Date</th>
-  <th>Content</th>
+  <th>Image</th>
    
   </tr>
 
 <% @entries.each do |entry| %>
   <tr>
+    <td><%=h entry.poster_id %></td>
     <td><%=h entry.author %></td>
     <td><%=h entry.authorurl %></td>
     <td><%=h entry.url %></td>
