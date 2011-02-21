@@ -33,9 +33,9 @@
             <%= f.submit 'Select Format', :method =>:post %></p>
         <% end %>
       </div>
+      <h2>作成回数の多いポスター</h2>
 <table>
   <tr>
-    
     <th>Query</th>
     <th>Date (日本時間)</th>
     <th>回数</th>
@@ -47,6 +47,24 @@
 
     <td><%=h poster[:created_at].strftime("%Y/%m/%d %H:%M:%S") %></td>
     <td><%=h poster[:count] %></td>
+    <td><%= link_to '再作成', :controller=>"posters", :action => "format", :id => poster[:id] %></td>
+  </tr>
+<% end %>
+</table>
+        <h2>新しく作成されたポスター</h2>
+<table>
+  <tr>
+    <th>Query</th>
+    <th>Date (日本時間)</th>
+   
+  </tr>
+<% @recent.each do |poster| %>
+  <tr>
+
+    <td><%=h poster[:query] %></td>
+
+    <td><%=h poster[:created_at].strftime("%Y/%m/%d %H:%M:%S") %></td>
+   
     <td><%= link_to '再作成', :controller=>"posters", :action => "format", :id => poster[:id] %></td>
   </tr>
 <% end %>

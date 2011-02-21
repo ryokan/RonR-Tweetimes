@@ -10,5 +10,7 @@ class MainController < ApplicationController
     }
     @posters.sort! {|b,a| a[:count] - b[:count]}
     @posters = @posters[0..9]
+
+    @recent = Poster.find :all, :order => 'updated_at desc', :limit => 10
 	end
 end
