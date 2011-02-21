@@ -125,8 +125,8 @@ class PostersController < ApplicationController
   end
   
   def format2
-    @q = params[:poster][:query]
-    #@q = params[:poster][:query].split(/ /).join('+')
+    #@q = params[:poster][:query]
+    @q = params[:poster][:query].split(/ /).join('+')
     redirect_to :action => "format", :q => @q
     return
   end
