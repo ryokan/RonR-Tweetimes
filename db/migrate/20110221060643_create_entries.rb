@@ -7,7 +7,7 @@ class CreateEntries < ActiveRecord::Migration
       t.string :date
       t.text :content
       t.string :image
-      t.string :poster_id
+      t.integer :poster_id
 
       t.timestamps
     end

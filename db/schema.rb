@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(:version => 20110221060643) do
     t.string   "date"
     t.text     "content"
     t.string   "image"
-    t.string   "poster_id"
+    t.integer  "poster_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
