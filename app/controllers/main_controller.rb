@@ -9,6 +9,6 @@ class MainController < ApplicationController
       {:id => poster.id, :query => poster.query, :count => poster.logs.size, :created_at => poster.created_at}
     }
     @posters.sort! {|b,a| a[:count] - b[:count]}
-    @psters = @posters[0..9]
+    @posters = @posters[0..9]
 	end
 end
