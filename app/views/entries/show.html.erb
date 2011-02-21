@@ -1,0 +1,33 @@
+<p>
+  <b>Author:</b>
+  <%=h @entry.author %>
+</p>
+
+<p>
+  <b>Authorurl:</b>
+  <%=h @entry.authorurl %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%=h @entry.url %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%=h @entry.date %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%=h @entry.content %>
+</p>
+
+<p>
+  <b>Image:</b>
+  <%=h @entry.image %>
+</p>
+
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>
