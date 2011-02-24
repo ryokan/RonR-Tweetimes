@@ -32,15 +32,15 @@
             <%= f.submit 'Show!', :method =>:get %>
           </p>
         <% end %>
-        <%#*<p>形式選択</p>%>
-        <%# form_for @poster,  :url => {:controller=>"posters", :action => "make"} do |f| %>
-          <%#= f.error_messages %>
-          <%#*<p>%>
-            <%#= f.label :query %>
-            <%#= f.text_field :query %>
-            <%#= f.submit 'Select Format', :method =>:post %>
-          <%#*</p>%>
-        <%# end %>
+<%#*<p>形式選択</p>%>
+<%# form_for @poster,  :url => {:controller=>"posters", :action => "make"} do |f| %>
+<%#= f.error_messages %>
+<%#*<p>%>
+<%#= f.label :query %>
+<%#= f.text_field :query %>
+<%#= f.submit 'Select Format', :method =>:post %>
+<%#*</p>%>
+<%# end %>
       </div>
       <h3>Frequently Shown</h3>
       <table>
@@ -77,5 +77,17 @@
         <% end %>
       </table>
     </div>
+
+    <script type="text/javascript">
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+      try {
+        var pageTracker = _gat._getTracker("UA-598676-10");
+        pageTracker._trackPageview();
+      } catch(err) {}
+    </script>
+
   </body>
 </html>
