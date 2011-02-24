@@ -3,13 +3,15 @@
 <table>
   <tr>
     <th>Poster_id</th>
-    <th>Date</th>
+    <th>created</th>
+
   </tr>
 
 <% @logs.each do |log| %>
   <tr>
-     <td><%=h log.poster_id %></td>
+    <td><%=h log.poster_id %> <%=h log.poster.query %></td>
     <td><%=h log.created_at %></td>
+    
     <td><%= link_to 'Show', log %></td>
     <td><%= link_to 'Edit', edit_log_path(log) %></td>
     <td><%= link_to 'Destroy', log, :confirm => 'Are you sure?', :method => :delete %></td>

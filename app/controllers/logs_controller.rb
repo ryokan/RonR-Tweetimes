@@ -3,7 +3,7 @@ class LogsController < ApplicationController
   # GET /logs
   # GET /logs.xml
   def index
-    @logs = Log.all
+    @logs = Log.find :all, :order => 'created_at desc', :limit => 40
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @logs }
