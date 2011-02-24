@@ -7,14 +7,21 @@
   </head>
   <body>
     <div ID="BODY">
-      <!-- div ID="title"><img src="images/logo.png" alt="logo" /></div> -->
-      <div ID="logo">
-        <span style="text-align:left;float:left; width:240px;">
-          <% link_to @url_linktext, :action => "login" %>
-        </span>
-        <span><a href="mailto:yoshihiroueda@gmail.com">Yoshihiro Ueda</a></span>
+      <div ID="title" style="width:1000px;">
+        <div><img src="images/tweetimes.png" alt="logo" /></div>
+        <div>
+          <span style="text-align:left;float:left; width:240px;">
+            <% link_to @url_linktext, :action => "login" %>
+          </span>
+          <span style="text-align:right;float:right;">Contact: <a href="mailto:yoshihiroueda@gmail.com">Yoshihiro Ueda</a></span>
+        </div>
       </div>
       <h2>Poster Maker</h2>
+      <ul>
+        <li>皆さんPCに向かってばかりで会話が減ってませんか？</li>
+        <li>このサイトでは、Twitterでのツイートを壁新聞の形にレイアウトします。</li>
+        <li>印刷してタバコ部屋などの壁に貼って、リアルな場での話題のタネに使ってください。</li>
+      </ul>
       <div>
         <p>画面表示 → その後 PDF</p>
         <% form_for @poster,  :url => {:controller=>"posters", :action => "format2"} do |f| %>
@@ -22,53 +29,53 @@
           <p>
             <%= f.label :query %>
             <%= f.text_field :query %>
-            <%= f.submit 'Show!', :method =>:get %></p>
+            <%= f.submit 'Show!', :method =>:get %>
+          </p>
         <% end %>
-        <p>形式選択</p>
-        <% form_for @poster,  :url => {:controller=>"posters", :action => "make"} do |f| %>
-          <%= f.error_messages %>
-           <p>
-            <%= f.label :query %>
-            <%= f.text_field :query %>
-            <%= f.submit 'Select Format', :method =>:post %></p>
-        <% end %>
+        <%#*<p>形式選択</p>%>
+        <%# form_for @poster,  :url => {:controller=>"posters", :action => "make"} do |f| %>
+          <%#= f.error_messages %>
+          <%#*<p>%>
+            <%#= f.label :query %>
+            <%#= f.text_field :query %>
+            <%#= f.submit 'Select Format', :method =>:post %>
+          <%#*</p>%>
+        <%# end %>
       </div>
-      <h2>作成回数の多いポスター</h2>
-<table>
-  <tr>
-    <th>Query</th>
-    <th>Date (日本時間)</th>
-    <th>回数</th>
-  </tr>
-<% @posters.each do |poster| %>
-  <tr>
-    
-    <td><%=h poster[:query] %></td>
-
-    <td><%=h poster[:created_at].strftime("%Y/%m/%d %H:%M:%S") %></td>
-    <td><%=h poster[:count] %></td>
-    <td><%= link_to '再作成', :controller=>"posters", :action => "format", :id => poster[:id] %></td>
-  </tr>
-<% end %>
-</table>
-        <h2>新しく作成されたポスター</h2>
-<table>
-  <tr>
-    <th>Query</th>
-    <th>Date (日本時間)</th>
-   
-  </tr>
-<% @recent.each do |poster| %>
-  <tr>
-
-    <td><%=h poster[:query] %></td>
-<td><%=h poster[:created_at].strftime("%Y/%m/%d %H:%M:%S") %></td>
-    <td><%=h poster.created_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
-   
-    <td><%= link_to '再作成', :controller=>"posters", :action => "format", :id => poster[:id] %></td>
-  </tr>
-<% end %>
-</table>
+      <h3>Frequently Shown</h3>
+      <table>
+        <tr>
+          <th>Query</th>
+          <th>Shown (Tokyo)</th>
+          <th align="right">Number Used</th>
+        </tr>
+        <% @posters.each do |poster| %>
+          <tr>
+            <td><%=h poster[:query] %></td>
+            <td><%=h poster[:created_at].strftime("%Y/%m/%d %H:%M:%S") %></td>
+            <td align="right"><%=h poster[:count] %></td>
+            <td><%= link_to '再表示', :controller=>"posters", :action => "format", :id => poster[:id] %></td>
+            <td><%= link_to '再作成', :controller=>"posters", :action => "format", :q => poster[:query] %></td>
+          </tr>
+        <% end %>
+      </table>
+      <h3>Newly Created & Shown</h3>
+      <table>
+        <tr>
+          <th>Query</th>
+          <th>Created at (Tokyo)</th>
+          <th>Shown at (Tokyo)</th>
+        </tr>
+        <% @recent.each do |poster| %>
+          <tr>
+            <td><%=h poster.query %></td>
+            <td><%=h poster.created_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
+            <td><%=h poster.updated_at.strftime("%Y/%m/%d %H:%M:%S") %></td>
+            <td><%= link_to '再表示', :controller=>"posters", :action => "format", :id => poster.id %></td>
+            <td><%= link_to '再作成', :controller=>"posters", :action => "format", :q => poster.query %></td>
+          </tr>
+        <% end %>
+      </table>
     </div>
   </body>
 </html>

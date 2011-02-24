@@ -1,12 +1,13 @@
 
 <div id="banner">
-  <img src="/images/twitimes.gif" />
+  <img src="/images/tweetimes.png" />
 </div>
 <div id="container">
   <div id = "theme">
-    Theme: <span class = "theme"><%=h @key -%></span> [<%= Time.now() -%>]
-			→ <%= link_to 'PDFを作成する', :action => "pdf", :id => @poster %>
-| <%= link_to 'Top', :controller => 'main' %>
+    Theme: <span class = "theme"><%=h @key -%></span> 
+    [created at: <%= @poster.created_at.strftime("%Y/%m/%d %H:%M:%S") -%>]
+    → <%= link_to 'PDFを作成する', :action => "pdf", :id => @poster %>
+    | <%= link_to 'Top', :controller => 'main' %>
   </div>
 
   <div id="left" class="column">
@@ -26,7 +27,7 @@
   </div>
   <div id="right" class="column">
     <% @items_r.each do |item| %>
-         <div class= "tweet-body" width="100%">
+      <div class= "tweet-body" width="100%">
         <div style="float:left;width:64px;height:64px;">
           <img src="<%=h item.image %>" alt="icon" width="48" height="48" />
         </div>
