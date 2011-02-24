@@ -1,6 +1,6 @@
 
 <div id="banner">
-  <%= image_tag ("/images/tweetimes.png", :alt => "logo")  %>
+  <%= image_tag "/images/tweetimes.png", :alt => "logo"  %>
 </div>
 <div id="container">
   <div id = "theme">
@@ -29,8 +29,8 @@
     <% @items_r.each do |item| %>
       <div class= "tweet-body" width="100%">
         <div style="float:left;width:64px;height:64px;">
-  <%#*<img src="<%=h item.image %>" alt="icon" width="48" height="48" />%>
-          <%= image_tag item.image , :alt => "icon", :width=>"48", :height=>"48"  %>
+
+          <%= image_tag item.image, :alt => "icon", :width=>"48", :height=>"48"  %>
         </div>
         <div>
           <a href="<%=h item.authorurl %>"><%=h item.author %></a>:
