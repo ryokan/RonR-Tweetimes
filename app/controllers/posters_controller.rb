@@ -182,7 +182,7 @@ class PostersController < ApplicationController
       @poster.save
     elsif  params[:id]
       @poster = Poster.find(params[:id])
-      @poster.mode = 'PDF'
+      # @poster.mode = 'PDF'
       @key = @poster.query
       @items = @poster.entries
 
@@ -203,7 +203,7 @@ class PostersController < ApplicationController
       #          }
       #        end
       #      }
-          
+      @poster.code = @poster.logs.size # just for record update
       if @items.size == 0
         @items_l = []
         @items_r = []
