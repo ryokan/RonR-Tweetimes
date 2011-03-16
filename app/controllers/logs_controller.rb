@@ -14,7 +14,7 @@ class LogsController < ApplicationController
   # DELETE /logs/1.xml
   def destroy
     @poster = Log.find(params[:id])
-    @poster.destroy
+    #@poster.destroy
 
     respond_to do |format|
       format.html { redirect_to(logs_url) }
