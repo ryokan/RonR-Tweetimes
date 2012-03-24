@@ -8,7 +8,10 @@ class MainController < ApplicationController
     posters = []
     logs.each {|log| posters = posters | [log.poster]}
     @posters = posters.map {|poster|
-      {:id => poster.id, :query => poster.query, :count => poster.logs.size, :created_at => poster.created_at}
+      {:id => poster.id, 
+	  :query => poster.query, 
+	  :count => logs.select{|x| x.poster == poster }.size, 
+	  :created_at => poster.created_at}
     }
     @posters.sort! {|b,a| a[:count] - b[:count]}
     @posters = @posters[0..9]
