@@ -3,7 +3,7 @@ class MainController < ApplicationController
     @url_linktext = "login"
     @poster = Poster.new
     #logs = Log.find :all, :conditions => ["created_at < ?", Time.now - 30*24*60*60 ]
-	logs = Log.order("created_on DESC").find(:limit => 300)
+	logs = Log.order("created_on DESC").limit(1000).all
     posters = []
     logs.each {|log| posters = posters | [log.poster]}
     @posters = posters.map {|poster|
