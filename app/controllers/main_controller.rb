@@ -2,8 +2,8 @@ class MainController < ApplicationController
 	def index
     @url_linktext = "login"
     @poster = Poster.new
-    # logs = Log.find :all, :conditions => ["created_at < ?", Time.now - 30*24*60*60 ]
-	logs = Log.find :all
+    logs = Log.find :all, :conditions => ["created_at <= ?", Time.now - 30*24*60*60 ]
+	# logs = Log.find :all
     posters = []
     logs.each {|log| posters = posters | [log.poster]}
     @posters = posters.map {|poster|
