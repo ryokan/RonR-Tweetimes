@@ -5,7 +5,9 @@ class MainController < ApplicationController
 #    logs = Log.find :all, :conditions => ["created_at > ?", Time.now - 7*24*60*60 ]
     logs = Log.find :all, :order => 'created_at desc', :limit => 1000
     posters = []
-    logs.each {|log| posters = posters | [log.poster]}
+#    logs.each {|log| posters = posters | [log.poster]}
+    logs.each {|log| posters << log.poster}
+    posters.uniq!
     @posters = posters.map {|poster|
       {:id => poster.id, 
 	  :query => poster.query, 
