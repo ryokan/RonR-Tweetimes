@@ -6,17 +6,34 @@ class MainController < ApplicationController
     logs = Log.find :all, :order => 'created_at desc', :limit => 1000
     posters = []
 #    logs.each {|log| posters = posters | [log.poster]}
-    logs.each {|log| posters << log.poster}
-    posters.uniq!
-    @posters = posters.map {|poster|
-      {:id => poster.id, 
-	  :query => poster.query, 
-	  :count => logs.select{|x| x.poster == poster }.size, 
-	  :created_at => poster.created_at}
+#    logs.each {|log| posters << log.poster}
+#    posters.uniq!
+#    @posters = posters.map {|poster|
+#      {:id => poster.id, 
+#	  :query => poster.query, 
+#	  :count => logs.select{|x| x.poster == poster }.size, 
+#	  :created_at => poster.created_at}
+#    }
+#    @posters.sort! {|b,a| a[:count] - b[:count]}
+#    @posters = @posters[0..9]
+    
+    
+    
+    logs.each {|log| poster == log.poster
+      if p = posters.assoc(poster) 
+        p[1]++
+      else
+        posters << [poster, 1]
+      end
+      }
+    posters.sort!{|b,a| a[1] - b[1]}
+    @posters = posters[0..9].map {|poster|
+      {:id => poster[0].id, 
+	  :query => poster[0].query, 
+	  :count => poster[1], 
+	  :created_at => poster[0].created_at}
     }
-    @posters.sort! {|b,a| a[:count] - b[:count]}
-    @posters = @posters[0..9]
-
+   
     @recent = Poster.find :all, :order => 'updated_at desc', :limit => 10
 	end
 end
