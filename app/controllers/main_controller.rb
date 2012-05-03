@@ -19,7 +19,8 @@ class MainController < ApplicationController
     
     
     
-    logs.each {|log| poster == log.poster
+    logs.each {|log| 
+      poster = log.poster
       if p = posters.assoc(poster) 
         p[1]++
       else
