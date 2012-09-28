@@ -23,6 +23,7 @@ class LogsController < ApplicationController
 
   def clear
     @old = Log.find :all, :conditions => ["created_at < ?", Time.now - 30*24*60*60 ]
+    @old = Log.find :all, :order => 'created_at', :limit => 10000
     @old.each { |x| x.destroy }
     
     respond_to do |format|
