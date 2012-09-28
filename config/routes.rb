@@ -1,7 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :entries
 
-  map.resources :logs
+  map.resources :logs,
+    :collection => {:all => :get, :show => :get, :edit => :post, :destroy => :post, :clear => :get}
 
   map.resources :posters, :collection=>{:format => :get,:format2 => :post, :pdf => :get,
     :pdf2 => :get, :make=> :post, :test2=>:any}
@@ -37,8 +38,12 @@ ActionController::Routing::Routes.draw do |map|
   #     admin.resources :products
   #   end
 
+
+
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   map.root :controller => "main"
+  
+  # map logs/all 
 
   # See how all your routes lay out with "rake routes"
 
@@ -47,4 +52,5 @@ ActionController::Routing::Routes.draw do |map|
   # consider removing or commenting them out if you're using named routes and resources.
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
+  
 end
