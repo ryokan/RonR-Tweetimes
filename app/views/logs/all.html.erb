@@ -1,0 +1,43 @@
+<h1>Listing posters</h1>
+
+
+<%= link_to 'Clear', 
+#:confirm => 'Are you sure?', 
+:controller => :logs,
+:action => :clear
+ %>
+
+<table>
+  <tr>
+  <th>No,</th>
+    <th>Poster_id,</th>
+    <th>created</th>
+
+  </tr>
+
+<% @logs.each do |log| %>
+  <tr>
+    <td><%=h log.poster_id %> ,
+      "<%=h log.poster.query %>",</td>
+    <td><%=h log.created_at %></td>
+    
+    <td><%= link_to 'Show', log %></td>
+    <td><%= link_to 'Edit', edit_log_path(log) %></td>
+    <td><%= link_to 'Destroy', log, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<script type="text/javascript">
+  var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+  document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+  try {
+    var pageTracker = _gat._getTracker("UA-598676-10");
+    pageTracker._trackPageview();
+  } catch(err) {}
+</script>
+
