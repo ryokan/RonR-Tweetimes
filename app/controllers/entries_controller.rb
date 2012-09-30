@@ -74,6 +74,17 @@ class EntriesController < ApplicationController
       end
     end
   end
+  
+  def clear
+    @old = Entry.find :all, :conditions => ["created_at < ?", Time.now - 30*24*60*60 ]
+    @old.each { |x| x.destroy }
+    
+    
+    respond_to do |format|
+      format.html { redirect_to(entries_url) }
+      format.xml  { head :ok }
+    end
+  end
 
   # DELETE /entries/1
   # DELETE /entries/1.xml

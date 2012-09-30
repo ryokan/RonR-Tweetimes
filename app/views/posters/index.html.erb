@@ -6,6 +6,7 @@
     <th>Query</th>
     <th>Mode</th>
     <th>Response.Code</th>
+    <th>Ids</th>
     <th>Date</th>
   </tr>
 
@@ -15,6 +16,7 @@
     <td><%=h poster.query %></td>
     <td><%=h poster.mode %></td>
     <td><%=h poster.code %></td>
+    <td><%=h poster.result %></td>
     <td><%=h poster.created_at %></td>
     <td><%= link_to 'Show', poster %></td>
     <td><%= link_to 'Edit', edit_poster_path(poster) %></td>

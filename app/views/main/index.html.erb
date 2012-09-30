@@ -36,6 +36,7 @@
   </head>
   <body>
     <div ID="BODY">
+      
       <div ID="title" style="width:1000px;">
         <div><%= image_tag ("/images/tweetimes.gif", :alt => "logo")  %></div>
         <div>
@@ -45,6 +46,14 @@
           <span style="text-align:right;float:right;">Contact: <a href="mailto:yoshihiroueda@gmail.com">Yoshihiro Ueda</a></span>
         </div>
       </div>
+      
+            <h2>お知らせ (お詫び)</h2>
+      <ul>
+        <li>新しいTwitterのAPIポリシーに対応できていないため、適切に動かない機能があります。申し訳ありません。</li>
+<li>特に再作成が正しく働いていません。</li>
+<li>他に機能不全の部分を発見された方は、上記Contact先にご連絡いただければ幸いです。</li>
+      </ul>
+      
       <h2>Poster Maker</h2>
       <ul>
         <li>皆さんPCに向かってばかりで会話が減ってませんか？</li>
@@ -61,6 +70,7 @@
             <%= f.submit 'Show!', :method =>:get %>
           </p>
         <% end %>
+
 <%#*<p>形式選択</p>%>
 <%# form_for @poster,  :url => {:controller=>"posters", :action => "make"} do |f| %>
 <%#= f.error_messages %>
@@ -70,8 +80,11 @@
 <%#= f.submit 'Select Format', :method =>:post %>
 <%#*</p>%>
 <%# end %>
+
       </div>
+
       <h3>Frequently Shown</h3>
+
       <table>
         <tr>
           <th>Query</th>
@@ -88,7 +101,9 @@
           </tr>
         <% end %>
       </table>
+      
       <h3>Newly Created & Shown</h3>
+      
       <table>
         <tr>
           <th>Query</th>
@@ -106,7 +121,6 @@
         <% end %>
       </table>
     </div>
-
 
 
   </body>

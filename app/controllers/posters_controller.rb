@@ -149,62 +149,75 @@ class PostersController < ApplicationController
           "User-Agent" => "Ruby/#{RUBY_VERSION}")
         @poster.code = response.code.to_s
         if response.code == '200'
-          result = REXML::Document.new(response.body)
-          @items = []
-          result.elements.each("feed/entry"){ |e|
-            entry = Entry.new
-            entry.author = e.elements['author/name'].text.split(' ').first
-            entry.authorurl = e.elements['author/uri'].text
-            entry.url =  e.elements['link'].attributes["href"]
-            entry.date = e.elements['updated'].text
-            entry.content = e.elements['content'].text
-            entry.image = REXML::XPath.first(e, "link[2]/attribute::href").value
-            @items << entry
-            @poster.entries << entry
-          }
-          if @items.size == 0
-            @items_l = []
-            @items_r = []
-            @key = @key + " (No Result) "
-          else
-            half = @items.size / 2
-            @items_l = @items[0..half-1]
-            @items_r = @items[half..@items.size]
-          end
-          @poster.result = @items.map {|i| URI.parse(i.url).path.split('/').last}.join(', ')
+            result = REXML::Document.new(response.body)
+            @items = []
+            result.elements.each("feed/entry"){ |e|
+                entry = Entry.new
+                entry.author = e.elements['author/name'].text.split(' ').first
+                entry.authorurl = e.elements['author/uri'].text
+                entry.url =  e.elements['link'].attributes["href"]
+                entry.date = e.elements['updated'].text
+                entry.content = e.elements['content'].text
+                entry.image = REXML::XPath.first(e, "link[2]/attribute::href").value
+                @items << {
+                    :author => entry.author ,
+                    :authorurl => entry.authorurl,
+                    :url =>  entry.url,
+                    :date => entry.date,
+                    :text => entry.content,
+                    :image => entry.image
+                }
+                #            @poster.entries << entry
+                #           Entry 保存をやめる 
+            }
+            if @items.size == 0
+                @items_l = []
+                @items_r = []
+                @key = @key + " (No Result) "
+            else
+                half = @items.size / 2
+                @items_l = @items[0..half-1]
+                @items_r = @items[half..@items.size]
+            end
+            
+            @poster.result = @items.map {|i| URI.parse(i[:url]).path.split('/').last}.join(', ')
+        
         else
-          @key = @key + " -> " + response.code.to_s
-          @items_l =[]
-          @items_r= []
-          @poster.result = ""
+            @key = @key + " -> " + response.code.to_s
+            @items_l =[]
+            @items_r= []
+            @poster.result = ""
         end
       }
-      @poster.save
+        @poster.save
+        
     elsif  params[:id]
-      @poster = Poster.find(params[:id])
-      # @poster.mode = 'PDF'
-      @key = @poster.query
-      @items = @poster.entries
-
-      #      http = Net::HTTP.new('api.twitter.com')
-      #      @items = []
-      #      @poster.result.split(',').each { |i|
-      #        req = Net::HTTP::Get.new('/1/statuses/show/' + i.to_s.strip + '.xml')
-      #        response = http.request(req)
-      #        if response.code == '200'
-      #          e = REXML::Document.new(response.body)
-      #          @items << {
-      #            :author => e.elements['status/user/screen_name'].text,
-      #            :authorurl => e.elements['status/user/url'].text,
-      #            :url =>  "http://twitter.com/kiku_lin/statuses/" + i.to_s,
-      #            :date => e.elements['status/created_at'].text,
-      #            :text => e.elements['status/text'].text,
-      #            :image => e.elements['status/user/profile_image_url'].text
-      #          }
-      #        end
-      #      }
-      @poster.code = @poster.logs.size # just for record update
-      if @items.size == 0
+        @poster = Poster.find(params[:id])
+        # @poster.mode = 'PDF'
+        @key = @poster.query
+        
+        #  @items = @poster.entries
+        
+        http = Net::HTTP.new('api.twitter.com')
+        @items = []
+        @poster.result.split(',').each { |i|
+            req = Net::HTTP::Get.new('/1/statuses/show/' + i.to_s.strip + '.xml')
+            response = http.request(req)
+            if response.code == '200'
+                e = REXML::Document.new(response.body)
+                @items << {
+                    :author => e.elements['status/user/screen_name'].text,
+                    :authorurl => e.elements['status/user/url'].text,
+                    :url =>  "http://twitter.com/" +  e.elements['status/user/screen_name'].text + "/status/" + i.to_s,
+                    :date => e.elements['status/created_at'].text,
+                    :text => e.elements['status/text'].text,
+                    :image => e.elements['status/user/profile_image_url'].text
+                }
+            end
+        }
+        @poster.code = @poster.logs.size # just for record update
+ 
+     if @items.size == 0
         @items_l = []
         @items_r = []
         @key = @key + " (No Result) "

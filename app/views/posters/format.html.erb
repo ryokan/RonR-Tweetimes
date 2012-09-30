@@ -14,12 +14,12 @@
     <% @items_l.each do |item| %>
       <div class= "tweet-body" width="100%">
         <div style="float:left;width:64px;height:64px;">
-          <%= image_tag item.image , :alt => "icon", :width=>"48", :height=>"48"  %>
+          <%= image_tag item[:image] , :alt => "icon", :width=>"48", :height=>"48"  %>
         </div>
         <div>
-          <a href="<%=h item.authorurl %>"><%=h item.author %></a>:
-          <%= item.content %>
-          <a class="tweet-date" href="<%=h item.url %>"><%=h item.date %></a>
+          <a href="<%=h item[:authorurl] %>"><%=h item[:author] %></a>:
+          <%= item[:text] %>
+          <a class="tweet-date" href="<%=h item[:url] %>"><%=h item[:date] %></a>
         </div>
       </div>
       <br clear="all"/>
@@ -30,12 +30,12 @@
       <div class= "tweet-body" width="100%">
         <div style="float:left;width:64px;height:64px;">
 
-          <%= image_tag item.image, :alt => "icon", :width=>"48", :height=>"48"  %>
+          <%= image_tag item[:image], :alt => "icon", :width=>"48", :height=>"48"  %>
         </div>
         <div>
-          <a href="<%=h item.authorurl %>"><%=h item.author %></a>:
-          <%= item.content %>
-          <a class="tweet-date" href="<%=h item.url %>"><%=h item.date %></a>
+          <a href="<%=h item[:authorurl] %>"><%=h item[:author] %></a>:
+          <%= item[:text] %>
+          <a class="tweet-date" href="<%=h item[:url] %>"><%=h item[:date]  %></a>
         </div>
       </div>
       <br clear="all"/>

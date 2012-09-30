@@ -1,11 +1,13 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :entries
+  map.resources :entries,
+    :collection => {:all => :get, :show => :get, :edit => :post, :destroy => :post, :clear => :get}
 
   map.resources :logs,
     :collection => {:all => :get, :show => :get, :edit => :post, :destroy => :post, :clear => :get}
 
   map.resources :posters, :collection=>{:format => :get,:format2 => :post, :pdf => :get,
     :pdf2 => :get, :make=> :post, :test2=>:any}
+    
 
 # The priority is based upon order of creation: first created -> highest priority.
 
