@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :entries,
-    :collection => {:all => :get, :show => :get, :edit => :post, :destroy => :post, :clear => :get}
+    :collection => {:show => :get, :edit => :post, :destroy => :post, :clear => :get}
 
   map.resources :logs,
     :collection => {:all => :get, :show => :get, :edit => :post, :destroy => :post, :clear => :get}
