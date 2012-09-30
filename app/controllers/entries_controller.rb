@@ -2,11 +2,12 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.xml
   def index
+    @count = Entry.count
     @entries = Entry.all.reverse[0..99]
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @entries }
+      format.xml  { render :xml => @entries, :size => @size }
     end
   end
 
@@ -77,7 +78,7 @@ class EntriesController < ApplicationController
   
   def clear
 #    @old = Entry.find :all, :conditions => ["created_at < ?", Time.now - 270*24*60*60 ]
-    @old = Log.find :all, :order => 'created_at', :limit => 10000
+    @old = Entry.find :all, :order => 'created_at', :limit => 10000
 
     @old.each { |x| x.destroy }
     
