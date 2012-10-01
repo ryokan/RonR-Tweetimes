@@ -2,12 +2,12 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.xml
   def index
-    @count = Entry.count
+    @size = Entry.count
     @entries = Entry.all.reverse[0..99]
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @entries, :size => @size }
+      format.xml  { render :xml => @entries}
     end
   end
 
