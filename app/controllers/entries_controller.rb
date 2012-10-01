@@ -77,7 +77,7 @@ class EntriesController < ApplicationController
   end
   
   def clear
-   @old = Entry.find :all, :conditions => ["created_at < ?", Time.now - 90*24*60*60 ]
+   @old = Entry.find :all, :conditions => ["created_at < ?", Time.now - 7*24*60*60 ]
     # @old = Entry.find :all, :order => 'created_at', :limit => 10000
 
     @old.each { |x| x.destroy }
