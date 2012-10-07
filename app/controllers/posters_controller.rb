@@ -228,8 +228,8 @@ class PostersController < ApplicationController
       end
       #@poster.save
     end
-## @poster.logs << Log.new
- ##   @poster.save
+ @poster.logs << Log.new
+    @poster.save
   end
 	
   # GET /posters/format?q=
